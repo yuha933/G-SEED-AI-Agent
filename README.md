@@ -1,5 +1,3 @@
-<br />
-
 <h1>
   🌱 G-SEED 인증 항목 컨설팅 AI Agent
 </h1>
