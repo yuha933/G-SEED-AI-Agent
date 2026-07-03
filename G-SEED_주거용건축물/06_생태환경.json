@@ -1,0 +1,773 @@
+{
+  "metadata": {
+    "인증기준명": "녹색건축 인증기준",
+    "버전": "G-SEED 2016-8",
+    "건축물유형": "신축 주거용 건축물",
+    "전문분야번호": "6",
+    "전문분야명": "생태환경",
+    "시작페이지": 44,
+    "종료페이지": 50,
+    "항목수": 4,
+    "원본PDF": "G-SEED 2016-8_개정전문.pdf",
+    "참조데이터": "G-SEED/01_신축_주거용_건축물.json",
+    "생성방식": "PDF 원문·평가기준·계산식 구조를 전문분야별로 분리"
+  },
+  "전문분야": [
+    {
+      "번호": "6",
+      "명칭": "생태환경",
+      "인증항목": [
+        {
+          "criterion_id": "R-6.1",
+          "출처": {
+            "페이지": 44,
+            "종료페이지": 45,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "6",
+            "명칭": "생태환경"
+          },
+          "인증항목": {
+            "번호": "6.1",
+            "명칭": "연계된 녹지축 조성",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "녹지축 조성과 외부 녹지 연계를 통해 생태 네트워크의 연속성을 확보한다.",
+            "평가방법": "평가방법 1은 대지 내 녹지축 길이비율로 평가하고, 평가방법 2는 외부 녹지와의 연결폭 점수와 녹지축 길이비율 점수를 합산하여 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                44,
+                45
+              ],
+              "max_score": 2,
+              "input_variables": [
+                {
+                  "name": "evaluation_method",
+                  "label": "선택 평가방법",
+                  "type": "enum",
+                  "values": [
+                    "method_1_green_axis_length_ratio",
+                    "method_2_external_connection_plus_length_ratio"
+                  ]
+                },
+                {
+                  "name": "site_boundary_length_m",
+                  "label": "대지 경계 길이 또는 기준 길이",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "green_axis_length_m",
+                  "label": "대지 내 녹지축 길이",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "green_axis_min_width_m",
+                  "label": "녹지축 최소 폭",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "green_axis_disconnected_length_max_m",
+                  "label": "녹지축 단절부 최대 길이",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "green_axis_disconnected_length_total_m",
+                  "label": "녹지축 단절부 합계 길이",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "external_green_connection_width_m",
+                  "label": "외부 녹지와 연결되는 녹지축 폭",
+                  "type": "number",
+                  "unit": "m"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "green_axis_length_ratio",
+                  "label": "녹지축 길이비율",
+                  "formula": "green_axis_length_m / site_boundary_length_m * 100",
+                  "unit": "%"
+                },
+                {
+                  "name": "green_axis_continuity_condition",
+                  "label": "녹지축 연속성 인정조건",
+                  "formula": "green_axis_min_width_m >= 4 and green_axis_disconnected_length_max_m < 1 and green_axis_disconnected_length_total_m <= 3"
+                },
+                {
+                  "name": "method_2_total_point",
+                  "label": "평가방법 2 합산점수",
+                  "formula": "external_green_connection_width_point + green_axis_length_ratio_point",
+                  "unit": "점"
+                }
+              ],
+              "method_1_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "녹지축 길이비율 45% 이상",
+                  "condition": "green_axis_continuity_condition and green_axis_length_ratio >= 45",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "녹지축 길이비율 35% 이상 45% 미만",
+                  "condition": "green_axis_continuity_condition and 35 <= green_axis_length_ratio < 45",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "녹지축 길이비율 25% 이상 35% 미만",
+                  "condition": "green_axis_continuity_condition and 25 <= green_axis_length_ratio < 35",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "녹지축 길이비율 15% 이상 25% 미만",
+                  "condition": "green_axis_continuity_condition and 15 <= green_axis_length_ratio < 25",
+                  "weight": 0.4
+                }
+              ],
+              "method_2_connection_width_point_table": [
+                {
+                  "condition": "external_green_connection_width_m >= 8",
+                  "point": 1.0
+                },
+                {
+                  "condition": "6 <= external_green_connection_width_m < 8",
+                  "point": 0.8
+                },
+                {
+                  "condition": "4 <= external_green_connection_width_m < 6",
+                  "point": 0.6
+                }
+              ],
+              "method_2_length_ratio_point_table": [
+                {
+                  "condition": "green_axis_continuity_condition and green_axis_length_ratio >= 25",
+                  "point": 1.0
+                },
+                {
+                  "condition": "green_axis_continuity_condition and 20 <= green_axis_length_ratio < 25",
+                  "point": 0.8
+                },
+                {
+                  "condition": "green_axis_continuity_condition and 15 <= green_axis_length_ratio < 20",
+                  "point": 0.6
+                },
+                {
+                  "condition": "green_axis_continuity_condition and 10 <= green_axis_length_ratio < 15",
+                  "point": 0.4
+                }
+              ],
+              "method_2_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "평가방법 2 합산점수 2.0점",
+                  "condition": "method_2_total_point == 2.0",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "평가방법 2 합산점수 1.6점 이상 2.0점 미만",
+                  "condition": "1.6 <= method_2_total_point < 2.0",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "평가방법 2 합산점수 1.2점 이상 1.6점 미만",
+                  "condition": "1.2 <= method_2_total_point < 1.6",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "평가방법 2 합산점수 1.0점 이상 1.2점 미만",
+                  "condition": "1.0 <= method_2_total_point < 1.2",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = selected_method_weight * 2"
+            }
+          },
+          "참고자료": [
+            "조경설계기준, 한국조경학회, 2013"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 녹지축이 표시된 단지배치도, 설계설명서(단지 둘레 길이 및 녹지축의 길이 표시)",
+              "인증 - 녹지축 식재계획 평면도, 녹지축 단면도 등 상세도면",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "현장사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 6 생태환경\n인증항목 6.1 연계된 녹지축 조성\n세부평가기준\n평가목적 단지 내부에 연속된 녹지를 조성하고 단지 외부 녹지와의 연계성을 갖도록 유도한다.\n평가방법 1. 단지 내부 녹지축 길이 비율에 따라 평가\n2. 내부 녹지축이 단지 외부 녹지에 연결된 경우 연결 폭 및 길이 비율에 따라 평가\n배 점 2점(평가항목)\n산출기준 ※ 평가방법 1 또는 평가방법 2를 적용\n[평가방법 1]\n• 평점 = (가중치)×(배점)\n구분 단지 내부 녹지축 길이 비율 가중치\n1급 내부 녹지축 길이가 단지 전체 둘레 길이의 45% 이상 (0.45×A ≤ L) 1.0\n2급 내부 녹지축 길이가 단지 전체 둘레 길이의 35% 이상 45% 미만 (0.35×A ≤ L ＜ 0.45×A) 0.8\n3급 내부 녹지축 길이가 단지 전체 둘레 길이의 25% 이상 35% 미만 (0.25×A ≤ L ＜ 0.35×A) 0.6\n4급 내부 녹지축 길이가 단지 전체 둘레 길이의 15% 이상 25% 미만 (0.15×A ≤ L ＜ 0.25×A) 0.4\n[평가방법 2]\n• 평점 = (가중치)×(배점)\n내부 녹지축이 단지 외부 녹지(비오톱 포함)에 연결되어 있는 경우의 점수 = 1) 점수 + 2) 점수\n구분 단지 외부 녹지(비오톱 포함)에 연결되어 있는 경우 가중치\n1급 2.0점 1.0\n2급 1.6점 이상 2.0점 미만 0.8\n3급 1.2점 이상 1.6점 미만 0.6\n4급 1.0점 이상 1.2점 미만 0.4\n1) 단지 내부 녹지축이 외부 녹지(비오톱 포함)와의 연결 정도\n단지 외부 녹지(비오톱 포함)와의 연결 정도 점수\n내부 녹지축이 외부 녹지(비오톱 포함)와 8m 이상의 폭으로 연결된 경우 1.0\n내부 녹지축이 외부 녹지(비오톱 포함)와 6m 이상의 폭으로 연결된 경우 0.8\n내부 녹지축이 외부 녹지(비오톱 포함)와 4m 이상의 폭으로 연결된 경우 0.6\n2) 단지 내부 녹지축 길이 비율\n내부 녹지축 길이 비율 점수\n내부 녹지축 길이가 단지 전체 둘레 길이의 25% 이상 (0.25×A ≤ L) 1.0\n내부 녹지축 길이가 단지 전체 둘레 길이의 20% 이상 25% 미만 (0.20×A ≤ L ＜ 0.25×A) 0.8\n내부 녹지축 길이가 단지 전체 둘레 길이의 15% 이상 20% 미만 (0.15×A ≤ L ＜ 0.20×A) 0.6\n내부 녹지축 길이가 단지 전체 둘레 길이의 10% 이상 15% 미만 (0.10×A ≤ L ＜ 0.15×A) 0.4\n- L : 내부 녹지축 길이 A: 단지 전체 둘레 길이\n- 녹지축은 다층식재 및 양질의 토양 생육환경(식생, 토양, 수자원 등)으로 조성되어 생물의 서식과 이동이\n가능하여야 함\n- 녹지축의 폭은 4m 이상이고 단절된 길이가 1m 미만이어야 하며, 부분 단절된 길이의 합이 3m 이내인\n경우 인정함\n- 녹지축은 내부에 디딤석 포장 등과 같이 식재면과 연계된 공법으로 조성된 산책로가 폭 1m 이내인 경우\n인정함\n참고자료 및 제출서류\n참고자료 - 조경설계기준, 한국조경학회, 2013\n제출서류\n예비 - 녹지축이 표시된 단지배치도, 설계설명서(단지 둘레 길이 및 녹지축의 길이 표시)\n인증 - 녹지축 식재계획 평면도, 녹지축 단면도 등 상세도면\n- 예비인증 시와 동일\n본인증\n- 현장사진"
+        },
+        {
+          "criterion_id": "R-6.2",
+          "출처": {
+            "페이지": 46,
+            "종료페이지": 46,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "6",
+            "명칭": "생태환경"
+          },
+          "인증항목": {
+            "번호": "6.2",
+            "명칭": "자연지반 녹지율",
+            "구분": "평가항목",
+            "배점": 4
+          },
+          "평가": {
+            "평가목적": "무분별한 지하공간 개발로 인한 생태적 기반 파괴를 지양하고 지하수 함양 공간을 확보한다.",
+            "평가방법": "전체 대지 내 자연지반 녹지면적 비율로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                46
+              ],
+              "max_score": 4,
+              "score_formula": "score = weight * 4",
+              "input_variables": [
+                {
+                  "name": "natural_ground_green_area_m2",
+                  "label": "자연지반 녹지면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "site_area_m2",
+                  "label": "전체 대지면적",
+                  "type": "number",
+                  "unit": "m2"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "natural_ground_green_ratio",
+                  "formula": "natural_ground_green_area_m2 / site_area_m2 * 100",
+                  "unit": "%"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "자연지반 녹지율 25% 이상",
+                  "condition": "natural_ground_green_ratio >= 25",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "자연지반 녹지율 20% 이상 25% 미만",
+                  "condition": "20 <= natural_ground_green_ratio < 25",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "자연지반 녹지율 15% 이상 20% 미만",
+                  "condition": "15 <= natural_ground_green_ratio < 20",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "자연지반 녹지율 10% 이상 15% 미만",
+                  "condition": "10 <= natural_ground_green_ratio < 15",
+                  "weight": 0.3
+                },
+                {
+                  "grade": "5급",
+                  "original_text": "자연지반 녹지율 5% 이상 10% 미만",
+                  "condition": "5 <= natural_ground_green_ratio < 10",
+                  "weight": 0.1
+                }
+              ],
+              "performance_note": "자연지반 녹지율이 4급 또는 5급인 경우 공동주택성능등급 인증서에는 ★로 표시한다."
+            }
+          },
+          "참고자료": [
+            "조경설계기준, 한국조경학회, 2013",
+            "생태기반지표의 도시계획 활용방안, 서울특별시, 2004",
+            "신도시 조성 등에 적용할 생태면적률 기준 도입 방안에 관한 연구, 2005"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "자연지반 녹지율 산출서 및 관련 도면(지하시설물 계획도, 식재계획 평면도)",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "현장사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 6 생태환경\n인증항목 6.2 자연지반 녹지율\n세부평가기준\n평가목적 무분별한 지하공간 개발로 인한 생태적 기반 파괴를 지양하고 토양생태계 및 구조물의 안정성 확보에 필수\n적인 지하수 함양 공간을 확보하도록 한다.\n평가방법 전체 대지 내에 분포하는 자연지반 녹지의 비율에 따라 평가\n배 점 4점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n자연지반 녹지면적 (m2)\n자연지반 녹지율(%) = × 100\n전체 대지면적 (m2)\n구분 자연지반 녹지율(%) 가중치\n1급 자연지반 녹지율이 25% 이상인 경우 1.0\n2급 자연지반 녹지율이 20% 이상 25% 미만인 경우 0.8\n3급 자연지반 녹지율이 15% 이상 20% 미만인 경우 0.6\n4급 자연지반 녹지율이 10% 이상 15% 미만인 경우 0.3\n5급 자연지반 녹지율이 5% 이상 10% 미만인 경우 0.1\n- 자연지반 녹지는 자연발생적인 표토층(자연지반)에 자연 상태로 형성된 녹지 또는 조성된 녹지를 말함\n- 자연지반 녹지는 자연지반 또는 자연지반과 연속성을 가지는 절성토 지반에 인공적으로 조성된 녹지를 포\n함함\n- 인공지반 및 건축물 상부의 녹지는 제외함\n- 자연지반 녹지율이 4급, 5급인 경우 공동주택성능등급 인증서에는 ★로 표시함\n참고자료 및 제출서류\n참고자료 - 조경설계기준, 한국조경학회, 2013\n- 생태기반지표의 도시계획 활용방안, 서울특별시, 2004\n- 신도시 조성 등에 적용할 생태면적률 기준 도입 방안에 관한 연구, 2005\n제출서류\n예비\n- 자연지반 녹지율 산출서 및 관련 도면(지하시설물 계획도, 식재계획 평면도)\n인증\n- 예비인증 시와 동일\n본인증\n- 현장사진"
+        },
+        {
+          "criterion_id": "R-6.3",
+          "출처": {
+            "페이지": 47,
+            "종료페이지": 48,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "6",
+            "명칭": "생태환경"
+          },
+          "인증항목": {
+            "번호": "6.3",
+            "명칭": "생태면적률",
+            "구분": "필수항목",
+            "배점": 10
+          },
+          "평가": {
+            "평가목적": "대지 내 생태적 기능을 가진 공간을 확보하여 생물서식 기반과 물순환 기능을 높인다.",
+            "평가방법": "피복유형별 환산면적과 식재유형별 환산면적을 별도로 계산한 뒤 합산하여 생태면적률을 산정한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                47,
+                48
+              ],
+              "max_score": 10,
+              "input_variables": [
+                {
+                  "name": "site_area_m2",
+                  "label": "대지면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "cover_type_areas",
+                  "label": "피복유형별 면적 목록",
+                  "type": "array",
+                  "item_schema": {
+                    "cover_type": "string",
+                    "area_m2": "number",
+                    "cover_coefficient": "number"
+                  }
+                },
+                {
+                  "name": "planting_type_items",
+                  "label": "식재유형별 수량 목록",
+                  "type": "array",
+                  "item_schema": {
+                    "planting_type": "string",
+                    "count": "number",
+                    "conversion_area_m2_per_item": "number",
+                    "planting_coefficient": "number"
+                  }
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "cover_type_converted_area_total",
+                  "label": "피복유형별 환산면적 합계",
+                  "formula": "sum(area_m2 * cover_coefficient for each cover_type)",
+                  "unit": "m2"
+                },
+                {
+                  "name": "planting_type_converted_area_total",
+                  "label": "식재유형별 환산면적 합계",
+                  "formula": "sum(count * conversion_area_m2_per_item * planting_coefficient for each planting_type)",
+                  "unit": "m2"
+                },
+                {
+                  "name": "ecological_area_ratio",
+                  "label": "생태면적률",
+                  "formula": "(cover_type_converted_area_total + planting_type_converted_area_total) / site_area_m2 * 100",
+                  "unit": "%"
+                }
+              ],
+              "cover_type_coefficient_table": [
+                {
+                  "cover_type": "자연지반녹지",
+                  "coefficient": 1.0
+                },
+                {
+                  "cover_type": "수공간(투수기능)",
+                  "coefficient": 1.0,
+                  "note": "바닥 차수 시 0.5 적용"
+                },
+                {
+                  "cover_type": "인공지반녹지 토심 90cm 이상",
+                  "coefficient": 0.7
+                },
+                {
+                  "cover_type": "인공지반녹지 토심 40cm 이상 90cm 미만",
+                  "coefficient": 0.5
+                },
+                {
+                  "cover_type": "옥상녹화 토심 40cm 이상",
+                  "coefficient": 0.6
+                },
+                {
+                  "cover_type": "옥상녹화 토심 40cm 미만",
+                  "coefficient": 0.4
+                },
+                {
+                  "cover_type": "식재가 수반된 투수포장",
+                  "coefficient": 0.4
+                },
+                {
+                  "cover_type": "순수 투수포장 또는 식재 없는 투수포장",
+                  "coefficient": 0.2
+                },
+                {
+                  "cover_type": "불투수포장",
+                  "coefficient": 0.0
+                },
+                {
+                  "cover_type": "벽면녹화",
+                  "coefficient": 0.3,
+                  "note": "높이 10m까지, 최소 토심 20cm 이상"
+                },
+                {
+                  "cover_type": "저류·침투시설 연계면적",
+                  "coefficient": 0.1
+                }
+              ],
+              "planting_type_table_note": "식재유형은 원문 표의 수목 높이·규격별 환산면적과 식재계수를 별도 변수로 적용한다. 피복계수와 식재계수는 서로 다른 계수이므로 혼용하지 않는다.",
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "생태면적률 50% 이상",
+                  "condition": "ecological_area_ratio >= 50",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "생태면적률 40% 이상 50% 미만",
+                  "condition": "40 <= ecological_area_ratio < 50",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "생태면적률 30% 이상 40% 미만",
+                  "condition": "30 <= ecological_area_ratio < 40",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "생태면적률 20% 이상 30% 미만",
+                  "condition": "20 <= ecological_area_ratio < 30",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = weight * 10"
+            }
+          },
+          "참고자료": [
+            "서울특별시 생태면적률 운영지침, 서울특별시",
+            "생태면적률 개선방안 수립 학술연구 용역 보고서, 2015.12, 서울특별시"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 생태면적률 산출서 및 관련 도면(공간유형 구분 명기)",
+              "인증 - 설계도면(배치도,생태면적률/녹지구적도,식재도/포장계획도,포장/지하구조물상세도 등)",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "투수성 포장공법의 투수성능 시험성적서",
+              "현장사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 6 생태환경\n인증항목 6.3 생태면적률\n세부평가기준\n평가목적 토지의 피복 변화에 따른 대지의 생태적 기능(토양 순환, 빗물 순환, 공기 및 기후조절, 서식처 기능 등) 변\n화를 정량적으로 평가하여 도시기후변화 등 도시생태 문제의 예방과 생태적 건전성 향상을 도모한다.\n평가방법 대지의 공간(피복)유형을 구분하고, 각 공간(피복)유형에 해당 계수를 곱하여 산출한 생태면적의 합과 전체\n대지면적의 비율로 평가\n배 점 10점(필수항목)\n산출기준 • 평점 = (가중치)×(배점)\n(피복유형별 환산면적*+식재유형별 환산면적**)\n생태면적률(%) = × 100\n전체 대지면적\n* 피복유형별 환산면적 = 자연순환기능 면적 = Σ(피복유형별 면적 × 계수)\n** 식재유형 환산면적 = 식재특성 면적 = Σ(식재개체수 × 환산면적 × 계수)\n구분 생태면적률(%) 가중치\n1급 생태면적률이 55% 이상인 경우 1.00\n2급 생태면적률이 45% 이상 55% 미만인 경우 0.75\n3급 생태면적률이 35% 이상 45% 미만인 경우 0.50\n4급 생태면적률이 30% 이상 35% 미만인 경우 0.25\n5급 생태면적률이 10% 이상 30% 미만인 경우 0.10\n피복유형 계수 공간(피복)유형 설명\n1 자연지반녹지 1.0 - 자연지반에 자생하거나 조성된 녹지\n- 지하수 함양 기능을 가지는 수공간\n2 수공간 (투수기능) 1.0\n- 바닥에 차수시설이 설치되어 있는 수공간의 경우에는 계수 0.5\n- 유효 토심이 90㎝ 이상인 인공지반 상부 녹지\n3 인공지반녹지 ≥ 90㎝ 0.7\n- 토심이 90cm미만인 경우에는 계수 0.5 (단, 최소 토심 40cm)\n- 유효 토심이 40㎝ 이상인 다층구조 녹화가 적용된 공간\n4 옥상녹화 ≥ 40㎝ 0.6\n- 토심이 40cm미만인 경우에는 계수 0.4\n- 순수포장면적이 50% 이상인 경우 또는 식재가 적용되지 않는 경\n5 투수포장 (식재포함) 0.4\n우에는 계수 0.2 (불투수포장의 경우에는 계수 0)\n- 녹화된 벽면이나 옹벽(담장) 등 창이 없는 벽면이나 옹벽의 녹화,\n6 벽면녹화 0.3\n최대 10m 높이까지만 산정(단, 최소 토심 20cm)\n7 저류․침투 시설 연계면 0.1 - 지하수 함양을 위한 우수침투시설 또는 일시적 저류시설 연계 면\n식재유형 계수 식재유형 산정 시 유의사항\n- 낙엽교목으로 H≥4m, B≥12cm 또는 R≥15cm\n수고 환산면적\n- 상록교목으로 H≥4m, W≥2m 2주 인정\n0.3m -1.5m 0.1 - 낙엽교목으로 H≥5m, B≥18cm 또는 R≥20cm\n8 0.1 - 상록교목으로 H≥5m, W≥3m 4주 인정\n1.5m-4.0m 0.3 - 낙엽교목으로 H≥5m, B≥25cm 또는 R≥30cm\n- 상록교목으로 H≥5m, W≥5m 8주 인정\n4.0m 이상 3.0\n* 수고 1.5m 이상 관목의 경우에는 환산면적 0.3의 50%로 인정(0.15)\n- 생태면적률이 4급, 5급인 경우 공동주택성능등급 인증서에는 ★로 표시함\n참고자료 및 제출서류\n참고자료 - 서울특별시 생태면적률 운영지침, 서울특별시\n- 생태면적률 개선방안 수립 학술연구 용역 보고서, 2015.12, 서울특별시\n제출서류\n예비 - 생태면적률 산출서 및 관련 도면(공간유형 구분 명기)\n인증 - 설계도면(배치도,생태면적률/녹지구적도,식재도/포장계획도,포장/지하구조물상세도 등)\n- 예비인증 시와 동일\n본인증 - 투수성 포장공법의 투수성능 시험성적서\n- 현장사진"
+        },
+        {
+          "criterion_id": "R-6.4",
+          "출처": {
+            "페이지": 49,
+            "종료페이지": 50,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "6",
+            "명칭": "생태환경"
+          },
+          "인증항목": {
+            "번호": "6.4",
+            "명칭": "비오톱 조성",
+            "구분": "평가항목",
+            "배점": 4
+          },
+          "평가": {
+            "평가목적": "비오톱 조성 기법을 평가함으로써 대지 내 생물다양성 증진을 유도한다.",
+            "평가방법": "비오톱 항목 최소 기준을 만족시키는 비오톱의 항목 개수와 면적을 대상으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                49,
+                50
+              ],
+              "max_score": 4,
+              "score_formula": "score = weight * 4",
+              "constants": {
+                "aquatic_biotope_minimum_unit_area_m2": 90,
+                "terrestrial_biotope_minimum_unit_area_m2": 180,
+                "biotope_minimum_width_m": 4
+              },
+              "input_variables": [
+                {
+                  "name": "aquatic_biotope_area_m2",
+                  "label": "수생비오톱 조성 면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "terrestrial_biotope_area_m2",
+                  "label": "육생비오톱 조성 면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "aquatic_biotope_minimum_width_m",
+                  "label": "수생비오톱 최소 폭",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "terrestrial_biotope_minimum_width_m",
+                  "label": "육생비오톱 최소 폭",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "aquatic_common_item_count",
+                  "label": "수생비오톱에 적용된 공통 조성항목 수",
+                  "type": "number",
+                  "unit": "개"
+                },
+                {
+                  "name": "terrestrial_common_item_count",
+                  "label": "육생비오톱에 적용된 공통 조성항목 수",
+                  "type": "number",
+                  "unit": "개"
+                },
+                {
+                  "name": "aquatic_biotope_specific_item_count",
+                  "label": "수생비오톱 적용항목 수",
+                  "type": "number",
+                  "unit": "개"
+                },
+                {
+                  "name": "terrestrial_biotope_specific_item_count",
+                  "label": "육생비오톱 적용항목 수",
+                  "type": "number",
+                  "unit": "개"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "aquatic_biotope_area_ratio_to_minimum",
+                  "label": "수생비오톱 최소단위면적 대비 배수",
+                  "formula": "aquatic_biotope_area_m2 / aquatic_biotope_minimum_unit_area_m2"
+                },
+                {
+                  "name": "terrestrial_biotope_area_ratio_to_minimum",
+                  "label": "육생비오톱 최소단위면적 대비 배수",
+                  "formula": "terrestrial_biotope_area_m2 / terrestrial_biotope_minimum_unit_area_m2"
+                },
+                {
+                  "name": "aquatic_biotope_created",
+                  "formula": "aquatic_biotope_area_m2 > 0 and aquatic_biotope_minimum_width_m >= biotope_minimum_width_m"
+                },
+                {
+                  "name": "terrestrial_biotope_created",
+                  "formula": "terrestrial_biotope_area_m2 > 0 and terrestrial_biotope_minimum_width_m >= biotope_minimum_width_m"
+                },
+                {
+                  "name": "aquatic_biotope_quality_condition",
+                  "formula": "aquatic_biotope_created and aquatic_common_item_count >= 2 and aquatic_biotope_specific_item_count >= 5"
+                },
+                {
+                  "name": "terrestrial_biotope_quality_condition",
+                  "formula": "terrestrial_biotope_created and terrestrial_common_item_count >= 2 and terrestrial_biotope_specific_item_count >= 5"
+                }
+              ],
+              "common_biotope_items": [
+                {
+                  "category": "계획",
+                  "item": "기존의 중요 비오톱의 보전 또는 복원"
+                },
+                {
+                  "category": "계획",
+                  "item": "기존 수목 또는 표토 등 자연자원 활용"
+                },
+                {
+                  "category": "연계",
+                  "item": "육지-습지-수변-물의 전이단계 조성"
+                },
+                {
+                  "category": "생물종",
+                  "item": "대상지에 적합한 목표종의 선정 및 알맞은 서식환경 조성"
+                },
+                {
+                  "category": "유지관리",
+                  "item": "비오톱 주변에 고정식 비오톱 해설판 제공"
+                }
+              ],
+              "aquatic_biotope_items": [
+                {
+                  "category": "서식환경",
+                  "minimum_area_m2": 90,
+                  "item": "텀벙 등 수생물의 월동이 가능한 장소 제공"
+                },
+                {
+                  "category": "서식환경",
+                  "minimum_area_m2": 90,
+                  "item": "다공질 환경조성을 통한 종 다양성 확보"
+                },
+                {
+                  "category": "서식환경",
+                  "minimum_area_m2": 90,
+                  "item": "호안 주변의 다양한 서식환경 조성"
+                },
+                {
+                  "category": "서식환경",
+                  "minimum_area_m2": 90,
+                  "item": "호안 경사각 10도 이하 및 1/2 초지대 형성"
+                },
+                {
+                  "category": "물의 공급",
+                  "minimum_area_m2": 90,
+                  "item": "우수 또는 중수를 유입수로 활용"
+                },
+                {
+                  "category": "물의 공급",
+                  "minimum_area_m2": 90,
+                  "item": "비오톱 주변 식생여과대 또는 쇄석여과층 조성"
+                },
+                {
+                  "category": "바닥처리",
+                  "minimum_area_m2": 90,
+                  "item": "중앙 수심 0.6m 이상 유지"
+                },
+                {
+                  "category": "바닥처리",
+                  "minimum_area_m2": 90,
+                  "item": "웅덩이/돌무더기 등 다양한 바닥 굴곡 조성"
+                },
+                {
+                  "category": "식재계획",
+                  "minimum_area_m2": 90,
+                  "item": "수면적 60% 이상 개방수면 확보 및 방안"
+                },
+                {
+                  "category": "식재계획",
+                  "minimum_area_m2": 90,
+                  "item": "침수, 부유, 부엽, 추수 식물 도입"
+                }
+              ],
+              "terrestrial_biotope_items": [
+                {
+                  "category": "서식환경",
+                  "minimum_area_m2": 180,
+                  "item": "다공질 공간 등 곤충, 소동물 서식처 제공"
+                },
+                {
+                  "category": "서식환경",
+                  "minimum_area_m2": 180,
+                  "item": "먹이터, 물확 등 조류 서식처 제공"
+                },
+                {
+                  "category": "서식환경",
+                  "minimum_area_m2": 180,
+                  "item": "식재기반 혹은 비오톱지형의 굴곡(요철) 조성"
+                },
+                {
+                  "category": "식재기반",
+                  "minimum_area_m2": 180,
+                  "item": "생육 최소심도 이상의 토심 확보"
+                },
+                {
+                  "category": "식재기반",
+                  "minimum_area_m2": 180,
+                  "item": "인공지반녹지 하부 배수/방수/방근층 확보"
+                },
+                {
+                  "category": "식재계획",
+                  "minimum_area_m2": 180,
+                  "item": "다양한 생물서식에 적합한 다층구조 식재"
+                },
+                {
+                  "category": "식재계획",
+                  "minimum_area_m2": 180,
+                  "item": "전체 면적 중 단일군락지 비율 60% 미만 조성"
+                },
+                {
+                  "category": "식재계획",
+                  "minimum_area_m2": 180,
+                  "item": "해당 지자체 조례 식재밀도의 1.5배 조성"
+                },
+                {
+                  "category": "식재계획",
+                  "minimum_area_m2": 180,
+                  "item": "대상지 주변 자연림(2차림 등)의 수종 및 구조 적용"
+                },
+                {
+                  "category": "식재계획",
+                  "minimum_area_m2": 180,
+                  "item": "석이 및 밀원 수종의 사용(3종 이상)"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "최소단위면적 1.5배 이상의 수생 및 육생비오톱을 각각 1곳에 조성하고, 공통 적용항목 2개 이상 및 유형별 적용항목 5개 이상을 각각 만족한 경우",
+                  "condition": "aquatic_biotope_area_ratio_to_minimum >= 1.5 and terrestrial_biotope_area_ratio_to_minimum >= 1.5 and aquatic_biotope_quality_condition and terrestrial_biotope_quality_condition",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "수생 및 육생비오톱을 각각 1곳에 조성하고 각각 공통 적용항목 2개 이상 및 유형별 적용항목 5개 이상을 만족하거나, 수생 또는 육생비오톱 1종을 최소단위면적 2.0배 이상으로 조성한 경우",
+                  "condition": "(aquatic_biotope_quality_condition and terrestrial_biotope_quality_condition) or ((aquatic_biotope_area_ratio_to_minimum >= 2.0 and aquatic_biotope_quality_condition) or (terrestrial_biotope_area_ratio_to_minimum >= 2.0 and terrestrial_biotope_quality_condition))",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "최소단위면적 1.5배 이상의 수생 또는 육생비오톱 1종을 선택하여 조성하고, 공통 적용항목 2개 이상 및 해당 유형 적용항목 5개 이상을 만족한 경우",
+                  "condition": "(aquatic_biotope_area_ratio_to_minimum >= 1.5 and aquatic_biotope_quality_condition) or (terrestrial_biotope_area_ratio_to_minimum >= 1.5 and terrestrial_biotope_quality_condition)",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "수생 또는 육생비오톱 1종을 선택하여 조성하고, 공통 적용항목 2개 이상 및 해당 유형 적용항목 5개 이상을 만족한 경우",
+                  "condition": "aquatic_biotope_quality_condition or terrestrial_biotope_quality_condition",
+                  "weight": 0.4
+                }
+              ]
+            },
+            "해석메모": "이미지 하단 주석에 따라 비오톱 최소 폭 4m 이상 조건을 별도 변수로 반영했다."
+          },
+          "참고자료": [
+            "조경설계기준, 한국조경학회, 2013"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "비오톱 현장조사 서류 및 조성계획서",
+              "단지계획도/ 비오톱 조성계획도",
+              "예비 - 급, 배수 처리 계획도(우수 활용 계획도)",
+              "인증 - 비오톱 상세도면(단면도)/비오톱 면적 산출 근거",
+              "설계 설명서(지자체 조례 식재기준 및 대상 비오톱 식재밀도(식재수량/m2) 표기)",
+              "식재 상세도 (규격 및 수량 표시) / 상세 계획도(단면 및 스케치)",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "비오톱 적용 현장사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 6 생태환경\n인증항목 6.4 비오톱 조성\n세부평가기준\n평가목적 비오톱의 조성 기법을 평가함으로서 대지 내 생물다양성 증진을 유도한다.\n평가방법 비오톱 평가 항목 최소 기준을 만족시키는 비오톱의 항목 개수와 면적을 대상으로 평가\n배 점 4점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 비오톱 조성 가중치\n최소단위면적 1.5배 이상의 수생 및 육생비오톱을 각각 1곳에 조성한 경우\n1급 - 공통 적용항목 2개 이상 + 수생비오톱 적용항목 5개 이상 1.0\n- 공통 적용항목 2개 이상 + 육생비오톱 적용항목 5개 이상\n수생 및 육생비오톱을 각각 1곳에 조성한 경우\n- 공통 적용항목 2개 이상 + 수생비오톱 적용항목 5개 이상\n0.8\n2급 - 공통 적용항목 2개 이상 + 육생비오톱 적용항목 5개 이상\n또는 최소단위면적 2.0배 이상의 수생 또는 육생비오톱을 1종 선택 조성\n최소면적 1.5배 이상의 수생 또는 육생비오톱을 1종을 선택하여 조성한 경우\n3급 - 공통 적용항목 2개 이상 + 수생비오톱 적용항목 5개 이상 0.6\n- 또는 공통 적용항목 2개 이상 + 육생비오톱 적용항목 5개 이상\n수생 또는 육생비오톱을 1종을 선택하여 조성한 경우\n4급 - 공통 적용항목 2개 이상 + 수생비오톱 적용항목 5개 이상 0.4\n- 또는 공통 적용항목 2개 이상 + 육생비오톱 적용항목 5개 이상\n비오톱 공통 적용항목\n기존의 중요 비오톱의 보전 또는 복원\n계획 연계 육지-습지-수변-물의 전이단계 조성\n기존 수목 또는 표토 등 자연자원 활용\n생물 대상지에 적합한 목표종의 선정 및 알맞은 서 유지\n비오톱 주변에 고정식 비오톱 해설판 제공\n종 식환경 조성 관리\n수생비오톱 적용항목 (최소단위면적 90m2) 육생비오톱 적용항목 (최소단위면적 180m2)\n둠벙 등 수생물의 월동이 가능한 장소 제공 다공질 공간 등 곤충, 소동물 서식처 제공\n서식\n서식 다공질 환경조성을 통한 종 다양성 확보 먹이통, 물확 등 조류 서식처 제공\n환경\n환경 호안 주변의 다양한 서식환경 조성 식재기반 혹은 비오톱지형의 굴곡(요철) 조성\n호안 경사각 10°이하 및 1/2 초지대 형성 식재 생육 최소심도 이상의 토심 확보\n물의 우수 또는 중수를 유입수로 활용 기반 인공지반녹지 하부 배수/방수/방근층 확보\n공급 비오톱 주변 식생여과대 또는 쇄석여과층 조성 다양한 생물서식에 적합한 다층구조 식재\n바닥 중앙 수심 0.6m 이상 유지 전체 면적 중 단일군락지 비율 60% 미만 조성\n처리 웅덩이/돌무더기 등 다양한 바닥 굴곡 조성 식재 해당 지차체 조례 식재밀도의 1.5배 조성\n계획 대상지 주변 자연림(2차림 등)의 수종 및 구\n식재 수면적 60% 이상 개방수면 확보 및 방안\n조 적용\n계획\n침수, 부유, 부엽, 추수 식물 도입 식이 및 밀원 수종의 사용(3종 이상)\n- 육생비오톱이란 곤충류, 조류, 소동물류 등을 비롯한 동물과 이들의 서식 기반이 되는 식물 군집의 공생\n이 가능한 육상 서식 공간을 말함\n- 수생비오톱이란 어류, 잠자리, 수초, 조류 등 수생 동식물이 생태적으로 순환체계를 이룰 수 있도록 조\n성한 상시 물이 있는 공간을 말함\n- 현장조사에 근거하여 비오톱 조성 계획을 마련하여야 하며, 비오톱은 인접 녹지 또는 인접의 비오톱과\n연계되어야 함\n- 육생비오톱의 내부에 휴게시설 및 보행로(관찰로) 등의 시설은 설치하지 않아야 하며, 주변에는 관찰로\n또는 휴게장소를 제공할 수 있음\n- 육생비오톱의 최소폭은 4m이상 이어야함\n참고자료 및 제출서류\n참고자료 - 조경설계기준, 한국조경학회, 2013\n제출서류\n- 비오톱 현장조사 서류 및 조성계획서\n- 단지계획도/ 비오톱 조성계획도\n예비 - 급, 배수 처리 계획도(우수 활용 계획도)\n인증 - 비오톱 상세도면(단면도)/비오톱 면적 산출 근거\n- 설계 설명서(지자체 조례 식재기준 및 대상 비오톱 식재밀도(식재수량/m2) 표기)\n- 식재 상세도 (규격 및 수량 표시) / 상세 계획도(단면 및 스케치)\n- 예비인증 시와 동일\n본인증\n- 비오톱 적용 현장사진"
+        }
+      ]
+    }
+  ]
+}

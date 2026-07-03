@@ -1,0 +1,506 @@
+{
+  "metadata": {
+    "인증기준명": "녹색건축 인증기준",
+    "버전": "G-SEED 2016-8",
+    "건축물유형": "신축 주거용 건축물",
+    "전문분야번호": "4",
+    "전문분야명": "물순환 관리",
+    "시작페이지": 34,
+    "종료페이지": 38,
+    "항목수": 4,
+    "원본PDF": "G-SEED 2016-8_개정전문.pdf",
+    "참조데이터": "G-SEED/01_신축_주거용_건축물.json",
+    "생성방식": "PDF 원문·평가기준·계산식 구조를 전문분야별로 분리"
+  },
+  "전문분야": [
+    {
+      "번호": "4",
+      "명칭": "물순환 관리",
+      "인증항목": [
+        {
+          "criterion_id": "R-4.1",
+          "출처": {
+            "페이지": 34,
+            "종료페이지": 34,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "4",
+            "명칭": "물순환 관리"
+          },
+          "인증항목": {
+            "번호": "4.1",
+            "명칭": "빗물관리",
+            "구분": "평가항목",
+            "배점": 5
+          },
+          "평가": {
+            "평가목적": "LID 또는 GI 시설을 활용하여 대지 내 빗물을 관리함으로써 도시홍수와 수질오염 저감 및 물순환 왜곡 최소화를 유도한다.",
+            "평가방법": "빗물유출량을 저감·관리하는 시설의 적용 용량과 불투수면 연계면적 비율을 모두 만족하는지 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                34
+              ],
+              "max_score": 5,
+              "score_formula": "score = weight * 5",
+              "input_variables": [
+                {
+                  "name": "rainwater_management_area_m2",
+                  "label": "빗물관리 면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "rainwater_management_facility_capacity_m3",
+                  "label": "빗물관리 기법 또는 시설 적용 용량",
+                  "type": "number",
+                  "unit": "m3"
+                },
+                {
+                  "name": "impervious_area_linked_ratio",
+                  "label": "전체 불투수면적 대비 빗물관리 시설 연계면적 비율",
+                  "type": "number",
+                  "unit": "%"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "적용 용량이 빗물관리 면적×0.03 이상이고 연계면적 비율 80% 이상",
+                  "condition": "rainwater_management_facility_capacity_m3 >= rainwater_management_area_m2 * 0.03 and impervious_area_linked_ratio >= 80",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "적용 용량이 빗물관리 면적×0.02 이상이고 연계면적 비율 80% 이상",
+                  "condition": "rainwater_management_facility_capacity_m3 >= rainwater_management_area_m2 * 0.02 and impervious_area_linked_ratio >= 80",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "적용 용량이 빗물관리 면적×0.01 이상이고 연계면적 비율 50% 이상",
+                  "condition": "rainwater_management_facility_capacity_m3 >= rainwater_management_area_m2 * 0.01 and impervious_area_linked_ratio >= 50",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "적용 용량이 빗물관리 면적×0.005 이상이고 연계면적 비율 50% 이상",
+                  "condition": "rainwater_management_facility_capacity_m3 >= rainwater_management_area_m2 * 0.005 and impervious_area_linked_ratio >= 50",
+                  "weight": 0.4
+                }
+              ],
+              "notes": [
+                "빗물관리 면적은 대지 전체면적에서 자연지반 면적을 제외한 면적이다.",
+                "적용 용량과 연계면적 비율을 모두 만족해야 한다."
+              ]
+            }
+          },
+          "참고자료": [
+            "친수구역 활용에 관한 특별법, 환경부",
+            "물환경보전법, 환경부",
+            "자연재해대책법 시행령, 행정안전부",
+            "우수유출저감시설의 종류·구조·설치 및 유지관리 기준, 행정안전부",
+            "친수구역 조성 지침, 환경부",
+            "수변구역 LID 적용 마스터플랜 수립 최종보고서, 한국수자원공사, 2012"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "빗물관리계획 또는 물순환계획 관련 도면",
+              "예비 - 빗물관리 면적 및 빗물관리용량 산출서",
+              "인증 - 저영향개발(LID)기법 또는 그린인프라(GI)시설별 설계 내역서·설명서",
+              "저영향개발(LID)기법 또는 그린인프라(GI)시설별 연계면적 설명서",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "시설의 유지관리 계획서",
+              "단계별 시공과정 및 설치 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 4 물순환 관리\n인증항목 4.1 빗물관리\n세부평가기준\n평가목적 저영향개발(Low Impact Development, LID)기법 또는 그린인프라(Green Infrastructure, GI)시설을 활용하여\n대지 내 빗물을 관리함으로써, 도시홍수와 수질오염의 저감 및 개발로 인한 물순환 왜곡의 최소화를 유도할\n수 있다. 또한 빗물유출수의 저감은 하수도 인프라 등의 건설비와 유지관리비를 절감할 뿐만 아니라 지하수\n보전, 토양 생태계 유지 및 미기후 개선 등의 효과를 얻을 수 있다.\n평가방법 빗물유출량을 저감·관리하는 시설의 설치 정도로 평가\n배 점 5점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n빗물관리 기법(시설) 적용 용량 및 불투수면 연계면적 비율\n구분 가중치\n적용 용량(m3) 연계면적 비율(%)\n1급 빗물관리 면적(m2) × 0.03(m) 이상 전체 불투수면적의 80% 이상 1.0\n2급 빗물관리 면적(m2) × 0.02(m) 이상 전체 불투수면적의 80% 이상 0.8\n3급 빗물관리 면적(m2) × 0.01(m) 이상 전체 불투수면적의 50% 이상 0.6\n4급 빗물관리 면적(m2) × 0.005(m) 이상 전체 불투수면적의 50% 이상 0.4\n- 빗물관리 시설이란 저영향개발(LID)기법 또는 그린인프라(GI)시설을 설치한 경우를 말하며, 적용 용량 및\n연계면적 비율을 모두 만족해야 함\n- 저영향개발(LID)기법 또는 그린인프라(GI)시설이란 도시홍수 및 수질오염 저감을 위한 빗물의 침투, 저류,\n물순환 체계를 고려한 토지이용 계획기법(저류조, 침투트렌치, 침투측구, 투수성포장 등) 및 토양과 식생\n기반으로 빗물을 관리하는 시설로써 비용 효율적이고 친환경적으로 빗물을 관리하는 시설(빗물정원, 띠녹\n지, 수목여과(나무여과상자) 등)을 말함\n- 빗물관리 면적은 대지 전체면적에서 자연지반 면적을 제외한 면적을 말함\n- 불투수면적이란 토양면이 포장이나 건물 등으로 덮여서 빗물이 침투할 수 없는 불투수 지역의 면적을 말함\n- 빗물관리 시설 연계 비율이란 전체 불투수면적 대비 빗물관리 시설과 연계된 불투수면의 비율을 말함\n참고자료 및 제출서류\n참고자료 - 친수구역 활용에 관한 특별법, 환경부\n- 물환경보전법, 환경부\n- 자연재해대책법 시행령, 행정안전부\n- 우수유출저감시설의 종류·구조·설치 및 유지관리 기준, 행정안전부\n- 친수구역 조성 지침, 환경부\n- 수변구역 LID 적용 마스터플랜 수립 최종보고서, 한국수자원공사, 2012\n제출서류\n- 빗물관리계획 또는 물순환계획 관련 도면\n예비 - 빗물관리 면적 및 빗물관리용량 산출서\n인증 - 저영향개발(LID)기법 또는 그린인프라(GI)시설별 설계 내역서·설명서\n- 저영향개발(LID)기법 또는 그린인프라(GI)시설별 연계면적 설명서\n- 예비인증 시와 동일\n본인증 - 시설의 유지관리 계획서\n- 단계별 시공과정 및 설치 사진"
+        },
+        {
+          "criterion_id": "R-4.2",
+          "출처": {
+            "페이지": 35,
+            "종료페이지": 35,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "4",
+            "명칭": "물순환 관리"
+          },
+          "인증항목": {
+            "번호": "4.2",
+            "명칭": "빗물 및 유출지하수 이용",
+            "구분": "평가항목",
+            "배점": 4
+          },
+          "평가": {
+            "평가목적": "빗물 및 유출지하수 이용시설 설치를 통해 상수 사용량과 우수 유출부하를 줄인다.",
+            "평가방법": "계획시설 적용 용량과 집수·이용 연계면적 비율을 모두 만족하는지 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                35
+              ],
+              "score_formula": "score = weight * 4",
+              "input_variables": [
+                {
+                  "name": "building_area_m2",
+                  "label": "건축면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "rainwater_groundwater_use_planned_capacity_m3",
+                  "label": "빗물 및 유출지하수 이용 계획시설 적용 용량",
+                  "type": "number",
+                  "unit": "m3"
+                },
+                {
+                  "name": "rainwater_groundwater_linked_area_ratio",
+                  "label": "빗물 및 유출지하수 이용 계획시설 연계면적 비율",
+                  "type": "number",
+                  "unit": "%"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "rainwater_groundwater_capacity_to_building_area_ratio",
+                  "label": "건축면적 대비 적용 용량 비율",
+                  "formula": "rainwater_groundwater_use_planned_capacity_m3 / building_area_m2",
+                  "unit": "m3/m2"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "적용 용량이 건축면적×0.03 이상이고 연계면적 비율 100% 이상",
+                  "condition": "rainwater_groundwater_use_planned_capacity_m3 >= building_area_m2 * 0.03 and rainwater_groundwater_linked_area_ratio >= 100",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "적용 용량이 건축면적×0.02 이상이고 연계면적 비율 67% 이상",
+                  "condition": "rainwater_groundwater_use_planned_capacity_m3 >= building_area_m2 * 0.02 and rainwater_groundwater_linked_area_ratio >= 67",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "적용 용량이 건축면적×0.01 이상이고 연계면적 비율 34% 이상",
+                  "condition": "rainwater_groundwater_use_planned_capacity_m3 >= building_area_m2 * 0.01 and rainwater_groundwater_linked_area_ratio >= 34",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "적용 용량이 건축면적×0.005 이상이고 연계면적 비율 17% 이상",
+                  "condition": "rainwater_groundwater_use_planned_capacity_m3 >= building_area_m2 * 0.005 and rainwater_groundwater_linked_area_ratio >= 17",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "물의 재이용 촉진 및 지원에 관한 법률, 시행령, 시행규칙, 환경부",
+            "지하수법, 환경부",
+            "도시계획시설의 결정·구조 및 설치기준에 관한 규칙, 국토교통부",
+            "서울특별시 빗물저수조 설치 추진 지침, 2004, 서울특별시"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "빗물·유출지하수 저수조 관련 도면 및 용량 산출서",
+              "예비 - 빗물 처리 계통도, 빗물 저수조, 빗물유입 및 관련 배관 평면도",
+              "인증 - 빗물 집수를 위한 대상 건축면적 및 저수조로 이송하는 연결관 설치 계획 등 관련 도면",
+              "빗물의 직접이용을 설명하는 도면(직접이용시설의 경우)",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "설치 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 4 물순환 관리\n인증항목 4.2 빗물 및 유출지하수 이용\n세부평가기준\n평가목적 빗물과 유출지하수를 대체수자원으로서 효율적으로 이용하는 것은 상수 소비 절감 및 우수유출 억제를 유도\n할 수 있다. 이러한 대체수자원의 적극적 활용으로 물 공급에 요구되는 에너지를 절감하는 효과도 기대할\n수 있다.\n평가방법 빗물 및 유출지하수를 이용하는 시설의 설치 정도로 평가\n배 점 4점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n빗물 및 유출지하수 이용 계획(시설) 적용 용량 및 연계면적 비율\n구분 가중치\n적용 용량(m3) 연계면적 비율(%)\n1급 건축면적(m2) × 0.03(m) 이상 건축면적의 100% 1.0\n2급 건축면적(m2) × 0.02(m) 이상 건축면적의 67% 이상 0.8\n3급 건축면적(m2) × 0.01(m) 이상 건축면적의 34% 이상 0.6\n4급 건축면적(m2) × 0.005(m) 이상 건축면적의 17% 이상 0.4\n- 빗물 및 유출지하수 이용 시설은 직접이용시설 계획 또는 저수조 설치한 경우를 말하며, 적용 용량 및 연\n계면적 비율을 모두 만족해야 함\n- 직접이용시설이란 옥상녹화시설 또는 빗물홈통의 조경녹지 연결시설 등 건축면에 발생하는 빗물이 저수조\n등을 거치지 않고 조경용수 등으로 직접 이용하는 구조를 갖춘 시설을 말함\n- 빗물·유출지하수의 저수조란 빗물과 유출지하수를 저류하기 위한 저수조 또는 저류지를 대지 또는 건축물\n에 설치하여 살수용수, 조경용수, 화장실세정용수, 청소용수 등으로 사용하는 경우를 말함\n- 유출지하수의 저류지는 지하수법 시행규칙에 의거하여 설치할 수 있음\n- 상수도 이용보다 빗물·유출지하수를 우선적으로 이용하도록 계획하여야 함\n- 물의 재이용 촉진 및 지원에 관한 법률에서 규정하는 의무시설의 경우 동법 시행규칙에서 규정하는 용량\n의 5%를 추가로 설치하여야 함\n- 빗물 및 유출지하수 이용 시설 연계 비율이란 전체 건축면적 대비 빗물 및 유출지하수 이용 시설과 연계\n된 건축면적의 비율을 말함\n참고자료 및 제출서류\n참고자료 - 물의 재이용 촉진 및 지원에 관한 법률, 시행령, 시행규칙, 환경부\n- 지하수법, 환경부\n- 도시계획시설의 결정·구조 및 설치기준에 관한 규칙, 국토교통부\n- 서울특별시 빗물저수조 설치 추진 지침, 2004, 서울특별시\n제출서류\n- 빗물·유출지하수 저수조 관련 도면 및 용량 산출서\n예비 - 빗물 처리 계통도, 빗물 저수조, 빗물유입 및 관련 배관 평면도\n인증 - 빗물 집수를 위한 대상 건축면적 및 저수조로 이송하는 연결관 설치 계획 등 관련 도면\n- 빗물의 직접이용을 설명하는 도면(직접이용시설의 경우)\n- 예비인증 시와 동일\n본인증\n- 설치 사진"
+        },
+        {
+          "criterion_id": "R-4.3",
+          "출처": {
+            "페이지": 36,
+            "종료페이지": 37,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "4",
+            "명칭": "물순환 관리"
+          },
+          "인증항목": {
+            "번호": "4.3",
+            "명칭": "절수형 기기 사용",
+            "구분": "필수항목, 최우수등급 및 우수등급 : 최소평점 1.8점",
+            "배점": 3
+          },
+          "평가": {
+            "평가목적": "절수형 기기와 물 사용량 절감 계획을 통해 건축물의 상수 소비를 줄인다.",
+            "평가방법": "절수기기 채택 점수와 연간 물 사용량 절감률, 감압밸브 적용 점수를 합산하여 등급을 산정한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                36,
+                37
+              ],
+              "score_formula": "score = weight * 4",
+              "input_variables": [
+                {
+                  "name": "eco_label_faucet_EL221_applied",
+                  "label": "환경표지 대상제품 EL221 수도꼭지 적용 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "eco_label_showerhead_EL222_applied",
+                  "label": "환경표지 대상제품 EL222 샤워헤드·수도꼭지 절수부속 적용 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "eco_label_toilet_EL223_applied",
+                  "label": "환경표지 대상제품 EL223 대변기 적용 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "annual_water_use_baseline_m3",
+                  "label": "연간 물 사용량 기준값",
+                  "type": "number",
+                  "unit": "m3/년"
+                },
+                {
+                  "name": "annual_water_use_planned_m3",
+                  "label": "연간 물 사용량 계획값",
+                  "type": "number",
+                  "unit": "m3/년"
+                },
+                {
+                  "name": "household_pressure_reducing_valve_installed",
+                  "label": "세대별 감압밸브 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "household_water_supply_pressure_MPa",
+                  "label": "세대 급수압",
+                  "type": "number",
+                  "unit": "MPa"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "annual_water_saving_ratio",
+                  "label": "연간 물 사용량 절감률",
+                  "formula": "(1 - annual_water_use_planned_m3 / annual_water_use_baseline_m3) * 100",
+                  "unit": "%"
+                },
+                {
+                  "name": "water_saving_device_score_total",
+                  "label": "절수방법 및 설비 채택 점수 합계",
+                  "formula": "eco_label_faucet_score + eco_label_showerhead_score + eco_label_toilet_score + annual_water_saving_score + pressure_reducing_valve_score",
+                  "unit": "점"
+                }
+              ],
+              "point_items": [
+                {
+                  "name": "eco_label_faucet_score",
+                  "condition": "eco_label_faucet_EL221_applied",
+                  "point": 1
+                },
+                {
+                  "name": "eco_label_showerhead_score",
+                  "condition": "eco_label_showerhead_EL222_applied",
+                  "point": 1
+                },
+                {
+                  "name": "eco_label_toilet_score",
+                  "condition": "eco_label_toilet_EL223_applied",
+                  "point": 1
+                },
+                {
+                  "name": "annual_water_saving_score",
+                  "condition": "annual_water_saving_ratio >= 20",
+                  "point": 2
+                },
+                {
+                  "name": "annual_water_saving_score",
+                  "condition": "10 <= annual_water_saving_ratio < 20",
+                  "point": 1
+                },
+                {
+                  "name": "pressure_reducing_valve_score",
+                  "condition": "household_pressure_reducing_valve_installed and household_water_supply_pressure_MPa <= 0.245",
+                  "point": 1
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "절수방법 및 설비 채택 점수 합계 6점 이상",
+                  "condition": "water_saving_device_score_total >= 6",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "절수방법 및 설비 채택 점수 합계 5점",
+                  "condition": "water_saving_device_score_total == 5",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "절수방법 및 설비 채택 점수 합계 4점",
+                  "condition": "water_saving_device_score_total == 4",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "절수방법 및 설비 채택 점수 합계 3점",
+                  "condition": "water_saving_device_score_total == 3",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "수도법, 환경부",
+            "환경기술 및 환경산업 지원법, 환경부",
+            "환경표지 대상제품 및 인증기준, 환경부",
+            "환경표지(마크) 공식 웹사이트 (http://el.keiti.re.kr), 환경부",
+            "LEED Reference Guide for Green Building and Construction"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "환경표지(마크) 인증 대상제품이 표시된 설계도서",
+              "환경표지(마크) 인증 대상제품의 인증서 및 관련 서류",
+              "물 사용 절감률 산출표",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "환경표지(마크) 인증 대상제품 등 구매 내역서 및 증빙 서류",
+              "설치 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 4 물순환 관리\n인증항목 4.3 절수형 기기 사용\n세부평가기준\n평가목적 도심 인구 증가로 인한 물수요의 증가는 수질 악화와 도시하수처리비용 증가 등의 문제를 발생시킴으로, 절\n수형 기기를 사용함으로써 물 사용량 절감 및 에너지 소비를 줄일 수 있다.\n평가방법 환경표지(마크) 인증 대상제품(물절약)의 적용 여부 및 물사용 절감률 따라 평가\n배 점 3점(필수항목, 최우수등급 및 우수등급 : 최소평점 1.8점)\n산출기준 • 평점 = (가중치)×(배점)\n구분 절수방법에 따른 점수 합계 가중치\n1급 6점 이상 1.0\n2급 5점 0.8\n3급 4점 0.6\n4급 3점 0.4\n구분 용도별 절수방법 점수\nEL221 절수형 수도꼭지 1\n환경표지(마크) 인증\nEL222 샤워헤드 및 수도꼭지 절수 부속 1\n대상제품군\nEL223 절수형 양변기 1\n20% 이상 2\n물 사용 절감률\n10% 이상 20% 미만 1\n감압밸브 세대별 감압밸브 설치(급수압력이 0.245MPa이하) 1\n- 절수형 수도꼭지, 샤워헤드, 절수형 양변기는 모든 세대에 적용한 경우 각각 1점씩 부여함\n- 발코니 수도꼭지 및 세탁기 부착 수도꼭지의 경우 절수형 수도꼭지 적용 대상에서 제외함\n- 물 사용 절감률은 연간 물 사용량 기준 대비 연간 물 사용량 계획의 절감률에 따라 평가함\n- 물 사용 기기는 환경표지(마크) 인증제품을 사용하여야함\n- 물 사용 절감률 산출시 세면용, 샤워용, 샤워·욕조용 기기는 최대 20%까지 인정함\n- 물 사용 절감률 산출방법\n연간 물 사용량(계획)\n물 사용 절감률 (%) = { 1 - } × 100\n연간 물 사용량(기준)\n- 물 사용량 기준\n물 사용 기기별 기준 물 사용 횟수 기준\n사용수량\n물 사용 기기 1일 사용 횟수 (회) 사용시간\n(공급수압 98kPa)\n세면용 6.0 L/분 5 1분\n샤워용,\n절수형 7.0 L/분 1 8분\n샤워·욕조용\n수도꼭지\n주방용 5.5 L/분 4 1분\n기타 6.0 L/분 - -\n샤워헤드 7.5 L/분 1 8분\n구분 남 여 -\n6.0 L/회 단일형 5 5 -\n양변기\n구분형(대변용) 2 2 -\n4.0 L/회 구분형(소변용) 3 3 -\n참고자료 및 제출서류\n참고자료 - 수도법, 환경부\n- 환경기술 및 환경산업 지원법, 환경부\n- 환경표지 대상제품 및 인증기준, 환경부\n- 환경표지(마크) 공식 웹사이트 (http://el.keiti.re.kr), 환경부\n- LEED Reference Guide for Green Building and Construction\n제출서류 - 환경표지(마크) 인증 대상제품이 표시된 설계도서\n예비\n- 환경표지(마크) 인증 대상제품의 인증서 및 관련 서류\n인증\n- 물 사용 절감률 산출표\n- 예비인증 시와 동일\n본인증 - 환경표지(마크) 인증 대상제품 등 구매 내역서 및 증빙 서류\n- 설치 사진"
+        },
+        {
+          "criterion_id": "R-4.4",
+          "출처": {
+            "페이지": 38,
+            "종료페이지": 38,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "4",
+            "명칭": "물순환 관리"
+          },
+          "인증항목": {
+            "번호": "4.4",
+            "명칭": "물 사용량 모니터링",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "수도계량기와 물 소비량 관리체계를 통해 건축물의 물 사용량을 계측·감시·관리한다.",
+            "평가방법": "친환경 수도계량기 설치를 기본조건으로 하고, 모니터링 장치·관리 프로그램·재이용수 시설 연동 여부를 단계적으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                38
+              ],
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "all_building_water_meters_eco_label_or_equivalent",
+                  "label": "건물에 설치되는 수도계량기 100% 환경표지 인증 또는 동등 이상 제품 적용 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "building_water_use_monitoring_device_installed",
+                  "label": "건물 물 사용량 정보를 표시하는 모니터링 장치 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "water_consumption_meter_installed",
+                  "label": "물 소비량 계측 장치 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "water_management_program_or_device_installed",
+                  "label": "물 소비량 관리 프로그램 또는 장치 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "reuse_water_facilities_real_time_integrated_monitoring",
+                  "label": "빗물이용시설·중수도시설·하폐수처리수 재이용시설 등이 연동되어 실시간 물 소비량을 감시·관리하는지 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "grade_4_water_meter_condition",
+                  "formula": "all_building_water_meters_eco_label_or_equivalent"
+                },
+                {
+                  "name": "grade_3_water_monitoring_condition",
+                  "formula": "grade_4_water_meter_condition and building_water_use_monitoring_device_installed"
+                },
+                {
+                  "name": "grade_2_water_management_condition",
+                  "formula": "grade_3_water_monitoring_condition and water_consumption_meter_installed and water_management_program_or_device_installed"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "2급 기준을 만족하고, 빗물이용시설·중수도시설·하폐수처리수 재이용시설 등이 연동되어 실시간 물 소비량을 감시·관리하는 경우",
+                  "condition": "grade_2_water_management_condition and reuse_water_facilities_real_time_integrated_monitoring",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "3급 기준을 만족하고, 물 소비량 계측 장치 및 물 소비량 관리 프로그램 또는 장치를 설치한 경우",
+                  "condition": "grade_2_water_management_condition",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "4급 기준을 만족하고, 건물 물 사용량 정보를 표시하는 모니터링 장치를 설치한 경우",
+                  "condition": "grade_3_water_monitoring_condition",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "건물에 설치되는 수도계량기 100%를 환경표지 인증 또는 동등 이상 제품으로 적용한 경우",
+                  "condition": "grade_4_water_meter_condition",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "수도법, 환경부",
+            "환경기술 및 환경산업 지원법, 환경부",
+            "환경표지 대상제품 및 인증기준, 환경부",
+            "환경표지(마크) 공식 웹사이트 (http://el.keiti.re.kr), 환경부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "환경표지(마크) 인증 대상제품이 표시된 관련 도서",
+              "예비 - 환경표지(마크) 인증 대상제품의 인증서 및 관련 서류",
+              "인증 - 수돗물 관리 프로그램 관련 설계도면",
+              "※ 적용예정확인서로 갈음 가능",
+              "예비인증 시와 동일",
+              "환경표지(마크) 인증 대상제품 등 구매 내역서 및 증빙 서류"
+            ],
+            "본인증": [
+              "실제 모니터링 기록 등 입증할 수 있는 자료",
+              "설치 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 4 물순환 관리\n인증항목 4.4 물 사용량 모니터링\n세부평가기준\n평가목적 물 사용량 모니터링을 통해 추가적인 물 소비량 절감을 유도하고 효율적인 물관리를 지원하고자 한다.\n평가방법 물이용 효율화를 위해 환경표지(마크) 인증을 받은 계량기, 수돗물 관리 프로그램 등을 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 물 사용량 모니터링 및 관리 가중치\n2급 + 빗물이용시설, 중수도 시설, 하·폐수 처리수 재이용시설 등이 연동하여 실시간\n1급 1.0\n물 소비량을 감시, 관리하는 경우\n3급 + 물 사용량 계측기 및 물 소비량을 관리할 수 있는 수돗물 관리 프로그램과 장\n2급 0.8\n치를 설치하여 물 소비량을 감시, 관리하는 경우\n3급 4급 + 건축물 내 모니터링 장치를 통해서 물 사용량 정보를 확인할 수 있는 경우 0.6\n건축물 전체에 설치된 물 사용량 측정 계량기의 100%가 환경표지(마크) 인증을 받거\n4급 0.4\n나 또는 그에 준하는 기준에 적합한 계량기인 경우\n- 수돗물 관리 프로그램이란 물 사용량 계측기 및 물 소비량을 관리할 수 있는 프로그램으로, 빗물이용시\n설, 유출지하수 이용시설, 중수도 시설, 하·폐수처리수 재이용시설 등이 설치된 경우 해당 시설에 대한 물\n소비량 감시, 관리가 가능한 프로그램을 말함\n참고자료 및 제출서류\n참고자료 - 수도법, 환경부\n- 환경기술 및 환경산업 지원법, 환경부\n- 환경표지 대상제품 및 인증기준, 환경부\n- 환경표지(마크) 공식 웹사이트 (http://el.keiti.re.kr), 환경부\n제출서류 - 환경표지(마크) 인증 대상제품이 표시된 관련 도서\n예비 - 환경표지(마크) 인증 대상제품의 인증서 및 관련 서류\n인증 - 수돗물 관리 프로그램 관련 설계도면\n※ 적용예정확인서로 갈음 가능\n- 예비인증 시와 동일\n- 환경표지(마크) 인증 대상제품 등 구매 내역서 및 증빙 서류\n본인증\n- 실제 모니터링 기록 등 입증할 수 있는 자료\n- 설치 사진"
+        }
+      ]
+    }
+  ]
+}

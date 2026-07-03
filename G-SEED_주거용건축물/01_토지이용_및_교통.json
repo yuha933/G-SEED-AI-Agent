@@ -1,0 +1,860 @@
+{
+  "metadata": {
+    "인증기준명": "녹색건축 인증기준",
+    "버전": "G-SEED 2016-8",
+    "건축물유형": "신축 주거용 건축물",
+    "전문분야번호": "1",
+    "전문분야명": "토지이용 및 교통",
+    "시작페이지": 12,
+    "종료페이지": 20,
+    "항목수": 8,
+    "원본PDF": "G-SEED 2016-8_개정전문.pdf",
+    "참조데이터": "G-SEED/01_신축_주거용_건축물.json",
+    "생성방식": "PDF 원문·평가기준·계산식 구조를 전문분야별로 분리"
+  },
+  "전문분야": [
+    {
+      "번호": "1",
+      "명칭": "토지이용 및 교통",
+      "인증항목": [
+        {
+          "criterion_id": "R-1.1",
+          "출처": {
+            "페이지": 12,
+            "종료페이지": 12,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "1",
+            "명칭": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": "1.1",
+            "명칭": "기존대지의 생태학적 가치",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "토지의 합리적인 이용을 위해 기존대지의 환경 및 생태학적 가치를 평가하여 환경적으로 가치 있는 토지자원을 보호한다.",
+            "평가방법": "기존대지의 생태학적 가치, 토지이용 현황, 용도지역 등을 근거로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                12
+              ],
+              "max_score": 2,
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "low_ecological_value_site_area_m2",
+                  "label": "생태학적 가치가 낮은 대지 면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "site_area_m2",
+                  "label": "대지면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "is_previously_used_site",
+                  "label": "기 사용된 대지 또는 재사용 대지 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "is_full_remodeling_site",
+                  "label": "전면 리모델링 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "is_ecologically_damaged_site_like_landfill",
+                  "label": "쓰레기매립지 등 생태학적으로 훼손된 대지 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "is_large_development_district_or_reclaimed_wetland",
+                  "label": "택지개발지구 등 대규모 개발사업지구 또는 해안·습지 매립지 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "low_ecological_value_site_ratio",
+                  "label": "생태학적 가치가 낮은 대지 비율",
+                  "formula": "low_ecological_value_site_area_m2 / site_area_m2 * 100",
+                  "unit": "%"
+                },
+                {
+                  "name": "low_ecological_value_site_eligible",
+                  "formula": "(is_previously_used_site or is_full_remodeling_site or is_ecologically_damaged_site_like_landfill) and not is_large_development_district_or_reclaimed_wetland"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "생태학적 가치가 낮은 대지가 해당 대지면적의 80% 이상인 경우",
+                  "condition": "low_ecological_value_site_eligible and low_ecological_value_site_ratio >= 80",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "생태학적 가치가 낮은 대지가 해당 대지면적의 70% 이상 80% 미만인 경우",
+                  "condition": "low_ecological_value_site_eligible and 70 <= low_ecological_value_site_ratio < 80",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "생태학적 가치가 낮은 대지가 해당 대지면적의 60% 이상 70% 미만인 경우",
+                  "condition": "low_ecological_value_site_eligible and 60 <= low_ecological_value_site_ratio < 70",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "생태학적 가치가 낮은 대지가 해당 대지면적의 50% 이상 60% 미만인 경우",
+                  "condition": "low_ecological_value_site_eligible and 50 <= low_ecological_value_site_ratio < 60",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "국토의 계획 및 이용에 관한 법률, 시행령, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "토지이용계획 확인원",
+              "형질변경행위 확인원",
+              "개발 전·후의 부지 현황사진 또는 위성사진 또는 항공사진"
+            ],
+            "본인증": [
+              "예비인증 시와 동일"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 1 토지이용 및 교통\n인증항목 1.1 기존대지의 생태학적 가치\n세부평가기준\n평가목적 토지의 합리적인 이용을 위해 기존대지의 환경 및 생태학적 가치를 평가하여 환경적으로 가치 있는 토지자\n원을 보호한다.\n평가방법 기존대지의 생태학적 가치, 토지이용 현황, 용도지역 등을 근거로 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 기존 대지의 생태학적 가치 가중치\n1급 생태학적 가치가 낮은 대지가 해당 대지면적의 80% 이상인 경우 1.0\n2급 생태학적 가치가 낮은 대지가 해당 대지면적의 70% 이상 80% 미만인 경우 0.8\n3급 생태학적 가치가 낮은 대지가 해당 대지면적의 60% 이상 70% 미만인 경우 0.6\n4급 생태학적 가치가 낮은 대지가 해당 대지면적의 50% 이상 60% 미만인 경우 0.4\n- 생태학적 가치가 낮은 대지라 함은 생태학적으로 훼손된 대지를 말하며, 아래의 조건 중 하나를 만족하는\n경우에 해당함\n· 기 사용된 대지(재사용 대지)의 경우\n· 전면 리모델링을 하는 경우\n· 쓰레기매립지 등 이와 유사하게 사용되어 생태학적으로 훼손된 대지의 경우\n- 택지개발지구 등 대규모 개발사업지구, 해안 및 습지 매립지 등은 생태학적 가치가 낮은 대지에 해당하지\n않음\n참고자료 및 제출서류\n참고자료 - 국토의 계획 및 이용에 관한 법률, 시행령, 국토교통부\n제출서류\n- 토지이용계획 확인원\n예비\n- 형질변경행위 확인원\n인증\n- 개발 전·후의 부지 현황사진 또는 위성사진 또는 항공사진\n본인증 - 예비인증 시와 동일"
+        },
+        {
+          "criterion_id": "R-1.2",
+          "출처": {
+            "페이지": 13,
+            "종료페이지": 13,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "1",
+            "명칭": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": "1.2",
+            "명칭": "과도한 지하개발 지양",
+            "구분": "평가항목",
+            "배점": 3
+          },
+          "평가": {
+            "평가목적": "조성된 지표면 이하의 과도한 개발을 지양하여 지하의 다양한 생태계를 보호하고 지하토양을 보존한다.",
+            "평가방법": "대지면적에 대한 지하층 각층 바닥면적과 층고를 이용해 지하구조물 설치율을 계산하여 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                13
+              ],
+              "max_score": 3,
+              "score_formula": "score = weight * 3",
+              "input_variables": [
+                {
+                  "name": "site_area_m2",
+                  "label": "대지면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "underground_floor_items",
+                  "label": "지하층별 바닥면적 및 층고 목록",
+                  "type": "array",
+                  "item_schema": {
+                    "floor_area_m2": "number",
+                    "floor_height_m": "number"
+                  }
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "underground_structure_volume_sum_m3",
+                  "label": "지하구조물 체적 합계",
+                  "formula": "sum(floor_area_m2 * floor_height_m for each underground_floor_item)",
+                  "unit": "m3"
+                },
+                {
+                  "name": "underground_facilities_to_land_ratio",
+                  "label": "지하구조물 설치율 UR",
+                  "formula": "underground_structure_volume_sum_m3 / (site_area_m2 * 1) * 100",
+                  "unit": "%"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "지하구조물 설치율이 200% 미만인 경우",
+                  "condition": "underground_facilities_to_land_ratio < 200",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "지하구조물 설치율이 200% 이상 300% 미만인 경우",
+                  "condition": "200 <= underground_facilities_to_land_ratio < 300",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "지하구조물 설치율이 300% 이상 400% 미만인 경우",
+                  "condition": "300 <= underground_facilities_to_land_ratio < 400",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "지하구조물 설치율이 400% 이상 500% 미만인 경우",
+                  "condition": "400 <= underground_facilities_to_land_ratio < 500",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "건축법 시행령, 국토교통부",
+            "주택건설기준등에 관한 규정, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "설계개요, 배치도, 대지 종횡 단면도, 지하층 평면도, 대지조성 계획도",
+              "지하구조물 배치도(외곽선, 지하구조물 최저면 및 조성 대지 레벨 표기)",
+              "지하구조물 각 동별 면적표 및 지하구조물이 깊이에 대한 산출근거"
+            ],
+            "본인증": [
+              "예비인증 시와 동일"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 1 토지이용 및 교통\n인증항목 1.2 과도한 지하개발 지양\n세부평가기준\n평가목적 조성된 지표면 이하의 과도한 개발을 지양하여 지하의 다양한 생태계를 보호하고 지하토양을 보존한다.\n평가방법 대지면적에 대한 지하층의 각층 바닥면적과 해당층 층고를 조사하여 지하구조물 설치율을 계산하여 평가\n배 점 3점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n∑ {지하층 각층 바닥면적(m2) × 해당층 층고(m)}\n지하구조물 설치율 UR(%) = × 100\n대지면적(m2) × 1m\n구분 지하구조물 설치율 UR(Underground Facilities-to-Land Ratio) 가중치\n1급 지하구조물 설치율(UR)이 200% 미만인 경우 1.0\n2급 지하구조물 설치율(UR)이 200% 이상 300% 미만인 경우 0.8\n3급 지하구조물 설치율(UR)이 300% 이상 400% 미만인 경우 0.6\n4급 지하구조물 설치율(UR)이 400% 이상 500% 미만인 경우 0.4\n- 지하란 지하구조물이 접하고 있는 조성(계획)된 지표면 이하를 말함\n- 지하구조물이란 지하에 설치되는 부대복리시설, 주차장, 기계실, 전기실, 정화조, 저수조, PIT 등 지하에\n공간을 차지하는 모든 구조물을 말함\n- 지하 최하층 층고 산정 시 기초두께를 포함하여 기초 하부면에서부터 층고 산정함\n참고자료 및 제출서류\n참고자료 - 건축법 시행령, 국토교통부\n- 주택건설기준등에 관한 규정, 국토교통부\n제출서류\n- 설계개요, 배치도, 대지 종횡 단면도, 지하층 평면도, 대지조성 계획도\n예비\n- 지하구조물 배치도(외곽선, 지하구조물 최저면 및 조성 대지 레벨 표기)\n인증\n- 지하구조물 각 동별 면적표 및 지하구조물이 깊이에 대한 산출근거\n본인증 - 예비인증 시와 동일"
+        },
+        {
+          "criterion_id": "R-1.3",
+          "출처": {
+            "페이지": 14,
+            "종료페이지": 14,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "1",
+            "명칭": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": "1.3",
+            "명칭": "토공사 절성토량 최소화",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "지형을 활용한 개발을 권장하고 지형훼손이 적어지도록 계획하여 토공사 시 절토량 및 성토량을 최소화한다.",
+            "평가방법": "전체 대지면적에 대하여 지형변경과 관련된 성토 및 절토 절대량의 합으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                14
+              ],
+              "max_score": 2,
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "site_area_m2",
+                  "label": "전체 대지면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "cutting_volume_m3",
+                  "label": "절토량",
+                  "type": "number",
+                  "unit": "m3"
+                },
+                {
+                  "name": "banking_volume_m3",
+                  "label": "성토량",
+                  "type": "number",
+                  "unit": "m3"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "standard_earthwork_volume_m3",
+                  "label": "토공사 기준물량",
+                  "formula": "site_area_m2 * 1",
+                  "unit": "m3"
+                },
+                {
+                  "name": "cut_and_fill_volume_m3",
+                  "label": "절성토량",
+                  "formula": "abs(cutting_volume_m3) + abs(banking_volume_m3)",
+                  "unit": "m3"
+                },
+                {
+                  "name": "cut_and_fill_ratio",
+                  "label": "절성토량 비율",
+                  "formula": "cut_and_fill_volume_m3 / standard_earthwork_volume_m3 * 100",
+                  "unit": "%"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "절성토량이 토공사 기준물량의 100% 이하인 경우",
+                  "condition": "cut_and_fill_ratio <= 100",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "절성토량이 토공사 기준물량의 200% 이하인 경우",
+                  "condition": "100 < cut_and_fill_ratio <= 200",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "절성토량이 토공사 기준물량의 300% 이하인 경우",
+                  "condition": "200 < cut_and_fill_ratio <= 300",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "절성토량이 토공사 기준물량의 400% 이하인 경우",
+                  "condition": "300 < cut_and_fill_ratio <= 400",
+                  "weight": 0.4
+                }
+              ],
+              "exclusion_note": "건축물 기초, 지하부분 등을 위한 터파기와 되메우기 물량 등은 절성토량에 포함하지 않는다."
+            }
+          },
+          "참고자료": [
+            "건설공사표준시방서, 국토교통부",
+            "단지조성공사 설계 및 적산 기준, 한국토지주택공사, 2009"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "지적 현황 도면 (면적, 등고선도 표시)",
+              "대지 전체 종·횡단면도",
+              "예비 - 토목공사계획도 (횡단면도, 종단면도, 절토 및 성토 계획도)",
+              "인증 - 현장사진",
+              "토지이용계획확인원",
+              "토공 수량산출서(총 절토량 및 총 성토량 계산서 포함)",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "절토 및 성토 공사 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 1 토지이용 및 교통\n인증항목 1.3 토공사 절성토량 최소화\n세부평가기준\n평가목적 지형을 활용한 개발을 권장하고 지형훼손이 적어지도록 계획하여 토공사 시 절토량 및 성토량을 최소화한다.\n평가방법 전체 대지면적에 대하여 지형변경과 관련된 성토 및 절토 절대량의 합으로 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n절성토량(m3)\n절성토량 비율(%) = × 100\n토공사 기준물량(m3)\n구분 토공사 절성토량 최소화 가중치\n해당 대지 내 절토량과 성토량의 절대값의 합(절성토량)이 전체 대지면적×1m(토공사\n1급 1.0\n기준물량)의 100% 이하인 경우\n해당 대지 내 절토량과 성토량의 절대값의 합(절성토량)이 전체 대지면적×1m(토공사\n2급 0.8\n기준물량)의 200% 이하인 경우\n해당 대지 내 절토량과 성토량의 절대값의 합(절성토량)이 전체 대지면적×1m(토공사\n3급 0.6\n기준물량)의 300% 이하인 경우\n해당 대지 내 절토량과 성토량의 절대값의 합(절성토량)이 전체 대지면적×1m(토공사\n4급 0.4\n기준물량)의 400% 이하인 경우\n- 토공사 기준물량(m3) = 전체 대지면적(m2) × 1m\n- 절성토량(m3) = 절토량(m3) + 성토량(m3)\n- 절성토량에 건축물 기초, 지하부분 등을 위한 터파기와 되메우기 물량 등은 포함되지 않음\n참고자료 및 제출서류\n참고자료 - 건설공사표준시방서, 국토교통부\n- 단지조성공사 설계 및 적산 기준, 한국토지주택공사, 2009\n제출서류\n- 지적 현황 도면 (면적, 등고선도 표시)\n- 대지 전체 종·횡단면도\n예비 - 토목공사계획도 (횡단면도, 종단면도, 절토 및 성토 계획도)\n인증 - 현장사진\n- 토지이용계획확인원\n- 토공 수량산출서(총 절토량 및 총 성토량 계산서 포함)\n- 예비인증 시와 동일\n본인증\n- 절토 및 성토 공사 사진"
+        },
+        {
+          "criterion_id": "R-1.4",
+          "출처": {
+            "페이지": 15,
+            "종료페이지": 15,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "1",
+            "명칭": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": "1.4",
+            "명칭": "일조권 간섭방지 대책의 타당성",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "인접대지 개발에 미칠 잠재적 영향을 고려하여 대상 건축물이 인접대지로의 일조권을 차단하지 않도록 유도한다.",
+            "평가방법": "인접대지 경계선으로부터 대상 건축물 정북방향 각 부분의 높이를 잰 최대앙각으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                15
+              ],
+              "max_score": 2,
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "building_height_north_part_m",
+                  "label": "대상 건축물 정북방향 각 부분의 높이",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "distance_to_north_adjacent_site_boundary_m",
+                  "label": "북측 인접대지 경계선까지 거리",
+                  "type": "number",
+                  "unit": "m"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "maximum_solar_access_angle_deg",
+                  "label": "최대앙각",
+                  "formula": "atan(building_height_north_part_m / distance_to_north_adjacent_site_boundary_m) in degrees",
+                  "unit": "deg"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "최대앙각이 40° 미만인 경우",
+                  "condition": "maximum_solar_access_angle_deg < 40",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "최대앙각이 40° 이상 45° 미만인 경우",
+                  "condition": "40 <= maximum_solar_access_angle_deg < 45",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "최대앙각이 45° 이상 50° 미만인 경우",
+                  "condition": "45 <= maximum_solar_access_angle_deg < 50",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "최대앙각이 50° 이상 55° 미만인 경우",
+                  "condition": "50 <= maximum_solar_access_angle_deg < 55",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "건축법, 국토교통부",
+            "건축법 시행령, 국토교통부",
+            "도시공원 및 녹지 등에 관한 법률, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "배치도 및 입면도(건축물 주요부분의 건축물 높이, 인접대지 경계선까지의 거리, 최대앙각",
+              "표기 포함)",
+              "지구단위계획도 또는 토지이용계획확인원",
+              "부지 종횡단면도",
+              "최대앙각 산출도"
+            ],
+            "본인증": [
+              "예비인증 시와 동일"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 1 토지이용 및 교통\n인증항목 1.4 일조권 간섭방지 대책의 타당성\n세부평가기준\n평가목적 기존에 위치하고 있는 건축물뿐만 아니라 장래에 인접대지의 개발에 미칠 잠재적 영향을 고려하기 위하여\n대상 건축물이 인접대지로의 일조권을 차단하지 않도록 유도한다.\n평가방법 인접대지 경계선으로부터 대상 건축물 정북방향의 각 부분의 높이를 잰 최대앙각으로 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n최대앙각 = arctan (대상 건축물의 높이 ÷ 대상 건축물과 북측에 위치한 인접대지 경계선간의 거리)\n구분 최대앙각 범위 가중치\n1급 최대앙각이 40° 미만인 경우 1.0\n2급 최대앙각이 40° 이상 45° 미만인 경우 0.8\n3급 최대앙각이 45° 이상 50° 미만인 경우 0.6\n4급 최대앙각이 50° 이상 55° 미만인 경우 0.4\n- 최대앙각이란 인접대지 경계선으로부터 대상 건축물의 정북방향의 각 부분의 높이를 잰 각도를 말함\n참고자료 및 제출서류\n참고자료 - 건축법, 국토교통부\n- 건축법 시행령, 국토교통부\n- 도시공원 및 녹지 등에 관한 법률, 국토교통부\n제출서류 - 배치도 및 입면도(건축물 주요부분의 건축물 높이, 인접대지 경계선까지의 거리, 최대앙각\n표기 포함)\n예비\n- 지구단위계획도 또는 토지이용계획확인원\n인증\n- 부지 종횡단면도\n- 최대앙각 산출도\n본인증 - 예비인증 시와 동일"
+        },
+        {
+          "criterion_id": "R-1.5",
+          "출처": {
+            "페이지": 16,
+            "종료페이지": 16,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "1",
+            "명칭": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": "1.5",
+            "명칭": "단지 내 보행자 전용도로 조성과 외부보행자 전용도로와의 연결",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "input_variables": [
+                {
+                  "name": "site_perimeter_m",
+                  "label": "단지 전체 둘레 길이",
+                  "unit": "m",
+                  "type": "number"
+                },
+                {
+                  "name": "pedestrian_only_road_length_m",
+                  "label": "단지 내 보행자 전용도로 길이의 합",
+                  "unit": "m",
+                  "type": "number"
+                },
+                {
+                  "name": "pedestrian_only_road_min_width_m",
+                  "label": "단지 내 보행자 전용도로 최소 폭",
+                  "unit": "m",
+                  "type": "number"
+                },
+                {
+                  "name": "pedestrian_only_road_discontinuity_count",
+                  "label": "보행자 전용도로 단절 개수",
+                  "unit": "개",
+                  "type": "number"
+                },
+                {
+                  "name": "continuous_extension_route_count",
+                  "label": "단절되지 않은 인정 연장노선 개수",
+                  "unit": "개",
+                  "type": "number"
+                },
+                {
+                  "name": "rest_community_connection_ratio",
+                  "label": "휴게 및 커뮤니티공간과 연결된 비율",
+                  "unit": "%",
+                  "type": "number"
+                },
+                {
+                  "name": "external_pedestrian_road_connected",
+                  "label": "외부 보행자 전용도로 연결 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "pedestrian_road_perimeter_ratio",
+                  "formula": "pedestrian_only_road_length_m / site_perimeter_m",
+                  "label": "단지 둘레 대비 보행자 전용도로 길이비율",
+                  "unit": "ratio"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "condition": "pedestrian_only_road_min_width_m >= 4 and pedestrian_road_perimeter_ratio >= 0.25 and pedestrian_only_road_discontinuity_count == 0 and continuous_extension_route_count >= 2 and rest_community_connection_ratio >= 80 and external_pedestrian_road_connected",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "condition": "pedestrian_only_road_min_width_m >= 4 and pedestrian_road_perimeter_ratio >= 0.25 and pedestrian_only_road_discontinuity_count == 0 and continuous_extension_route_count >= 2 and rest_community_connection_ratio >= 80",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "condition": "pedestrian_only_road_min_width_m >= 4 and pedestrian_road_perimeter_ratio >= 0.25 and pedestrian_only_road_discontinuity_count == 0 and continuous_extension_route_count >= 2 and rest_community_connection_ratio >= 60",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "condition": "pedestrian_only_road_min_width_m >= 4 and pedestrian_road_perimeter_ratio >= 0.25 and pedestrian_only_road_discontinuity_count <= 4",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = weight * 2",
+              "source_pages": [
+                16
+              ],
+              "max_score": 2
+            },
+            "원문평가": "단지 내의 보행환경을 위한 보행자 전용도로를 조성하고, 휴게 및 커뮤니티공간과 외부보행자 전용도로와의\n연결을 유도한다.",
+            "원문평가방법": "단지 내 보행자 전용도로 조성과 휴게 및 커뮤니티공간, 단지 외부보행자 전용도로와의 연결을 평가"
+          },
+          "참고자료": [
+            "주택건설기준등에관한 규정, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "단지계획도",
+              "단지 내 보행자전용도로와 외부 보행자 전용도로가 연결되고 표시된 설계도면",
+              "휴게 및 커뮤니티공간 설계도서",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "현장사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 1 토지이용 및 교통\n인증항목 1.5 단지 내 보행자 전용도로 조성과 외부보행자 전용도로와의 연결\n세부평가기준\n평가목적 단지 내의 보행환경을 위한 보행자 전용도로를 조성하고, 휴게 및 커뮤니티공간과 외부보행자 전용도로와의\n연결을 유도한다.\n평가방법 단지 내 보행자 전용도로 조성과 휴게 및 커뮤니티공간, 단지 외부보행자 전용도로와의 연결을 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 단지 내 보행자 전용도로 조성과 단지 외부보행자 전용도로와의 연결 가중치\n단지 내 보행자 전용도로가 휴게 및 커뮤니티공간과 80% 이상 연결되고, 단지 외부\n1급 1.0\n보행자 전용도로와 연결되어 조성된 경우\n2급 단지 내 보행자 전용도로가 휴게 및 커뮤니티공간과 80% 이상 연결되어 조성된 경우 0.8\n3급 단지 내 보행자 전용도로가 휴게 및 커뮤니티공간과 60% 이상 연결되어 조성된 경우 0.6\n단지 내 보행자 전용도로는 길이가 단지 전체 둘레의 1/4 이상이고, 4개 이하로\n4급 0.4\n단절되어 있는 경우\n- 단지 내 보행자 전용도로의 폭은 4m 이상 일 것\n- 1, 2, 3급일 경우 단지 내 보행자 전용도로의 길이의 합이 단지 전체 둘레의 1/4 이상이고 단절되지 않은\n2개의 연장노선만 인정함\n- 보행자 전용도로의 일부가 하나의 차도와 교차하거나 필로티 하부 등으로 통과하는 경우 보행자 우선구조\n(험프형 보도 등)로 계획되어 있으면 보행자 전용도로가 연결된 것으로 인정하되, 해당부분의 길이만큼\n길이산정에는 제외함\n- 휴게 및 커뮤니티공간(비오톱 포함)과 연결되어 조성된 비율은 개소 또는 면적으로 산출함\n- 커뮤니티공간이란 근린교제가 가능한 개방형 공간으로서 휴게소, 중앙광장, 노천극장, 테마광장, 운동시설,\n어린이놀이터 등을 말함\n- 외부 보행자 전용도로는 도시계획시설로서 설치되는 보행자 전용도로 외에 공원, 녹지, 하천 등에 설치되\n는 보행로 등과 단절되지 않고 단지 내 보행자전용 도로와 연계된 경우도 인정함\n참고자료 및 제출서류\n참고자료 주택건설기준등에관한 규정, 국토교통부\n제출서류 - 단지계획도\n예비\n- 단지 내 보행자전용도로와 외부 보행자 전용도로가 연결되고 표시된 설계도면\n인증\n- 휴게 및 커뮤니티공간 설계도서\n- 예비인증 시와 동일\n본인증\n- 현장사진"
+        },
+        {
+          "criterion_id": "R-1.6",
+          "출처": {
+            "페이지": 17,
+            "종료페이지": 17,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "1",
+            "명칭": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": "1.6",
+            "명칭": "대중교통의 근접성",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "input_variables": [
+                {
+                  "name": "transport_facility_type_count_within_300m",
+                  "label": "300m 미만 거리에 위치한 대중교통시설 종 수",
+                  "unit": "종",
+                  "type": "number"
+                },
+                {
+                  "name": "nearest_transport_facility_walking_distance_m",
+                  "label": "가장 가까운 대중교통시설까지의 보행거리",
+                  "unit": "m",
+                  "type": "number"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "condition": "transport_facility_type_count_within_300m >= 2",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "condition": "nearest_transport_facility_walking_distance_m < 200",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "condition": "nearest_transport_facility_walking_distance_m >= 200 and nearest_transport_facility_walking_distance_m < 300",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "condition": "nearest_transport_facility_walking_distance_m >= 300 and nearest_transport_facility_walking_distance_m < 400",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = weight * 2",
+              "source_pages": [
+                17
+              ],
+              "max_score": 2
+            },
+            "원문평가": "대중교통 이용을 통한 공해발생의 저감, 에너지 사용 절감 등을 유도하고자 한다.",
+            "원문평가방법": "대중교통시설(철도시설, 버스시설, 항만시설 등)과의 도보거리, 대중교통시설의 개수를 종합하여 평가"
+          },
+          "참고자료": [
+            "대중교통의 육성 및 이용촉진에 관한 법률, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "택지개발지구 토지이용계획도(교통영향평가 종합개선안도)",
+              "대상 건축물에 인접 대중교통시설 관련 자료 (도시철도기본계획 등)",
+              "현장인근 상황도(대중교통시설의 위치 및 보행출입구 표기, 대중교통시설 위치에서 보행출입",
+              "구까지의 거리 명기)",
+              "대중교통시설의 현장정류소 사진",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "대중교통시설의 현장정류소 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 1 토지이용 및 교통\n인증항목 1.6 대중교통의 근접성\n세부평가기준\n평가목적 대중교통 이용을 통한 공해발생의 저감, 에너지 사용 절감 등을 유도하고자 한다.\n평가방법 대중교통시설(철도시설, 버스시설, 항만시설 등)과의 도보거리, 대중교통시설의 개수를 종합하여 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 대중교통시설과의 도보거리 가중치\n1급 2종 이상의 대중교통시설이 300m 미만의 거리에 위치한 경우 1.0\n2급 가장 가까운 대중교통시설이 200m 미만의 거리에 위치한 경우 0.8\n3급 가장 가까운 대중교통시설이 200m 이상 300m 미만의 거리에 위치한 경우 0.6\n4급 가장 가까운 대중교통시설이 300m 이상 400m 미만의 거리에 위치한 경우 0.4\n- 대중교통시설이란 대중교통의 육성 및 이용촉진에 관한 법률에 따라 대중교통수단의 운행에 필요한 시설\n을 의미함\n- 도보거리란 가장 안전하고 편리한 길을 이용한 물리적 거리를 말함\n- 거리는 보행 출입구로부터 대중교통시설까지의 도보거리로 산정함\n- 대중교통시설의 종은 철도시설, 버스시설, 여객용 항만시설, 여객용 항공시설로 봄\n- 마을버스 정류소, 공항버스 정류소는 버스시설에 포함됨\n참고자료 및 제출서류\n참고자료 - 대중교통의 육성 및 이용촉진에 관한 법률, 국토교통부\n제출서류\n- 택지개발지구 토지이용계획도(교통영향평가 종합개선안도)\n- 대상 건축물에 인접 대중교통시설 관련 자료 (도시철도기본계획 등)\n예비\n- 현장인근 상황도(대중교통시설의 위치 및 보행출입구 표기, 대중교통시설 위치에서 보행출입\n인증\n구까지의 거리 명기)\n- 대중교통시설의 현장정류소 사진\n- 예비인증 시와 동일\n본인증\n- 대중교통시설의 현장정류소 사진"
+        },
+        {
+          "criterion_id": "R-1.7",
+          "출처": {
+            "페이지": 18,
+            "종료페이지": 18,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "1",
+            "명칭": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": "1.7",
+            "명칭": "자전거주차장 및 자전거도로의 적합성",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "input_variables": [
+                {
+                  "name": "bicycle_parking_spaces",
+                  "label": "자전거주차장 설치대수",
+                  "unit": "대",
+                  "type": "number"
+                },
+                {
+                  "name": "total_households",
+                  "label": "총 세대수",
+                  "unit": "세대",
+                  "type": "number"
+                },
+                {
+                  "name": "bicycle_road_planned_on_site",
+                  "label": "대지 내 자전거도로 계획 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "bicycle_parking_spaces_per_household",
+                  "formula": "bicycle_parking_spaces / total_households",
+                  "label": "세대당 자전거주차대수",
+                  "unit": "대/세대"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "condition": "bicycle_parking_spaces_per_household >= 0.3 and bicycle_road_planned_on_site",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "condition": "bicycle_parking_spaces_per_household >= 0.2 and bicycle_road_planned_on_site",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "condition": "bicycle_parking_spaces_per_household >= 0.3",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "condition": "bicycle_parking_spaces_per_household >= 0.2",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = weight * 2",
+              "source_pages": [
+                18
+              ],
+              "max_score": 2
+            },
+            "원문평가": "자전거주차장 및 자전거도로의 적합성을 평가함으로써 녹색교통 환경을 유도하며, 에너지 소비와 공해발생\n저감을 도모한다.",
+            "원문평가방법": "자전거주차장 설치 및 자전거도로의 적용수준에 따라 평가"
+          },
+          "참고자료": [
+            "자전거이용 활성화에 관한 법률, 행정안전부",
+            "자전거이용시설의 구조·시설기준에 관한 규칙, 행정안전부",
+            "도시·군계획 시설의 결정·구조 및 설치기준에 관한 규칙, 국토교통부",
+            "지속가능하고 안전한 자전거 인프라 구축을 위한 설계 가이드 핸드북, 행정안전부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "배치도(자전거주차장 설치, 자전거 주차 대수, 자전거도로의 계획)",
+              "자전거주차장 설치대수 집계표",
+              "자전거도로 계획 상세도(도로 폭, 설치재료 등 표기)",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "자전거주차장 납품확인서",
+              "현장 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 1 토지이용 및 교통\n인증항목 1.7 자전거주차장 및 자전거도로의 적합성\n세부평가기준\n평가목적 자전거주차장 및 자전거도로의 적합성을 평가함으로써 녹색교통 환경을 유도하며, 에너지 소비와 공해발생\n저감을 도모한다.\n평가방법 자전거주차장 설치 및 자전거도로의 적용수준에 따라 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 자전거주차장의 설치 및 자전거도로의 적용수준 가중치\n1급 세대 당 0.3대 이상의 자전거주차장을 설치하고, 대지 내 자전거도로를 계획한 경우 1.0\n2급 세대 당 0.2대 이상의 자전거주차장을 설치하고, 대지 내 자전거도로를 계획한 경우 0.8\n3급 세대 당 0.3대 이상의 자전거주차장을 설치한 경우 0.6\n4급 세대 당 0.2대 이상의 자전거주차장을 설치한 경우 0.4\n- 자전거주차장의 설치기준은 자전거 이용시설의 구조·시설기준에 관한 규칙을 따르며, 자전거도로는 자전거\n이용 활성화에 관한 법률에 따름\n- 자전거주차장은 자전거 주차 및 보관의 편의를 위하여 눈·비 등을 가릴 수 있도록 설치하여야 함\n- 보행자전용도로와 자전거도로가 함께 조성된 대지 내 도로인 경우 6m이상으로 조성된 경우를 인정하되,\n보행자도로와의 구분(패턴, 포장, 색상 등) 될 수 있어야 함\n- 자전거도로 폭은 2m 이상이어야 함\n참고자료 및 제출서류\n참고자료 - 자전거이용 활성화에 관한 법률, 행정안전부\n- 자전거이용시설의 구조·시설기준에 관한 규칙, 행정안전부\n- 도시·군계획 시설의 결정·구조 및 설치기준에 관한 규칙, 국토교통부\n- 지속가능하고 안전한 자전거 인프라 구축을 위한 설계 가이드 핸드북, 행정안전부\n제출서류\n- 배치도(자전거주차장 설치, 자전거 주차 대수, 자전거도로의 계획)\n예비\n- 자전거주차장 설치대수 집계표\n인증\n- 자전거도로 계획 상세도(도로 폭, 설치재료 등 표기)\n- 예비인증 시와 동일\n본인증 - 자전거주차장 납품확인서\n- 현장 사진"
+        },
+        {
+          "criterion_id": "R-1.8",
+          "출처": {
+            "페이지": 19,
+            "종료페이지": 20,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "1",
+            "명칭": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": "1.8",
+            "명칭": "생활편의시설의 접근성",
+            "구분": "평가항목",
+            "배점": 1
+          },
+          "평가": {
+            "평가목적": "거주민의 이용시설인 문화, 행정, 체육, 비즈니스 시설 및 지역 생활편의시설과 대지와의 접근성을 평가하여 교통유발요인을 감소시킨다.",
+            "평가방법": "대지 출입구를 기점으로 기준 반경거리 내 생활편의시설 개수와 종류 조건을 충족하는지 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                19,
+                20
+              ],
+              "max_score": 1,
+              "score_formula": "score = neighborhood_urban_facility_weight + urban_facility_weight",
+              "input_variables": [
+                {
+                  "name": "nearest_neighborhood_or_urban_facility_distance_m",
+                  "label": "근린 및 도시 생활편의시설까지 반경거리",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "neighborhood_facility_type_count",
+                  "label": "근린 생활편의시설 종류 수",
+                  "type": "number",
+                  "unit": "종"
+                },
+                {
+                  "name": "nearest_urban_facility_distance_m",
+                  "label": "도시 생활편의시설까지 반경거리",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "urban_facility_type_count",
+                  "label": "도시 생활편의시설 종류 수",
+                  "type": "number",
+                  "unit": "종"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "neighborhood_urban_facility_weight",
+                  "formula": "0.5 if distance<=500 and neighborhood_facility_type_count>=10 else 0.4 if distance<=600 and count>=10 else 0.3 if distance<=700 and count>=10 else 0.2 if distance<=1000 and count>=10 else 0"
+                },
+                {
+                  "name": "urban_facility_weight",
+                  "formula": "0.5 if nearest_urban_facility_distance_m<=2000 and urban_facility_type_count>=4 else 0.4 if distance<=3000 and count>=4 else 0.3 if distance<=4000 and count>=4 else 0.2 if distance<=5000 and count>=4 else 0"
+                }
+              ],
+              "performance_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "평점이 1.0점인 경우",
+                  "condition": "score == 1.0",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "평점이 0.8점 이상 1.0점 미만인 경우",
+                  "condition": "0.8 <= score < 1.0",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "평점이 0.6점 이상 0.8점 미만인 경우",
+                  "condition": "0.6 <= score < 0.8",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "평점이 0.4점 이상 0.6점 미만인 경우",
+                  "condition": "0.4 <= score < 0.6",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "건축법 시행령, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "생활편의시설과 대지 주출입구 및 부출입구가 표시된 위치도(반경 다이어그램 표시)",
+              "택지개발 계획도, 지구단위 계획도",
+              "단지계획도",
+              "예비인증 시 제출서류"
+            ],
+            "본인증": [
+              "생활편의시설 설치를 확인할 수 있는 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 1 토지이용 및 교통\n인증항목 1.8 생활편의시설의 접근성\n세부평가기준\n평가목적 거주민의 이용시설인 문화, 행정, 체육, 비즈니스 시설 및 지역에 위치하는 생활편의 시설과 대지와의 접근\n성을 평가함으로써 교통유발요인을 감소시킨다.\n평가방법 대지 출입구를 기점으로 일정기준의 반경거리 내에 있는 생활편의시설의 개수를 계산하여 평가\n배 점 1점(평가항목)\n산출기준 • 평점 = (근린 및 도시 생활편의시설의 가중치 + 도시 생활 편의시설의 가중치) × (배점)\n1) 근린 및 도시 생활편의시설\n구분 대지 출입구에서 근린 및 도시 생활편의시설까지의 거리 가중치\n1급 대지 출입구에서 생활편의시설까지의 반경거리가 500m 이내인 경우 0.5\n2급 대지 출입구에서 생활편의시설까지의 반경거리가 600m 이내인 경우 0.4\n3급 대지 출입구에서 생활편의시설까지의 반경거리가 700m 이내인 경우 0.3\n4급 대지 출입구에서 생활편의시설까지의 반경거리가 1km 이내인 경우 0.2\n2) 도시 생활편의시설\n구분 대지 출입구에서 도시 생활편의시설까지의 거리 가중치\n1급 대지 출입구에서 생활편의시설까지의 반경거리가 2km 이내인 경우 0.5\n2급 대지 출입구에서 생활편의시설까지의 반경거리가 3km 이내인 경우 0.4\n3급 대지 출입구에서 생활편의시설까지의 반경거리가 4km 이내인 경우 0.3\n4급 대지 출입구에서 생활편의시설까지의 반경거리가 5km 이내인 경우 0.2\n- 근린 생활편의시설이란 일상생활에 필요한 기본적인 요구를 충족시킬 수 있는 근린생활시설로 다음 조건\n을 만족하는 시설을 의미함\n․ 근린 생활편의시설의 경우 10개 이상 종류의 생활편의시설을 포함해야 함\n․ 「건축법 시행령」 제3조 5의 제1종 과 제2종 근린생활시설, 공원\n단, 일부 2종 근린생활시설(단란주점, 안마시술소, 노래연습장)은 제외\n- 도시 생활편의시설은 의료시설, 교육시설, 공공시설 등 도시거주민 생활의 중심이 되는 시설을 의미\n- 도시 생활편의시설의 경우 의료시설, 판매시설, 문화집회시설, 종교시설, 노유자시설, 교육시설, 운동시설,\n업무시설, 숙박시설 중 4개 이상을 포함해야 함\n- 대지 출입구는 주출입구와 부출입구 중 가장 유리한 쪽으로 산정함\n- 시설이 중복되어 있을 시에는 한 개 시설로 계산함\n※ 주택성능등급 평가 시 등급구분\n구분 평점 성능등급\n1급 평점이 1.0점인 경우 ★★★★\n2급 평점이 0.8점 이상 1.0점 미만인 경우 ★★★\n3급 평점이 0.6점 이상 0.8점 미만인 경우 ★★\n4급 평점이 0.4점 이상 0.6점 미만인 경우 ★\n참고자료 및 제출서류\n참고자료 - 건축법 시행령, 국토교통부\n제출서류\n- 생활편의시설과 대지 주출입구 및 부출입구가 표시된 위치도(반경 다이어그램 표시)\n예비\n- 택지개발 계획도, 지구단위 계획도\n인증\n- 단지계획도\n- 예비인증 시 제출서류\n본인증\n- 생활편의시설 설치를 확인할 수 있는 사진"
+        }
+      ]
+    }
+  ]
+}

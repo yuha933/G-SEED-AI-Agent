@@ -1,0 +1,2379 @@
+{
+  "metadata": {
+    "인증기준명": "녹색건축 인증기준",
+    "버전": "G-SEED 2016-8",
+    "건축물유형": "신축 주거용 건축물",
+    "전문분야번호": "8",
+    "전문분야명": "주택성능분야",
+    "시작페이지": 66,
+    "종료페이지": 86,
+    "항목수": 17,
+    "원본PDF": "G-SEED 2016-8_개정전문.pdf",
+    "참조데이터": "G-SEED/01_신축_주거용_건축물.json",
+    "생성방식": "PDF 원문·평가기준·계산식 구조를 전문분야별로 분리"
+  },
+  "전문분야": [
+    {
+      "번호": "8",
+      "명칭": "주택성능분야",
+      "인증항목": [
+        {
+          "criterion_id": "R-8.1",
+          "출처": {
+            "페이지": 66,
+            "종료페이지": 69,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.1",
+            "명칭": "내구성",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "건축물의 수명 연장과 유지관리비용 저감을 위해 내구성능 등급을 표시한다.",
+            "평가방법": "설계도서 및 공사시방서에 따라 철근콘크리트 구조의 피복두께·콘크리트 품질, 도장방법, 도금 부착량을 하위 평가항목별로 평가하고 가장 낮은 성능등급을 전체 등급으로 산정한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                66,
+                67,
+                68,
+                69
+              ],
+              "input_variables": [
+                {
+                  "name": "environment_region",
+                  "label": "염해 위험 지역 구분",
+                  "type": "enum",
+                  "values": [
+                    "일반지역",
+                    "염해지역"
+                  ]
+                },
+                {
+                  "name": "concrete_cover_part",
+                  "label": "철근 피복두께 평가 부위",
+                  "type": "enum",
+                  "values": [
+                    "흙에 접하지 않는 부분_벽체",
+                    "흙에 접하지 않는 부분_기둥보",
+                    "흙에 접하는 부분_바닥슬래브내력벽기둥보",
+                    "기초옹벽"
+                  ]
+                },
+                {
+                  "name": "concrete_cover_location",
+                  "label": "실내/실외 구분",
+                  "type": "enum",
+                  "values": [
+                    "실내",
+                    "실외"
+                  ]
+                },
+                {
+                  "name": "concrete_cover_thickness_mm",
+                  "label": "철근 피복두께",
+                  "type": "number",
+                  "unit": "mm"
+                },
+                {
+                  "name": "concrete_design_standard_strength_MPa",
+                  "label": "콘크리트 설계기준강도",
+                  "type": "number",
+                  "unit": "MPa"
+                },
+                {
+                  "name": "concrete_quality_control_test_average_ratio",
+                  "label": "연속 3회 시험값 평균의 설계기준강도 대비 비율",
+                  "type": "number",
+                  "unit": "%"
+                },
+                {
+                  "name": "concrete_quality_control_single_test_ratio",
+                  "label": "1회 시험값의 설계기준강도 대비 비율",
+                  "type": "number",
+                  "unit": "%"
+                },
+                {
+                  "name": "paint_region",
+                  "label": "도장방법 적용 지역",
+                  "type": "enum",
+                  "values": [
+                    "일반지역",
+                    "염해지역"
+                  ]
+                },
+                {
+                  "name": "paint_exposure_condition",
+                  "label": "도장 노출 조건",
+                  "type": "enum",
+                  "values": [
+                    "야외말뚝_도로",
+                    "야외말뚝_도로제외"
+                  ]
+                },
+                {
+                  "name": "primary_binder_type",
+                  "label": "프라이머 기본 바인더",
+                  "type": "enum",
+                  "values": [
+                    "ESI",
+                    "EP",
+                    "PUR",
+                    "AK",
+                    "AY"
+                  ]
+                },
+                {
+                  "name": "topcoat_binder_type",
+                  "label": "후속도막 기본 바인더",
+                  "type": "enum",
+                  "values": [
+                    "EP",
+                    "PUR",
+                    "AY",
+                    "AK"
+                  ]
+                },
+                {
+                  "name": "paint_minimum_coat_count",
+                  "label": "도장 최소 도막 수",
+                  "type": "number",
+                  "unit": "회"
+                },
+                {
+                  "name": "paint_total_thickness_um",
+                  "label": "도장 도막 두께",
+                  "type": "number",
+                  "unit": "um"
+                },
+                {
+                  "name": "floor_finishing_material_type",
+                  "label": "도금 부착량 평가 도금 종류",
+                  "type": "enum",
+                  "values": [
+                    "용융 아연 도금",
+                    "용융 아연 도금 강판 및 강대",
+                    "용융 아연 합금 도금 강판 및 강대"
+                  ]
+                },
+                {
+                  "name": "zinc_plating_mass_g_per_m2",
+                  "label": "양면 도금량",
+                  "type": "number",
+                  "unit": "g/m2"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "concrete_cover_grade",
+                  "label": "철근 피복두께 등급",
+                  "formula": "look up concrete_cover_thickness_mm by part/location/region table"
+                },
+                {
+                  "name": "concrete_strength_grade",
+                  "label": "콘크리트 설계기준강도 등급",
+                  "formula": "look up concrete_design_standard_strength_MPa and quality control conditions by region table"
+                },
+                {
+                  "name": "paint_grade",
+                  "label": "도장방법 등급",
+                  "formula": "look up binder combination, coat count, film thickness by region/exposure table"
+                },
+                {
+                  "name": "floor_finishing_grade",
+                  "label": "도금 부착량 등급",
+                  "formula": "look up zinc_plating_mass_g_per_m2 or HDZ type by material/region table"
+                },
+                {
+                  "name": "durability_final_grade_number",
+                  "label": "내구성 최종 등급 번호",
+                  "formula": "max(concrete_cover_grade, concrete_strength_grade, paint_grade, floor_finishing_grade)",
+                  "unit": "급"
+                }
+              ],
+              "overall_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "각 평가항목 1급 이상 충족",
+                  "condition": "durability_final_grade_number <= 1",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "각 평가항목 2급 이상 충족",
+                  "condition": "durability_final_grade_number <= 2",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "각 평가항목 3급 이상 충족",
+                  "condition": "durability_final_grade_number <= 3",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "각 평가항목 4급 이상 충족",
+                  "condition": "durability_final_grade_number <= 4",
+                  "performance_grade": "★"
+                }
+              ],
+              "reinforced_concrete_cover_table": [
+                {
+                  "region": "일반지역",
+                  "part": "흙에 접하지 않는 부분_벽체",
+                  "location": "실내",
+                  "grade_2_mm": 30,
+                  "grade_3_mm": 20,
+                  "grade_4_mm": 20
+                },
+                {
+                  "region": "일반지역",
+                  "part": "흙에 접하지 않는 부분_벽체",
+                  "location": "실외",
+                  "grade_2_mm": 40,
+                  "grade_3_mm": 30,
+                  "grade_4_mm": 20
+                },
+                {
+                  "region": "일반지역",
+                  "part": "흙에 접하지 않는 부분_기둥보",
+                  "location": "실내",
+                  "grade_2_mm": 40,
+                  "grade_3_mm": 40,
+                  "grade_4_mm": 40
+                },
+                {
+                  "region": "일반지역",
+                  "part": "흙에 접하지 않는 부분_기둥보",
+                  "location": "실외",
+                  "grade_2_mm": 50,
+                  "grade_3_mm": 40,
+                  "grade_4_mm": 40
+                },
+                {
+                  "region": "일반지역",
+                  "part": "흙에 접하는 부분_바닥슬래브내력벽기둥보",
+                  "grade_2_mm": 50,
+                  "grade_3_mm": 40,
+                  "grade_4_mm": 40
+                },
+                {
+                  "region": "일반지역",
+                  "part": "기초옹벽",
+                  "grade_2_mm": 85,
+                  "grade_3_mm": 75,
+                  "grade_4_mm": 75
+                },
+                {
+                  "region": "염해지역",
+                  "class": "S4",
+                  "grade_1_mm": 90,
+                  "grade_2_mm": 90,
+                  "grade_3_mm": 80
+                },
+                {
+                  "region": "염해지역",
+                  "class": "S3",
+                  "grade_1_mm": 90,
+                  "grade_2_mm": 80,
+                  "grade_3_mm": 70
+                },
+                {
+                  "region": "염해지역",
+                  "class": "S2",
+                  "grade_1_mm": 80,
+                  "grade_2_mm": 70,
+                  "grade_3_mm": 60
+                },
+                {
+                  "region": "염해지역",
+                  "class": "S1",
+                  "grade_1_mm": 80,
+                  "grade_2_mm": 70,
+                  "grade_3_mm": 60
+                }
+              ],
+              "concrete_strength_table": {
+                "general_region": [
+                  {
+                    "grade": "1급",
+                    "minimum_strength_MPa": 30
+                  },
+                  {
+                    "grade": "2급",
+                    "minimum_strength_MPa": 27
+                  },
+                  {
+                    "grade": "3급",
+                    "minimum_strength_MPa": 24
+                  },
+                  {
+                    "grade": "4급",
+                    "minimum_strength_MPa": 21
+                  }
+                ],
+                "salt_damage_region_by_class": [
+                  {
+                    "class": "S4",
+                    "grade_1_MPa": 40,
+                    "grade_3_MPa": 35
+                  },
+                  {
+                    "class": "S3",
+                    "grade_1_MPa": 40,
+                    "grade_3_MPa": 35
+                  },
+                  {
+                    "class": "S2",
+                    "grade_1_MPa": 33,
+                    "grade_3_MPa": 30
+                  },
+                  {
+                    "class": "S1",
+                    "grade_1_MPa": 33,
+                    "grade_3_MPa": 30
+                  }
+                ],
+                "quality_control_condition": "1급은 연속 3회 시험값 평균이 설계기준강도 이상이고 1회 시험값이 설계기준강도의 90% 이상이어야 하며, 3급은 연속 3회 평균이 설계기준강도 이상이고 1회 시험값이 설계기준강도-3.5MPa 이상이어야 한다."
+              },
+              "paint_method_table": [
+                {
+                  "region": "일반지역",
+                  "paint_type": "아연말 도료",
+                  "primer_binder": [
+                    "ESI",
+                    "EP",
+                    "PUR"
+                  ],
+                  "topcoat_binder": [
+                    "EP",
+                    "PUR",
+                    "AY"
+                  ],
+                  "grade_1": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 160
+                  },
+                  "grade_2": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 60
+                  },
+                  "grade_3": null,
+                  "grade_4": null
+                },
+                {
+                  "region": "일반지역",
+                  "paint_type": "아연말 도료 제외",
+                  "primer_binder": [
+                    "EP",
+                    "PUR",
+                    "ESI"
+                  ],
+                  "topcoat_binder": [
+                    "EP",
+                    "PUR",
+                    "AY"
+                  ],
+                  "grade_1": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 180
+                  },
+                  "grade_2": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 120
+                  },
+                  "grade_3": null,
+                  "grade_4": null
+                },
+                {
+                  "region": "일반지역",
+                  "paint_type": "아연말 도료 제외",
+                  "primer_binder": [
+                    "AK",
+                    "AY"
+                  ],
+                  "topcoat_binder": [
+                    "AK",
+                    "AY"
+                  ],
+                  "grade_1": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 200
+                  },
+                  "grade_2": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 160
+                  },
+                  "grade_3": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 100
+                  },
+                  "grade_4": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 50
+                  }
+                },
+                {
+                  "region": "염해지역",
+                  "paint_type": "아연말 도료",
+                  "primer_binder": [
+                    "ESI",
+                    "EP",
+                    "PUR"
+                  ],
+                  "topcoat_binder": [
+                    "EP",
+                    "PUR",
+                    "AY"
+                  ],
+                  "grade_1": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 200
+                  },
+                  "grade_2": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 160
+                  },
+                  "grade_3": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 60
+                  },
+                  "grade_4": null
+                },
+                {
+                  "region": "염해지역",
+                  "paint_type": "아연말 도료 제외",
+                  "primer_binder": [
+                    "EP",
+                    "PUR",
+                    "ESI"
+                  ],
+                  "topcoat_binder": [
+                    "EP",
+                    "PUR",
+                    "AY"
+                  ],
+                  "grade_1": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 240
+                  },
+                  "grade_2": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 180
+                  },
+                  "grade_3": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 120
+                  },
+                  "grade_4": null
+                },
+                {
+                  "region": "염해지역",
+                  "paint_type": "아연말 도료 제외",
+                  "primer_binder": [
+                    "AK",
+                    "AY"
+                  ],
+                  "topcoat_binder": [
+                    "AK",
+                    "AY"
+                  ],
+                  "grade_1": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 260
+                  },
+                  "grade_2": {
+                    "minimum_coat_count": 2,
+                    "minimum_film_thickness_um": 200
+                  },
+                  "grade_3": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 160
+                  },
+                  "grade_4": {
+                    "minimum_coat_count": 1,
+                    "minimum_film_thickness_um": 100
+                  }
+                }
+              ],
+              "paint_binder_abbreviations": [
+                {
+                  "abbreviation": "AK",
+                  "main_binder": "알키드",
+                  "type": "1액형",
+                  "water_based_available": false
+                },
+                {
+                  "abbreviation": "AY",
+                  "main_binder": "아크릴",
+                  "type": "1액형",
+                  "water_based_available": false
+                },
+                {
+                  "abbreviation": "EP",
+                  "main_binder": "에폭시",
+                  "type": "2액형",
+                  "water_based_available": false
+                },
+                {
+                  "abbreviation": "PUR",
+                  "main_binder": "폴리우레탄",
+                  "type": "1액형 또는 2액형",
+                  "water_based_available": false
+                },
+                {
+                  "abbreviation": "ESI",
+                  "main_binder": "에틸 실리게이트",
+                  "type": "1액형 또는 2액형",
+                  "water_based_available": null
+                }
+              ],
+              "zinc_plating_mass_table": [
+                {
+                  "region": "일반지역",
+                  "plating_type": "용융 아연 도금 (KS D 8308)",
+                  "grade_1": "HDZ 55 이상",
+                  "grade_2": null,
+                  "grade_3": "HDZ 35 이상",
+                  "grade_4": "HDZ A/B"
+                },
+                {
+                  "region": "일반지역",
+                  "plating_type": "용융 아연 도금 강판 및 강대 (KS D 3506)",
+                  "grade_1": {
+                    "double_side_plating_mass_g_per_m2": 450
+                  },
+                  "grade_2": {
+                    "double_side_plating_mass_g_per_m2": 270
+                  },
+                  "grade_3": {
+                    "double_side_plating_mass_g_per_m2": 180
+                  },
+                  "grade_4": {
+                    "double_side_plating_mass_g_per_m2": 120
+                  }
+                },
+                {
+                  "region": "일반지역",
+                  "plating_type": "용융 아연 합금 도금 강판 및 강대 (KS D 3770, KS D 3030, KS D 3033)",
+                  "grade_1": {
+                    "double_side_plating_mass_g_per_m2": 300
+                  },
+                  "grade_2": {
+                    "double_side_plating_mass_g_per_m2": 180
+                  },
+                  "grade_3": {
+                    "double_side_plating_mass_g_per_m2": 120
+                  },
+                  "grade_4": {
+                    "double_side_plating_mass_g_per_m2": 80
+                  }
+                },
+                {
+                  "region": "염해지역",
+                  "plating_type": "용융 아연 도금 (KS D 8308)",
+                  "grade_1": "HDZ 61 이상",
+                  "grade_2": "HDZ 55 이상",
+                  "grade_3": "HDZ 35 이상",
+                  "grade_4": null
+                },
+                {
+                  "region": "염해지역",
+                  "plating_type": "용융 아연 도금 강판 및 강대 (KS D 3506)",
+                  "grade_1": {
+                    "double_side_plating_mass_g_per_m2": 500
+                  },
+                  "grade_2": {
+                    "double_side_plating_mass_g_per_m2": 450
+                  },
+                  "grade_3": {
+                    "double_side_plating_mass_g_per_m2": 270
+                  },
+                  "grade_4": {
+                    "double_side_plating_mass_g_per_m2": 180
+                  }
+                },
+                {
+                  "region": "염해지역",
+                  "plating_type": "용융 아연 합금 도금 강판 및 강대 (KS D 3770, KS D 3030, KS D 3033)",
+                  "grade_1": {
+                    "double_side_plating_mass_g_per_m2": 350
+                  },
+                  "grade_2": {
+                    "double_side_plating_mass_g_per_m2": 300
+                  },
+                  "grade_3": {
+                    "double_side_plating_mass_g_per_m2": 180
+                  },
+                  "grade_4": {
+                    "double_side_plating_mass_g_per_m2": 120
+                  }
+                }
+              ]
+            },
+            "해석메모": "이미지 표의 세부 하위표가 많아 전체 등급은 하위 평가항목의 최저 성능등급을 따르도록 모델링했다."
+          },
+          "참고자료": [
+            "건축물 콘크리트구조 설계기준(KDS 14 20 00), 국토교통부",
+            "콘크리트구조 내구성 설계기준(KDS 14 20 40), 국토교통부",
+            "콘크리트구조 철근상세 설계기준(KDS 14 20 50), 국토교통부",
+            "장수명 주택 건설․인증 기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "설계도서 및 공사시방서의 검토",
+              "철근콘크리트 구조 : 철근 피복두께, 콘크리트 품질 등",
+              "철골 구조 : 도장방식 또는 도금방식, 구조용 강재의 종류 등",
+              "내구성 평가기준 만족 자료",
+              "공사계획서, 공사시방서, 구조계획서 등"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.1 내구성\n세부평가기준\n평가목적 건축물의 수명 연장 및 이를 통한 유지관리비용 저감을 위하여 내구성능 등급을 표시한다.\n평가방법 설계도서 및 공사시방서에 따라 평가(건물형상⋅상세, 허용균열폭, 부재의 최소단면, 철근의 피복두께, 콘크\n리트의 품질 등)\n산출기준 구분 등급기준 성능등급\n1급 각 평가항목 1급 이상 충족 ★★★★\n2급 각 평가항목 2급 이상 충족 ★★★\n3급 각 평가항목 3급 이상 충족 ★★\n4급 각 평가항목 4급 이상 충족 ★\n- 철근콘크리트는 ① 철근의 피복두께 및 ② 콘크리트 품질로 평가하고, 철골조는 ①부식방지 성능 및 ②\n강재의 품질로 평가하되, 4급을 충족한 상태에서 항목별로 등급이 다를 경우 가장 낮은 등급을 기준으로\n전체 등급을 평가한다.\n[철근콘크리트 구조의 내구성 평가기준 1]\n성능등급\n항 목\n1급 2급 3급 4급\n지붕슬래브･ 실내 30 20\n흙에 바닥슬래브･ 20\n접하지 벽체 실외 401) 301)\n않는\n실내 40 40\n일반 부분\n기둥·보 2급 기준을 40\n지역 실외 만족하고, 501) 40\n철근의 국토교통부에\n피복두께 흙에 바닥슬래브·내력벽· 서 지정하는 50 40 40\n기둥·보\n(mm) 접하는 “건설신기술”\n부분 기초·옹벽 을 흙에 85 75 75\n접하는\nS4 부분에 적용 90 90 80\n염해 S3 90 80 70\n위험 구분\n지역 S2 80 70 60\nS1 80 70 60\n주 1) 내구성상 유효한 마감이 있는 경우 10mm 완화하여 적용할 수 있음\n- 철근의 피복두께 3급과 4급에서 각각 기준을 만족하고, 국토교통부에서 지정하는 “건설신기술”을 흙에 접하\n는 부분에 추가적으로 적용 시 한 등급씩 상향\n- “건설신기술”은 철근의 방청과 관련된 기술 분야 (방식피복, 방청 혼화제, 전기방식, 방청 철근, 중성화 억제,\n방수재 등)로 함\n- “콘크리트구조설계기준”에 따를 경우 피복두께 항목에 대하여 4급을 인정할 수 있음\n[철근콘크리트 구조의 내구성 평가기준 2]\n성능등급\n항 목\n1급 2급 3급 4급\n30MPa 이상 27MPa 이상 24MPa 이상 21MPa 이상\n※ 설계기준강도 2급을 만족하고, 비를 맞는 외부 콘크리트에 표면\n일반지역 방수 처리를 한 경우 한 등급 상향\n※ 기초 및 지하부위는 “콘크리트구조 내구성 설계기준”의 노출 범주\n및 등급에 적합한 설계기준강도 적용\n구분 1급 2급 3급 4급\n설계\n기준 염해 S4 40MPa 이상 35MPa 이상\n강도 위험 S3 40MPa 이상 35MPa 이상\n(fck) 지역\n콘크 S2 33MPa 이상 30MPa 이상\n리트\nS1 33MPa 이상 30MPa 이상\n품질\n① 연속 3회 시험값의 평균이 ① 연속 3회 시험값의 평균이\n품질기준강도 이상 품질기준강도 이상\n품질관리기준\n② 1회 시험값이 품질기준강도의 ② 1회 시험값이 (품질기준강도-\n90 % 이상 3.5MPa) 이상\n※ 콘크리트 시공과 관련하여 표준시방서 등 관련 기준을 따르도록 함\nKCS(표준시방서) 14 20 10 일반 콘크리트\nKCS(표준시방서) 14 20 31 유동화 콘크리트\nKCS(표준시방서) 14 20 44 해양 콘크리트\nKDS(설계기준) 14 20 40 콘크리트구조 내구성 설계기준\nKDS(설계기준) 14 20 50 콘크리트구조 철근 상세 설계기준\n- 내구성은 수명기간(내용년수) 동안 일상의 유지관리 조건하에서 대규모 이상의 보수, 보강을 필요로 하지\n않음\n[철골 구조의 내구성 평가기준]\n성능등급\n항 목\n1급 2급 3급 4급\n도장1급 도장2급 도장3급 도장4급\n일반 기둥·보· 실내 또는 또는 또는 또는\n지역 내력벽 도금1급 도금2급 도금3급 도금4급\n①\n실외 도장1급 또는 도금1급 도장2급 또는 도금2급\n부식\n도장1급 도장2급 도장3급 도장4급\n방지 염해\n기둥·보· 실내 또는 또는 또는 또는\n위험\n내력벽 도금1급 도금2급 도금3급 도금4급\n지역\n실외 도장1급 또는 도금1급 도장2급 또는 도금2급\nKS D 3861\n(건축 구조용 압연강재)\nKS D 3503\nKS D 3866\n(일반 구조용 압연 강재)\n(건축 구조용 열간\n② KS D 3566\n구조용 강재의 종류 압연 형강)\n강재 (일반 구조용 탄소 강관)\n(기둥·보·내력벽) KS D 5994\n품질 KS D 3568\n(건축구조용 고성능\n(일반 구조용 각형 강관)\n압연강재)\nKS D 3515\nKS D 3632\n(용접 구조용 압연 강재)\n(건축구조용 탄소강관)\nKS D 3864\n(용접 구조용 냉간\n각형 탄소 강관)\n※ 외기 및 우수에 직접 노출되는 부재(보, 기둥, 내력벽)는 실외로 구분하되, 건축물의 외부에 위치하더라도\n별도의 외장재로 마감하여 외기 및 우수에 직접 노출되지 않는 부재(보, 기둥, 내력벽)는 실내로 구분함\n※ 구조용 강재는 한국산업표준(KS)에 적합한 것을 사용함\n- 지역에 따른 도장사양별 등급기준\n도장방식 성능등급\n도장1급 도장2급 도장3급 도장4급\n지역 프라이머 후속도막\n도막 도막 도막 도막\n구분 도료유형 기본 기본 최소 최소 최소 최소\n두께 두께 두께 두께\n바인더 바인더 도막수 도막수 도막수 도막수\n(㎛) (㎛) (㎛) (㎛)\n아연말 ESI, EP, EP, PUR,\n2 160 1 60 - - - -\n도료 PUR AY\n일반 아연말 EP, PUR, EP, PUR,\n2 180 1 120 - - - -\n지역 도료 제외 ESI AY\n아연말\nAK, AY AK, AY 2 200 1 160 1 100 1 50\n도료 제외\n아연말 ESI, EP, EP, PUR,\n2 200 2 160 1 60 - -\n도료 PUR AY\n염해 아연말 EP, PUR, EP, PUR,\n2 240 2 180 1 120 - -\n지역 도료 제외 ESI AY\n아연말\nAK, AY AK, AY 2 260 2 200 1 160 1 100\n도료 제외\n※ 약어와 설명\n주요 바인더 유형 수성 가능\nAK 알키드 1액형 X\nAY 아크릴 1액형 X\nEP 에폭시 2액형 X\nPUR 폴리우레탄 1액형 또는 2액형 X\nESI 에틸 실리게이트 1액형 또는 2액형\n- 지역에 따른 도금의 부착량별 등급기준\n도금 성능등급\n도금유형\n분류 도금1급 도금2급 도금3급 도금4급\n용융 아연 도금 (KS D 8308) HDZ 55이상 HDZ 35이상 HDZ A/B\n용융 아연 도금 강판 및 강대 (KS 양면도금량 양면도금량 양면도금량 양면도금량\n일반\nD 3506) 450g/m2이상 270g/m2이상 180g/m2이상 120g/m2이상\n지역\n용융 아연 합금 도금 강판 및 강대\n양면도금량 양면도금량 양면도금량 양면도금량\n(KS D 3770, KS D 3030, KS D\n300g/m2이상 180g/m2이상 120g/m2이상 80g/m2이상\n3033)\n염해 용융 아연 도금 (KS D 8308) HDZ 61 이상 HDZ 55이상 HDZ 35이상\n용융 아연 도금 강판 및 강대 (KS 양면도금량 양면도금량 양면도금량 양면도금량\nD 3506) 500g/m2이상 450g/m2이상 270g/m2이상 180g/m2이상\n지역 용융 아연 합금 도금 강판 및 강대\n양면도금량 양면도금량 양면도금량 양면도금량\n(KS D 3770, KS D 3030,\n350g/m2이상 300g/m2이상 180g/m2이상 120g/m2이상\nKS D 3033)\n참고자료 및 제출서류\n참고자료 - 건축물 콘크리트구조 설계기준(KDS 14 20 00), 국토교통부\n- 콘크리트구조 내구성 설계기준(KDS 14 20 40), 국토교통부\n- 콘크리트구조 철근상세 설계기준(KDS 14 20 50), 국토교통부\n- 장수명 주택 건설․인증 기준, 국토교통부\n제출서류 - 설계도서 및 공사시방서의 검토\n· 철근콘크리트 구조 : 철근 피복두께, 콘크리트 품질 등\n· 철골 구조 : 도장방식 또는 도금방식, 구조용 강재의 종류 등\n- 내구성 평가기준 만족 자료\n- 공사계획서, 공사시방서, 구조계획서 등"
+        },
+        {
+          "criterion_id": "R-8.2",
+          "출처": {
+            "페이지": 70,
+            "종료페이지": 70,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.2",
+            "명칭": "가변성",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "건축물의 수명을 정량적으로 표시하고 장기적인 리모델링 가능성을 높인다.",
+            "평가방법": "세대 내부 내력벽 및 기둥 길이비율과 원룸 인접세대 경계벽의 비내력벽 적용비율을 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                70
+              ],
+              "input_variables": [
+                {
+                  "name": "load_bearing_wall_and_column_length_inside_unit_m",
+                  "label": "세대내 내력벽 및 기둥의 길이 X",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "non_load_bearing_wall_length_inside_unit_m",
+                  "label": "세대내 비내력벽 길이 Y",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "studio_adjacent_boundary_non_load_bearing_wall_ratio",
+                  "label": "원룸 인접세대 경계벽의 비내력벽 적용 비율",
+                  "type": "number",
+                  "unit": "%"
+                },
+                {
+                  "name": "studio_boundary_wall_evaluation_applicable",
+                  "label": "원룸 인접세대 경계벽 비내력벽 적용비율 평가대상 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "load_bearing_wall_and_column_length_ratio",
+                  "label": "세대내 내력벽 및 기둥 길이비율",
+                  "formula": "load_bearing_wall_and_column_length_inside_unit_m / (load_bearing_wall_and_column_length_inside_unit_m + non_load_bearing_wall_length_inside_unit_m) * 100",
+                  "unit": "%"
+                }
+              ],
+              "length_ratio_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "세대내부 내력벽 및 기둥의 길이비율이 10% 미만인 경우",
+                  "condition": "load_bearing_wall_and_column_length_ratio < 10",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "세대내부 내력벽 및 기둥의 길이비율이 10% 이상 40% 미만인 경우",
+                  "condition": "10 <= load_bearing_wall_and_column_length_ratio < 40",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "세대내부 내력벽 및 기둥의 길이비율이 40% 이상 70% 미만인 경우",
+                  "condition": "40 <= load_bearing_wall_and_column_length_ratio < 70",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "세대내부 내력벽 및 기둥의 길이비율이 70% 이상 100% 미만인 경우",
+                  "condition": "70 <= load_bearing_wall_and_column_length_ratio < 100",
+                  "performance_grade": "★"
+                }
+              ],
+              "studio_boundary_wall_grade_rules": [
+                {
+                  "grade": "3급",
+                  "original_text": "원룸 인접세대 경계벽의 비내력벽 적용비율이 50% 이상인 경우",
+                  "condition": "studio_adjacent_boundary_non_load_bearing_wall_ratio >= 50",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "원룸 인접세대 경계벽의 비내력벽 적용비율이 50% 미만인 경우",
+                  "condition": "studio_adjacent_boundary_non_load_bearing_wall_ratio < 50",
+                  "performance_grade": "★"
+                }
+              ],
+              "grade_selection_logic": "일반 공동주택은 length_ratio_grade_rules를 적용하고, 원룸형 공동주택 등 원룸 인접세대 경계벽 평가대상은 studio_boundary_wall_grade_rules를 적용한다.",
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "세대내부 내력벽 및 기둥의 길이비율이 10% 미만인 경우",
+                  "condition": "not studio_boundary_wall_evaluation_applicable and load_bearing_wall_and_column_length_ratio < 10",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "세대내부 내력벽 및 기둥의 길이비율이 10% 이상 40% 미만인 경우",
+                  "condition": "not studio_boundary_wall_evaluation_applicable and 10 <= load_bearing_wall_and_column_length_ratio < 40",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "세대내부 내력벽 및 기둥의 길이비율이 40% 이상 70% 미만 또는 원룸 인접세대 경계벽 비내력벽 적용비율 50% 이상",
+                  "condition": "(not studio_boundary_wall_evaluation_applicable and 40 <= load_bearing_wall_and_column_length_ratio < 70) or (studio_boundary_wall_evaluation_applicable and studio_adjacent_boundary_non_load_bearing_wall_ratio >= 50)",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "세대내부 내력벽 및 기둥의 길이비율이 70% 이상 100% 미만 또는 원룸 인접세대 경계벽 비내력벽 적용비율 50% 미만",
+                  "condition": "(not studio_boundary_wall_evaluation_applicable and 70 <= load_bearing_wall_and_column_length_ratio < 100) or (studio_boundary_wall_evaluation_applicable and studio_adjacent_boundary_non_load_bearing_wall_ratio < 50)",
+                  "performance_grade": "★"
+                }
+              ]
+            },
+            "해석메모": "원룸형 공동주택 등은 원룸 인접세대 경계벽의 비내력벽 적용비율을 별도 평가표로 판단한다."
+          },
+          "참고자료": [
+            "및 제출서",
+            "주택건설기준등에 관한 규정, 국토교통부",
+            "주택건설기준등에 관한 규칙, 국토교통부",
+            "장수명 주택 건설․인증 기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "단위세대 평면도, 바닥구조평면도, 창호도(창호 일람표), 면적표,",
+              "내력벽 및 기둥의 길이비율 산정계산서, 비내력벽체 단면 상세도"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.2 가변성\n세부평가기준\n평가목적 건축물의 수명을 정량적으로 표시함은 물론, 고내구성 계획을 통하여 건축물의 수명 연장 및 이를 통한 유\n지관리비용을 저감토록 한다.\n평가방법 설계도서 및 공사시방서에 따라 평가(건물형상⋅상세, 허용균열폭, 부재의 최소단면, 철근의 피복두께, 콘크\n리트의 품질 등)\n산출기준 내력벽 및 기둥의 길이 비율(%) = (X ÷ Y × 100)\nX : 세대내부 내력벽 및 기둥의 길이\nY : 세대내부 전체벽 및 기둥의 길이\n구분 세대내부 내력벽 및 기둥의 길이 비율 성능등급\n1급 세대내부 내력벽 및 기둥의 길이비율이 10% 미만인 경우 ★★★★\n2급 세대내부 내력벽 및 기둥의 길이비율이 10% ~ 40% 미만인 경우 ★★★\n3급 세대내부 내력벽 및 기둥의 길이비율이 40% ~ 70% 미만인 경우 ★★\n4급 세대내부 내력벽 및 기둥의 길이비율이 70% ~ 100% 미만인 경우 ★\n- 내력벽 및 기둥의 길이비율 산정은 세대내부를 기준하며, 전체 세대를 대상으로 평가하여 가장 낮은 등급\n으로 인정함\n- 벽 및 기둥의 길이는 장변의 길이로 산출함\n- 원룸세대와 혼합된 일반세대의 경우, 일반세대의 내력벽 및 기둥의 비율 평가 결과와 원룸세대의 세대간\n경계벽의 비내력 비율에 따른 평가결과를 비교하여 낮은 등급을 최종등급으로 부여함\n- 원룸 인점세대 경계벽의 비내력벽 적용비율은 다음과 같이 적용함\n구분 원룸 인접세대 경계벽의 비내력벽 적용 비율 성능등급\n3급 원룸 인접세대 경계벽의 비내력벽 적용비율이 50% 이상인 경우 ★★\n4급 원룸 인접세대 경계벽의 비내력벽 적용비율이 50% 미만인 경우 ★\n참고자료 및 제출서\n참고자료 - 주택건설기준등에 관한 규정, 국토교통부\n- 주택건설기준등에 관한 규칙, 국토교통부\n- 장수명 주택 건설․인증 기준, 국토교통부\n제출서류 - 단위세대 평면도, 바닥구조평면도, 창호도(창호 일람표), 면적표,\n- 내력벽 및 기둥의 길이비율 산정계산서, 비내력벽체 단면 상세도"
+        },
+        {
+          "criterion_id": "R-8.3",
+          "출처": {
+            "페이지": 71,
+            "종료페이지": 71,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.3",
+            "명칭": "단위세대의 사회적 약자 배려",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "고령자, 장애인 및 임산부 등 사회적 약자의 신체기능 저하를 고려하여 주호 내부의 이동 용이성과 생활 안전성을 확보한다.",
+            "평가방법": "세대 내부 설계 방법 및 치수 분석을 통해 사회적 약자를 위한 평가항목 충족 개수를 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                71
+              ],
+              "input_variables": [
+                {
+                  "name": "unit_socially_vulnerable_design_item_count",
+                  "label": "단위세대 사회적 약자 배려 평가항목 충족 개수",
+                  "type": "number",
+                  "unit": "개"
+                }
+              ],
+              "evaluation_items": [
+                "출입구 유효폭 0.9m 이상",
+                "출입구 전후면에 직경 1.5m 이상의 활동공간 확보",
+                "일상생활공간의 문턱 단차 5mm 이하",
+                "발코니·세대 내 현관 오름턱·욕실 출입구 단차 10mm 이하",
+                "세대 현관문 문턱 높이 10mm 이하",
+                "욕실 내 직경 1.5m 이상 활동공간 확보",
+                "비상콜 버튼 설치",
+                "미닫이문 또는 밖여닫이문 설치",
+                "물이 묻어도 미끄럽지 않은 바닥마감재 사용 또는 KS M 3510에 의한 미끄럼저항계수 0.6 이상~0.8 이하",
+                "욕조 측면에 안전손잡이 설치",
+                "침대 측면에 직경 1.5m 이상의 활동공간 확보",
+                "10m 이상의 독립침실 확보",
+                "미끄럽지 않은 바닥마감재 사용 또는 바닥마감 처리",
+                "조작이 용이한 문의 레버식 손잡이 설치",
+                "기타 부엌·방·거실 등 전용공간 내 2개 이상의 유니버설 디자인 부품 설치"
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "활동공간의 적정성을 만족하는 설계로 총 평가항목 중 13개 이상 만족",
+                  "condition": "unit_socially_vulnerable_design_item_count >= 13",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "이동의 용이성을 만족하는 설계로 총 평가항목 중 10개 이상 13개 미만 만족",
+                  "condition": "10 <= unit_socially_vulnerable_design_item_count < 13",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "이용의 안전성을 확보한 설계로 총 평가항목 중 6개 이상 10개 미만 만족",
+                  "condition": "6 <= unit_socially_vulnerable_design_item_count < 10",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "이용의 용이성을 확보한 설계로 총 평가항목 중 3개 이상 6개 미만 만족",
+                  "condition": "3 <= unit_socially_vulnerable_design_item_count < 6",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "장애인･노인･임산부 등의 편의증진 보장에 관한 법률, 보건복지부",
+            "교통약자의 이동편의 증진법, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "창호 상세도(세대문, 모든 침실문, 특정욕실문) - 유니버설 디자인 제품 명세서",
+              "세대 출입구 상세도 - 특정 욕실 및 특정침실 바닥 마감표",
+              "특정 욕실 상세도 - 기본 설계도 등",
+              "특정 침실 단위 평면도 및 가구배치도 * 상세도 및 전개도는 유효치수로 표기할 것",
+              "KSM 3510에 의한 특정 욕실의 바닥미끄럼 저항 계수 확인 가능 서류 또는 제품 명세서",
+              "특정 침실 단위 평면도 및 가구 배치도(KSG 4300에 의거한 표준침대규격 명기)"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.3 단위세대의 사회적 약자 배려\n세부평가기준\n평가목적 고령자, 장애인 및 임산부 등 사회적 약자의 신체상 기능 저하를 고려하여 주호내부에서 이동의 용이성 및\n생활의 안전성을 확보한다.\n평가방법 - 세대 내부 설계 시 반영된 설계 방법 및 치수 분석을 통하여 고령자 등 사회적 약자를 위한 디자인 성능평가\n- 설계도면 분석을 통한 사회적 약자를 위한 디자인 설계방법의 적정성 및 적용 여부 평가\n산출기준\n구분 등급기준 성능등급\n1급 활동공간의 적정성을 만족하는 설계로, 총 평가항목 중 13개 이상 항목 만족 ★★★★\n2급 이동의 용이성을 만족하는 설계로, 총 평가항목 중 10개 이상 13개 미만 항목 만족 ★★★\n3급 이용의 안전성을 확보한 설계로, 총 평가항목 중 6개 이상 10개 미만 항목 만족 ★★\n4급 이용의 용이성을 확보한 설계로, 총 평가항목 중 1개 이상 6개 미만 항목 만족 ★\n평가대상 평가항목\n① 출입구의 유효폭 0.9m 이상(세대문, 모든 침실문, 특정욕실문)\n출입구\n② 출입구 전후면에 직경1.5m 이상 활동공간 확보(세대문, 모든 침실문, 특정욕실문)\n③ 일상생활공간(침실) 문턱 단차 5mm 이하\n단차 ④ 발코니, 세대 내 현관 오름턱, 욕실 출입구의 단차는 10mm 이하\n⑤ 세대 현관문 문턱높이 단차는 10mm 이하\n⑥ 욕실 내 직경 1.5m 이상 활동공간 확보\n⑦ 비상콜 버튼 설치\n⑧ 미닫이문 또는 밖여닫이문 설치\n특정 욕실*\n⑨ 물이 묻어도 미끄럽지 않은 바닥마감재 사용 또는 바닥마감 처리(KSM 3510에 의한\n미끄럼저항계수 0.6 이상~0.8 이하)\n⑩ 욕조 측면에 안전손잡이 설치\n⑪ 침대 측면에 직경 1.5m 이상의 활동 공간 확보\n특정 침실* ⑫ 10㎡ 이상의 특정침실 확보\n⑬ 미끄럽지 않은 바닥마감재 사용 또는 바닥마감 처리\n유니버설 디자인 ⑭ 조작이 용이한 문의 레버식 손잡이 설치\n부품 ⑮ 기타 부엌･방･거실 등 전용공간 내 2개 이상의 유니버설 디자인 부품 설치\n* 특정욕실 및 특정침실이라 함은 사회적 약자가 사용가능한 전용 욕실 및 침실을 의미함\n참고자료 및 제출서류\n참고자료 - 장애인･노인･임산부 등의 편의증진 보장에 관한 법률, 보건복지부\n- 교통약자의 이동편의 증진법, 국토교통부\n제출서류 - 창호 상세도(세대문, 모든 침실문, 특정욕실문) - 유니버설 디자인 제품 명세서\n- 세대 출입구 상세도 - 특정 욕실 및 특정침실 바닥 마감표\n- 특정 욕실 상세도 - 기본 설계도 등\n- 특정 침실 단위 평면도 및 가구배치도 * 상세도 및 전개도는 유효치수로 표기할 것\n- KSM 3510에 의한 특정 욕실의 바닥미끄럼 저항 계수 확인 가능 서류 또는 제품 명세서\n- 특정 침실 단위 평면도 및 가구 배치도(KSG 4300에 의거한 표준침대규격 명기)"
+        },
+        {
+          "criterion_id": "R-8.4",
+          "출처": {
+            "페이지": 72,
+            "종료페이지": 72,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.4",
+            "명칭": "공용공간의 사회적 약자 배려",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "고령자, 장애인 및 임산부 등 사회적 약자의 신체기능 저하를 고려하여 주동 내 공용공간의 이동 용이성과 생활 안전성을 확보한다.",
+            "평가방법": "공용공간 설계 방법 및 치수 분석을 통해 사회적 약자를 고려한 평가항목 충족 개수를 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                72
+              ],
+              "input_variables": [
+                {
+                  "name": "common_space_socially_vulnerable_design_item_count",
+                  "label": "공용공간 사회적 약자 배려 평가항목 충족 개수",
+                  "type": "number",
+                  "unit": "개"
+                }
+              ],
+              "evaluation_items": [
+                "주출입구 경사로 유효폭 1.5m 이상",
+                "주출입구 경사로 기울기 1/18 이하",
+                "주출입구 경사로 설치 또는 바닥마감재 사용 또는 바닥마감 처리",
+                "주출입문 유효폭 1.2m 이상",
+                "주출입문 출입구 전후면에 직경 1.5m 이상의 활동공간 확보",
+                "주출입문 건축물 출입구 내외에는 단차가 없는 구조",
+                "승강기 전면에 직경 1.5m 이상의 활동공간 확보",
+                "승강기 출입구 유효폭 0.9m 이상",
+                "승강기 유효바닥면적 폭 1.6m, 깊이 1.5m 이상",
+                "공용계단 챌판 및 줄눈 높이 15mm 이상 또는 설치 시 1.2m 이상",
+                "공용복도 유효폭 1.5m 이상",
+                "공용복도 복도에 미끄럽지 않은 바닥마감재 사용 또는 바닥마감 처리"
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "전체 평가항목 중 11개 이상 항목 만족",
+                  "condition": "common_space_socially_vulnerable_design_item_count >= 11",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "전체 평가항목 중 9개 이상 11개 미만 항목 만족",
+                  "condition": "9 <= common_space_socially_vulnerable_design_item_count < 11",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "전체 평가항목 중 6개 이상 9개 미만 항목 만족",
+                  "condition": "6 <= common_space_socially_vulnerable_design_item_count < 9",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "전체 평가항목 중 1개 이상 6개 미만 항목 만족",
+                  "condition": "1 <= common_space_socially_vulnerable_design_item_count < 6",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "장애인･노인･임산부 등의 편의증진 보장에 관한 법률, 보건복지부",
+            "교통약자의 이동편의 증진법, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "건물 주출입문 상세도 - 1층 및 기준층 평면도",
+              "코아 상세도(복도, 계단, 승강기) - 경사로 바닥마감 계획서",
+              "KSM 3510에 의한 복도의 바닥미끄럼 저항 계수 확인 가능 서류 또는 제품 명세서",
+              "* 상세도는 유효치수로 표기할 것"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.4 공용공간의 사회적 약자 배려\n세부평가기준\n평가목적 고령자, 장애인 및 임산부 등 사회적 약자의 신체상 기능 저하를 고려하여 주동 내 공용공간에서 이동의 용\n이성 및 생활의 안전성을 확보한다.\n평가방법 - 공용공간 설계 시 반영된 설계 방법 및 치수 분석을 통하여 사회적 약자를 고려한 디자인 성능평가\n- 설계도면 분석을 통하여 사회적 약자를 고려한 디자인 설계방법의 적정성 및 적용 여부 평가\n산출기준 구분 등급기준 성능등급\n1급 전체 평가항목 중 11개 이상 항목 이상 만족하는 경우 ★★★★\n2급 전체 평가항목 중 9개 이상 11개미만 항목 만족하는 경우 ★★★\n3급 전체 평가항목 중 6개 이상 9개미만 항목 만족하는 경우 ★★\n4급 전체 평가항목 중 1개 이상 6개미만 항목 만족하는 경우 ★\n평가대상 평가항목\n① 경사로 유효폭 1.5m 이상\n주출입구\n② 경사로 기울기 1/18 이하\n경사로*\n③ 경사로에 미끄럽지 않은 바닥마감재 사용 또는 바닥마감처리\n④ 유효폭 1.2m 이상\n주출입문** ⑤ 출입구 전후면에 직경 1.5m 이상 활동공간 확보\n⑥ 건축물 출입구 내외에는 단차가 없는 구조\n⑦ 전면에 직경 1.5m 이상의 활동공간 확보\n승강기 ⑧ 출입구 유효폭 0.9m 이상\n⑨ 유효면적은 폭 1.6m, 깊이 1.5m 이상\n공용계단*** ⑩ 계단 및 참의 유효폭 1.5m 이상(승강기 설치 시 1.2m 이상)\n⑪ 유효폭 1.5m 이상\n공용복도**** ⑫ 복도에 미끄럽지 않은 바닥 마감재 사용 또는 바닥마감처리\n(KSM 3510규정에 의한 미끄럼저항계수 0.4이상 0.9이하)\n* 경사로 없이 직접 진입이 가능한 주출입구는 ①, ②, ③항목을 모두 만족 시킨 것으로 간주함.\n** 장애인전용주차구역이 지하에 설치된 경우 지하층 관련 전부문평가\n*** 승강기 설치로 계단 및 참의 유효폭을 완화받기 위해서는 승강기의 유효면적기준을 만족시켜야 함.\n**** 공용복도라 함은 2세대 이상이 공동으로 사용하는 복도를 의미함.\n참고자료 및 제출서류\n참고자료 - 장애인･노인･임산부 등의 편의증진 보장에 관한 법률, 보건복지부\n- 교통약자의 이동편의 증진법, 국토교통부\n제출서류 - 건물 주출입문 상세도 - 1층 및 기준층 평면도\n- 코아 상세도(복도, 계단, 승강기) - 경사로 바닥마감 계획서\n- KSM 3510에 의한 복도의 바닥미끄럼 저항 계수 확인 가능 서류 또는 제품 명세서\n* 상세도는 유효치수로 표기할 것"
+        },
+        {
+          "criterion_id": "R-8.5",
+          "출처": {
+            "페이지": 73,
+            "종료페이지": 73,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.5",
+            "명칭": "커뮤니티 센터 및 시설공간의 조성수준",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "주거단지 내 커뮤니티 형성을 도모하는 공간 및 시설계획을 통해 사회적 지속성을 높인다.",
+            "평가방법": "주민공동시설 법정기준면적 대비 계획면적 배수와 커뮤니티 센터 또는 커뮤니티 공간 조성 여부를 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                73
+              ],
+              "input_variables": [
+                {
+                  "name": "legal_required_resident_communal_facility_area_m2",
+                  "label": "주민공동시설 법정기준면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "planned_resident_communal_facility_area_m2",
+                  "label": "계획 주민공동시설 면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "community_center_planned",
+                  "label": "커뮤니티 센터 계획 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "community_space_planned",
+                  "label": "커뮤니티 공간 계획 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "resident_communal_facility_area_ratio_to_legal",
+                  "label": "주민공동시설 법정기준면적 대비 계획면적 배수",
+                  "formula": "planned_resident_communal_facility_area_m2 / legal_required_resident_communal_facility_area_m2"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "주민공동시설을 법정기준면적의 1.20배 이상 설치하고 커뮤니티 공간 + 커뮤니티 센터를 계획한 경우",
+                  "condition": "resident_communal_facility_area_ratio_to_legal >= 1.20 and community_space_planned and community_center_planned",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "주민공동시설을 법정기준면적의 1.10배 이상 설치하고 커뮤니티 공간을 계획한 경우",
+                  "condition": "resident_communal_facility_area_ratio_to_legal >= 1.10 and community_space_planned",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "주민공동시설을 법정기준면적의 1.05배 이상 설치한 경우",
+                  "condition": "resident_communal_facility_area_ratio_to_legal >= 1.05",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "주민공동시설을 법정기준 면적으로 설치한 경우",
+                  "condition": "resident_communal_facility_area_ratio_to_legal >= 1.00",
+                  "performance_grade": "★"
+                }
+              ],
+              "area_notes": [
+                "커뮤니티 공간면적 최소 0.3m2 이상",
+                "단지세대가 300세대 이하인 경우 0.15m2/세대 이상 또는 최소 50m2 이상 적용",
+                "세대수가 500세대까지는 1m2/세대, 500세대 초과분은 0.5m2/세대 적용"
+              ]
+            }
+          },
+          "참고자료": [
+            "주택건설기준 등에 관한 규칙, 국토교통부",
+            "주택건설기준 등에 관한 규정, 국토교통부",
+            "주민공동시설 설치 총량제 운영 가이드라인, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "단지계획도 및 설계개요",
+              "커뮤니티 센터 또는 공간 계획 관련도면",
+              "주민공동시설 관련 도서"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.5 커뮤니티 센터 및 시설공간의 조성수준\n세부평가기준\n평가목적 주거단지 내 커뮤니티 형성을 도모하는 공간 및 시설계획은 주거단지의 사회적 지속성을 높여주는 중요한\n계획요소이다. 따라서 커뮤니티 센터 또는 커뮤니티 공간의 계획여부를 통해서 주거단지의 커뮤니티 증진을\n위한 노력을 평가한다.\n평가방법 단지 내 일정수준 이상의 커뮤니티 센터나 커뮤니티 공간의 조성 여부\n산출기준 구분 커뮤니티 센터 및 시설･공간계획 여부 성능등급\n주민공동시설을 법적기준면적의 1.20배 이상 설치+ 커뮤니티 공간 + 커뮤니티 센터\n1급 ★★★★\n를 계획한 경우\n2급 주민공동시설을 법적기준면적의 1.10배 이상 설치+ 커뮤니티 공간을 계획한 경우 ★★★\n3급 주민공동시설을 법적기준면적의 1.05배 이상 설치 ★★\n4급 주민공동시설을 법적기준 면적으로 설치 ★\n- 커뮤니티 공간면적 : 세대 당 0.3㎡ 이상,\n단, 전체세대가 국민주택규모(전용85㎡)이하는 0.15㎡/세대 이상\n: 최소 50㎡이상, 최대 400㎡ (계산상 400㎡이상일 경우에는 400㎡로 인정)\n- 커뮤니티 공간은 근린교제가 가능한 오픈공간으로서, 단지 내 중앙광장, 노천극장, 테마광장 등이 포함됨\n- 커뮤니티 센터라 함은 단지 내 주민들이 모여서 커뮤니티 활동을 할 수 있도록 법정시설 외에 별도로 조\n성된 건축공간으로서, 독립된 출입구를 확보하여야 함\n- 커뮤니티 센터의 최소면적은 500세대까지는 1㎡/세대, 500세대를 초과하는 세대에 대해서는 0.5㎡/세대\n일 것, 단, 전체가 국민주택규모(전용85㎡이하)의 경우 0.5㎡/세대로 함\n- 주민공동시설이란 주택의 거주자가 공동으로 사용하거나, 거주자의 생활을 지원하는 시설로 주택건설기준\n등에 관한 규정에서 정하는 경로당, 어린이놀이터, 어린이집, 주민운동시설 등을 의미함\n참고자료 및 제출서류\n참고자료 - 주택건설기준 등에 관한 규칙, 국토교통부\n- 주택건설기준 등에 관한 규정, 국토교통부\n- 주민공동시설 설치 총량제 운영 가이드라인, 국토교통부\n제출서류 - 단지계획도 및 설계개요\n- 커뮤니티 센터 또는 공간 계획 관련도면\n- 주민공동시설 관련 도서"
+        },
+        {
+          "criterion_id": "R-8.6",
+          "출처": {
+            "페이지": 74,
+            "종료페이지": 74,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.6",
+            "명칭": "세대 내 일조 확보율",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "일조는 인간이 외부환경에 차단되지 않고 태양의 직사광선을 받아 쾌적하게 생활할 수 있는 확보 조건이므로 세대 내 생활공간의 일조 접근성을 평가한다.",
+            "평가방법": "설계도서의 방위별 창면적·유효개구율·방위별 가중치를 이용하여 채광률을 산정하고 등급을 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                74
+              ],
+              "input_variables": [
+                {
+                  "name": "orientation_opening_items",
+                  "label": "방위별 개구부 목록",
+                  "type": "array",
+                  "item_schema": {
+                    "orientation": "string",
+                    "opening_ratio_or_length": "number",
+                    "orientation_weight": "number",
+                    "effective_opening_ratio": "number"
+                  }
+                },
+                {
+                  "name": "average_unit_frontage_width_m",
+                  "label": "세대평균 전면폭 또는 정규화 기준 길이",
+                  "type": "number",
+                  "unit": "m"
+                }
+              ],
+              "orientation_weight_table": [
+                {
+                  "orientation": "남향 또는 남동향",
+                  "weight_rule": "대향동 인동간비 또는 남향 기준 가중치 1.0"
+                },
+                {
+                  "orientation": "남서향 또는 남동향",
+                  "weight_rule": "대향동 인동간비에 0.81 적용"
+                },
+                {
+                  "orientation": "동향 또는 서향",
+                  "weight_rule": "대향동 인동간비에 0.66 적용"
+                },
+                {
+                  "orientation": "북동향 또는 북서향",
+                  "weight_rule": "대향동 인동간비에 0.53 적용"
+                },
+                {
+                  "orientation": "북향",
+                  "weight_rule": "대향동 인동간비에 0.46 적용"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "daylight_availability_ratio",
+                  "label": "세대 내 일조 확보율 V",
+                  "formula": "sum(opening_ratio_or_length * orientation_weight * effective_opening_ratio for each orientation_opening_item) / average_unit_frontage_width_m"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "채광률 0.9 이상인 경우",
+                  "condition": "daylight_availability_ratio >= 0.9",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "채광률 0.7 이상 0.9 미만인 경우",
+                  "condition": "0.7 <= daylight_availability_ratio < 0.9",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "채광률 0.5 이상 0.7 미만인 경우",
+                  "condition": "0.5 <= daylight_availability_ratio < 0.7",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "채광률 0.5 미만인 경우",
+                  "condition": "daylight_availability_ratio < 0.5",
+                  "performance_grade": "★"
+                }
+              ]
+            },
+            "해석메모": "이미지 산출식의 방위별 가중치는 대향동 인동간비 또는 전면 방위 조건에 곱하는 별도 계수로 분리했다."
+          },
+          "참고자료": [
+            "건축법, 시행령, 국토교통부",
+            "건축물의 피난,방화구조 등의 기준에 관한 규칙, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "채광창 면적 비율및 인동간격에 따른 방위별 가중치를 계산하여 최종등급 산출",
+              "창호상세도, 인동거리 배치도, 채광율 산출계산서"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.6 세대 내 일조 확보율\n세부평가기준\n평가목적 일조는 인간이 외부적 환경에 차단을 당하지 않고 태양의 직사광선을 받아들여 쾌적하게 생활할 수 있는 헌\n법에 규정된 권리(환경권)의 하나이다. 본 항에서는 합리적인 단지배치계획을 통해 세대 내 생활공간의 직사\n광선에 대한 접근성의 정도를 평가하는데 목적이 있다.\n평가방법 설계도서 및 시방서 검토를 통하여 채광창 면적 비율 및 인동간격에 따른 방위별 가중치를 계산하여 최종\n등급 산출\n산출기준 채광률 = Σ(방위별 개구비 × 방위별 가중치 × 유효개구율)\n유효개구율 = (단순개구율+3/세대평균전용면적)/2+0.135\n방위별 개구비 = 각 방위별 채광창 면적 / 전체 채광창 면적\n단순개구율 = 전체 채광창 면적 / 전체 전용면적\n구분 대지 내 일조확보율(V) 성능등급\n1급 채광률 0.9 이상인 경우 ★★★★\n2급 채광률 0.7이상～0.9미만인 경우 ★★★\n3급 채광률 0.5이상～0.7미만인 경우 ★★\n4급 채광률 0.5미만인 경우 ★\n- 방위별 가중치는 아래와 같음\n· 남향의 경우 = 대향동 인동간격비+방위별 인동간격비\n· 남서향 및 남동향의 경우= 대향동 인동간격비+방위별 인동간격비×0.81\n· 동향 및 서향의 경우 = 대향동 인동간격비+방위별 인동간격비×0.66\n· 북동향 및 북서향의 경우= 대향동 인동간격비+방위별 인동간격비×0.53\n· 북향의 경우 = 대향동 인동간격비+방위별 인동간격비×0.46\n- 인동간격비는 전면부에 위치한 대향동과의 이격거리/대향동의 높이임\n참고자료 및 제출서류\n참고자료 - 건축법, 시행령, 국토교통부\n- 건축물의 피난,방화구조 등의 기준에 관한 규칙, 국토교통부\n제출서류 - 채광창 면적 비율및 인동간격에 따른 방위별 가중치를 계산하여 최종등급 산출\n- 창호상세도, 인동거리 배치도, 채광율 산출계산서"
+        },
+        {
+          "criterion_id": "R-8.7",
+          "출처": {
+            "페이지": 75,
+            "종료페이지": 76,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.7",
+            "명칭": "홈네트워크 및 스마트홈",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "홈네트워크 중심의 성능환경을 입주자에게 제공하여 안전·편리·건강·에너지 삶을 향상시키고 국가 스마트홈 기술 및 산업발전에 기여한다.",
+            "평가방법": "홈네트워크 인프라부문, 세대부문, 공용부문의 성능 항목 설치 여부를 합산하고 기본항목 2개 이상 포함 여부를 확인한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                75,
+                76
+              ],
+              "input_variables": [
+                {
+                  "name": "home_network_installed_item_count",
+                  "label": "홈네트워크 및 스마트홈 성능확보 항목 설치 개수",
+                  "type": "number",
+                  "unit": "개"
+                },
+                {
+                  "name": "home_network_basic_item_count",
+                  "label": "기본항목 설치 개수",
+                  "type": "number",
+                  "unit": "개"
+                }
+              ],
+              "basic_item_requirement": "기본항목은 2개 이상 포함되어야 한다.",
+              "evaluation_items": {
+                "인프라 부문": [
+                  "세대 및 공용 부문의 제어 및 연동을 위한 세대단말기 설치",
+                  "세대 내 유선 AP 설치",
+                  "세대 내 IoT 허브 설치"
+                ],
+                "세대부문_안전한 삶": [
+                  "세대단말기와 스마트홈 애플리케이션에 연동된 현관 도어 카메라 설치",
+                  "세대단말기와 스마트홈 애플리케이션에 연동된 실내 방범센서 설치",
+                  "세대단말기와 스마트홈 애플리케이션에 연동된 세대 동체감지 설치",
+                  "관리서버와 연동된 외부침입 감지센서 설치",
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 주방의 가스 또는 전기 차단 장치 설치",
+                  "세대단말기와 관리서버가 연동된 욕실 비상호출기 설치",
+                  "정전 시 비상전원 장치 설치"
+                ],
+                "세대부문_편리한 삶": [
+                  "세대단말기와 연동된 대기전력 자동제어 스위치 설치",
+                  "세대단말기와 연동된 주방TV 설치",
+                  "세대단말기와 연동된 주방 방송 통신 디지털 도어락 설치",
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 학습 및 에측제어 센서 설치",
+                  "세대단말기와 연동된 음성 인식 장치 설치"
+                ],
+                "세대부문_건강한 삶": [
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 환경감지기 설치",
+                  "조도, 습도, 동작 등 센서가 적용된 지능형 욕실 및 설치",
+                  "세대단말기와 연동된 층간소음 경보장치 설치",
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 세대 에너지 사용량 원격검침 설치"
+                ],
+                "세대부문_재에너지 삶": [
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 조명 원격 On/Off 제어기, 일괄소등 스위치 설치",
+                  "세대단말기와 연동된 조명 디밍 제어 스위치 설치",
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 난방 제어 설치",
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 냉방 제어 설치"
+                ],
+                "공용부문_안전한 삶": [
+                  "세대단말기와 관리서버가 연동된 주동 현관통제기 설치",
+                  "세대단말기와 관리서버가 연동된 차량 통제기 설치",
+                  "관리서버와 연동된 지하주차장 비상벨 통화 장치 설치",
+                  "관리서버와 연동된 스마트키 원패스 시스템 설치",
+                  "관리서버와 연동된 열주차 위치인식 센서 설치",
+                  "관리서버와 연동된 승강기 내 범죄 예방장치 설치"
+                ],
+                "공용부문_편리한 삶": [
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 커뮤니티센터 시설 예약시스템 설치",
+                  "차량유도표시등 및 주차가능 대수 표시등 설치",
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 주차위치인식 시스템 설치",
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 무인택배함 설치"
+                ],
+                "공용부문_건강한 삶": [
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 단지 공기질 측정기 설치"
+                ],
+                "공용부문_재에너지 삶": [
+                  "지하주차장 LED 조도 제어장치 설치",
+                  "세대단말기와 스마트홈 애플리케이션과 연동된 전기차 충전시스템 설치",
+                  "관리서버와 연동된 에너지저장시스템 설치"
+                ]
+              },
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "홈네트워크 및 스마트홈 성능확보 항목 30개 이상",
+                  "condition": "home_network_basic_item_count >= 2 and home_network_installed_item_count >= 30",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "홈네트워크 및 스마트홈 성능확보 항목 20개 이상 30개 미만",
+                  "condition": "home_network_basic_item_count >= 2 and 20 <= home_network_installed_item_count < 30",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "홈네트워크 및 스마트홈 성능확보 항목 10개 이상 20개 미만",
+                  "condition": "home_network_basic_item_count >= 2 and 10 <= home_network_installed_item_count < 20",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "홈네트워크 및 스마트홈 성능확보 항목 2개 이상 10개 미만",
+                  "condition": "home_network_basic_item_count >= 2 and 2 <= home_network_installed_item_count < 10",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "지능형 홈네트워크 설비설치 및 기술기준, 국토교통부, 산업통상자원부, 미래창조과학부 공동고시",
+            "초고속정보통신건물 인증업무 처리지침. 미래창조과학부",
+            "방송통신설비의 기술기준에 관한 규정. 미래창조과학부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "단지망・세대망 구성도, 전기통신 설계도・상세도, 구조도, 시방서, 홈IoT 기기 설치도, 주동 및 지하주차",
+              "장 평면도, 관리동 평면도, 단지네트워크센터 평면도, 단지배치도, 단지공용시스템 구성도 및 상세도, 전",
+              "기통신상세도, 시공계획서 등 평가항목의 적용 여부를 확인 할 수 있는 자료"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.7 홈네트워크 및 스마트홈\n세부평가기준\n평가목적 홈네트워크 종합시스템 성능환경을 입주자에게 제공함으로써 국민의 안전·편리·건강·저에너지 삶을 향상시\n키고, 국가의 스마트홈 기술 및 산업발전에 기여하고자 한다.\n평가방법 홈네트워크 종합시스템 인프라부문, 세대부문, 공용부문의 성능에 대해 설계도서 및 계통도 등에 따라 평가\n산출기준 구분 홈네트워크 및 스마트홈 성능확보 성능등급\n1급 30개 이상 ★★★★\n2급 20개 이상 30개 미만 ★★★\n3급 10개 이상 20개 미만 ★★\n4급 2개 이상 10개 미만 ★\n평가대상 평가항목 기본항목\n① 세대 및 공용 부문의 제어 및 연동을 위한 세대단말기 설치 ●\n인프라 부문 ② 세대 내 무선 AP 설치\n③ 세대 내 IoT 허브 설치\n① 세대단말기와 스마트홈 애플리케이션과 연동된 현관 도어 카메라 설치 ●\n② 세대단말기와 스마트홈 애플리케이션과 연동된 현관 방범센서 설치\n③ 세대단말기와 스마트홈 애플리케이션과 연동된 세대 동체감지기 설치\n④ 관리서버와 연동된 외부침입 감지센서 설치\n안전한 삶\n⑤ 세대단말기와 스마트홈 애플리케이션과 연동된 주방의 가스 또는 전기\n차단 장치 설치\n⑥ 세대단말기와 관리서버가 연동된 욕실 비상호출기 설치\n⑦ 정전 시 비상전원 장치 설치\n① 세대단말기와 연동된 다기능 스마트 스위치 설치\n② 세대단말기와 연동된 주차위치 및 날씨정보 스마트 스위치 설치\n③ 세대단말기와 연동된 주방TV 설치\n편리한 삶 ④ 세대 단말기와 양방향 연동된 양방향 통신 디지털 도어락 설치\n세대\n⑤ 세대단말기와 스마트홈 애플리케이션과 연동된 학습 및 예측제어 센서\n부문\n설치\n⑥ 세대단말기와 연동된 음성 인식 장치 설치\n① 세대단말기와 스마트홈 애플리케이션과 연동된 환경감지기 설치\n건강한 삶 ② 조도, 습도, 동작 등 센서가 적용된 지능형 욕실 팬 설치\n③ 세대단말기와 연동된 층간소음 경보장치 설치\n① 세대단말기와 스마트홈 애플리케이션과 연동된 세대 에너지 사용량\n●\n원격검침 설치\n② 세대단말기와 스마트홈 애플리케이션과 연동된 조명 원격 On/Off\n제어기, 일괄소등 스위치 설치\n저에너지 삶\n③ 세대단말기와 연동된 조명 디밍 제어 스위치 설치\n④ 세대단말기와 스마트홈 애플리케이션과 연동된 난방 제어 설치\n⑤ 세대단말기와 스마트홈 애플리케이션과 연동된 냉방 제어 설치\n평가대상 평가항목 기본항목\n① 세대단말기와 관리서버가 연동된 주동 현관통제기 설치 ●\n② 세대단말기와 관리서버가 연동된 차량 통제기 설치 ●\n③ 관리서버와 연동된 지하주차장 비상벨 통화 장치 설치 ●\n안전한 삶\n④ 관리서버와 연동된 스마트키 원패스 시스템 설치\n⑤ 관리서버와 연동된 입주자 위치인식 센서 설치\n⑥ 관리서버와 연동된 승강기 내 범죄 예방장치 설치\n① 세대단말기와 스마트홈 애플리케이션과 연동된 커뮤니티센터 시설\n공용 예약시스템 설치\n부문 ② 차량유도표시등 및 주차가능 대수 표시등 설치\n편리한 삶\n③ 세대단말기와 스마트홈 애플리케이션과 연동된 주차위치인식 시스템\n설치\n④ 세대단말기와 스마트홈 애플리케이션과 연동된 무인택배함 설치\n건강한 삶 ① 세대단말기와 스마트홈 애플리케이션과 연동된 단지 공기질 측정기 설치\n① 지하주차장 LED 조도 제어장치 설치 ●\n저에너지 삶 ② 세대단말기와 스마트홈 애플리케이션과 연동된 전기차 충전시스템 설치\n③ 관리서버와 연동된 에너지저장시스템 설치\n- 기본항목은 2개 이상 포함하여야 함\n참고자료 및 제출서류\n참고자료 - 지능형 홈네트워크 설비설치 및 기술기준, 국토교통부, 산업통상자원부, 미래창조과학부 공동고시\n- 초고속정보통신건물 인증업무 처리지침. 미래창조과학부\n- 방송통신설비의 기술기준에 관한 규정. 미래창조과학부\n제출서류 - 단지망・세대망 구성도, 전기통신 설계도・상세도, 구조도, 시방서, 홈IoT 기기 설치도, 주동 및 지하주차\n장 평면도, 관리동 평면도, 단지네트워크센터 평면도, 단지배치도, 단지공용시스템 구성도 및 상세도, 전\n기통신상세도, 시공계획서 등 평가항목의 적용 여부를 확인 할 수 있는 자료"
+        },
+        {
+          "criterion_id": "R-8.8",
+          "출처": {
+            "페이지": 77,
+            "종료페이지": 77,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.8",
+            "명칭": "방범안전 콘텐츠",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "방범안전 설비 설치를 통해 거주자의 안전성 및 쾌적성을 향상한다.",
+            "평가방법": "세대와 단지에 방범안전 설비를 설치하여 위급상황 알림과 외부인의 출입통제·출입정보 제공 성능을 단계적으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                77
+              ],
+              "input_variables": [
+                {
+                  "name": "household_terminal_emergency_alarm_available",
+                  "label": "세대 단말기 비상경보 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "household_status_video_check_available",
+                  "label": "세대내 상태 영상확인 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "mobile_phone_auto_notification_available",
+                  "label": "휴대폰 자동통보 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "security_office_auto_notification_available",
+                  "label": "세대단말기·관리소 또는 경비실 자동통보 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "household_entrance_visitor_video_check_available",
+                  "label": "세대현관 방문자 영상확인 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "common_entrance_visitor_video_check_available",
+                  "label": "공동현관 방문자 영상확인 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "missed_visitor_recording_available",
+                  "label": "부재중 방문자 녹화 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "visitor_vehicle_notification_available",
+                  "label": "방문차량통보 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "resident_vehicle_parking_location_check_available",
+                  "label": "거주자 차량 주차위치 확인 기능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "vehicle_exit_location_or_elevator_call_or_biometric_feature_available",
+                  "label": "출차위치·승강위치·외부인식 관련 기능 중 1개 이상 적용 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "emergency_alert_grade_4_condition",
+                  "formula": "household_terminal_emergency_alarm_available"
+                },
+                {
+                  "name": "emergency_alert_grade_3_condition",
+                  "formula": "emergency_alert_grade_4_condition and security_office_auto_notification_available"
+                },
+                {
+                  "name": "emergency_alert_grade_2_condition",
+                  "formula": "emergency_alert_grade_3_condition and mobile_phone_auto_notification_available"
+                },
+                {
+                  "name": "emergency_alert_grade_1_condition",
+                  "formula": "emergency_alert_grade_2_condition and household_status_video_check_available"
+                },
+                {
+                  "name": "external_access_information_grade_4_condition",
+                  "formula": "household_entrance_visitor_video_check_available"
+                },
+                {
+                  "name": "external_access_information_grade_3_condition",
+                  "formula": "external_access_information_grade_4_condition and common_entrance_visitor_video_check_available and missed_visitor_recording_available"
+                },
+                {
+                  "name": "external_access_information_grade_2_condition",
+                  "formula": "external_access_information_grade_3_condition and visitor_vehicle_notification_available"
+                },
+                {
+                  "name": "external_access_information_grade_1_condition",
+                  "formula": "external_access_information_grade_2_condition and resident_vehicle_parking_location_check_available and vehicle_exit_location_or_elevator_call_or_biometric_feature_available"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "비상사태 알림 2급 + 세대내 상태 영상확인, 외부인 출입통제 2급 + 거주자 차량 주차위치 확인 및 출차위치·승강위치·외부인식 관련 기능 중 1개 이상 적용",
+                  "condition": "emergency_alert_grade_1_condition and external_access_information_grade_1_condition",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "비상사태 알림 3급 + 휴대폰 자동통보, 외부인 출입통제 3급 + 방문차량통보",
+                  "condition": "emergency_alert_grade_2_condition and external_access_information_grade_2_condition",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "비상사태 알림 4급 + 세대단말기·관리소 자동통보, 외부인 출입통제 4급 + 공동현관 방문자 영상확인 및 부재중 방문자 녹화",
+                  "condition": "emergency_alert_grade_3_condition and external_access_information_grade_3_condition",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "세대 단말기 비상경보 및 세대현관 방문자 영상확인",
+                  "condition": "emergency_alert_grade_4_condition and external_access_information_grade_4_condition",
+                  "performance_grade": "★"
+                }
+              ]
+            },
+            "해석메모": "이미지 표가 비상사태 알림과 외부인 출입통제/정보 제공을 나란히 제시하므로 두 축을 모두 만족하는 방식으로 모델링했다."
+          },
+          "참고자료": [],
+          "제출서류": {
+            "예비인증": [
+              "설계도면․시방서, 관련 기기․설비 설치도면, 방범안전관리센터(또는 방재실) 설치도면"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.8 방범안전 콘텐츠\n세부평가기준\n평가목적 방범안전 설비 설치를 통해 거주자들의 안전성, 쾌적성 등을 향상시키고자 한다.\n평가방법 세대와 단지에 방범안전 관련 설비․기기를 설치하고 이를 통해 위급상황이나 외부인의 출입통제․정보 등을\n거주자에게 알려주어 방범안전 성능을 제고시키는 방식에 대하여 평가\n산출기준 구분 비상사태 알림 (가스누출, 침입자발생) 외부인 출입통제 성능등급\n2급 + 거주자 차량 주차위치 확인,\n1급 2급 + 세대내 상태 영상확인 (홈뷰어 등) 홍체인식·음성인식·지문인식·얼굴인식 중 ★★★★\n1개 이상 적용\n2급 3급 + 휴대폰 자동통보 3급 + 방문차량통보 ★★★\n4급 + 주동 방문자 영상확인, 부재중 방\n3급 4급 + 세대단말기․관리소(경비실) 자동통보 ★★\n문자 녹화\n4급 세대 단말기 비상경보* 세대현관 방문자 영상확인 ★\n* 세대 단말기 비상경보는 세대 내에 설치된 비디오폰 또는 월패드의 비상버튼기능 조작 시 세대 단말기\n및 관리소(경비실 포함)에 경보를 발하는 것을 말함\n- 방범안전 콘텐츠: 세대와 단지에 방범안전 관련 설비․기기를 설치하고 이를 통해 위급상황이나 외부인의\n출입통제․정보 등을 거주자에게 알려주어 방범안전 성능을 제고시키는 방식\n참고자료 및 제출서류\n참고자료\n제출서류 - 설계도면․시방서, 관련 기기․설비 설치도면, 방범안전관리센터(또는 방재실) 설치도면"
+        },
+        {
+          "criterion_id": "R-8.9",
+          "출처": {
+            "페이지": 78,
+            "종료페이지": 78,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.9",
+            "명칭": "감지 및 경보설비",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "화재발생에 대한 감지 및 경보설비 설치수준을 평가함으로써 화재에 안전한 성능확보를 목적으로 한다.",
+            "평가방법": "화재감지 및 경보설비의 설치수준에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                78
+              ],
+              "input_variables": [
+                {
+                  "name": "heat_detector_installed",
+                  "label": "열감지기 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "smoke_detector_installed",
+                  "label": "연기감지기 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "alarm_bell_installed",
+                  "label": "경보벨 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "emergency_broadcasting_system_installed",
+                  "label": "비상방송설비 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "analog_fire_detector_installed",
+                  "label": "아날로그 감지기 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "strobe_installed",
+                  "label": "스트로보스코프 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "communication_fire_detector_installed",
+                  "label": "통신식 화재감지설비 설치 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "basic_detector_and_alarm_condition",
+                  "formula": "heat_detector_installed and smoke_detector_installed and alarm_bell_installed"
+                },
+                {
+                  "name": "grade_4_detection_alarm_condition",
+                  "formula": "basic_detector_and_alarm_condition"
+                },
+                {
+                  "name": "grade_3_detection_alarm_condition",
+                  "formula": "grade_4_detection_alarm_condition and analog_fire_detector_installed"
+                },
+                {
+                  "name": "grade_2_detection_alarm_condition",
+                  "formula": "grade_3_detection_alarm_condition and emergency_broadcasting_system_installed"
+                },
+                {
+                  "name": "grade_1_detection_alarm_condition",
+                  "formula": "grade_2_detection_alarm_condition and strobe_installed and communication_fire_detector_installed"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "2급 + 방재실 또는 동방상계실에 및 콘트롤데스크가 설치되고, 통신식 설비와 2중 이중배선으로 설치된 경우",
+                  "condition": "grade_1_detection_alarm_condition",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "3급 + 방재실 내 통합방재설비가 설치된 경우",
+                  "condition": "grade_2_detection_alarm_condition",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "4급 + 아날로그 감지기를 설치한 경우",
+                  "condition": "grade_3_detection_alarm_condition",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "법규에 따른 감지, 경보 및 소실 설비를 설치한 경우",
+                  "condition": "grade_4_detection_alarm_condition",
+                  "performance_grade": "★"
+                }
+              ],
+              "notes": [
+                "아날로그 감지기는 주위 온도 또는 연기량 변화에 따라 감지하여 작동 위치 확인이 가능한 감지기를 말한다.",
+                "방재실은 수신기·감시제어반 등을 별도 실로 구현한 곳이다.",
+                "통합방재설비는 소방관련 시설을 효율적으로 관리하기 위해 평상시 소방방재시설 작동상황을 종합 감시하고 화재 시 신속히 상황전파가 가능한 시스템을 말한다.",
+                "통신식 배선은 병렬 루프 또는 루프형 회로를 구성하여 단선 시에도 정상 전달이 가능한 구조를 의미한다."
+              ]
+            }
+          },
+          "참고자료": [
+            "화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률, 소방청",
+            "자동화재탐지설비 및 시각경보장치의 화재안전기준(NFSC 203), 소방청",
+            "옥내소화전설비의 화재안전기준(NFSC 102), 소방청"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "배치도, 계통도, 평면도, 상세도, 소방시설 내역서 및 시방서, 소방시설 설치계획표 등"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.9 감지 및 경보설비\n세부평가기준\n평가목적 화재발생에 대한 감지 및 경보설비 설치수준을 평가함으로써 화재에 안전한 성능확보를 목적으로 한다.\n평가방법 화재감지 및 경보설비 설치수준에 따라 평가\n산출기준 구분 감지 및 경보설비 성능등급\n2급 + 방재실(피난층에 설치) 내 통합방재설비 및 컨트롤데스크가 설치되고, 통신·\n1급 ★★★★\n신호배선의 경우 이중배선으로 설치된 경우\n2급 3급 + 방재실 내 통합방재설비가 설치된 경우 ★★★\n3급 4급 + 아날로그 감지기를 설치한 경우 ★★\n4급 법규에 따른 감지, 경보 및 수신 설비를 설치한 경우 ★\n- 아날로그 감지기란 주위의 온도 또는 연기량의 변화에 따라 김지하여, 작동 위치 확인이 가능한 감지기\n를 말함\n- 방재실이란 수신기, 감시제어반 등을 별도의 실로 구획한 곳을 말함\n- 통합방재설비란 소방시설 및 소방관련 시설을 효율적으로 관리하기 위하여 평상시에는 소방·방재시설의 작\n동상황을 종합적으로 감시할 수 있고, 화재 시 신속한 상황대처가 이루어지도록 설치되는 시스템을 말함\n- 컨트롤 데스크란 R형 수신기에서 감시/제어하는 모든 회로에 대해, 컴퓨터를 이용하여 건물 평면도에 기기\n별 위치를 표시하고 제어하는 장치를 말함\n- 이중배선이란 본선과 별도로 배관을 분리 또는 하나의 배관 내 루프(LOOP)배선을 구성하여 단선 시에도 고\n장표시가 되며, 다른 회로를 이용하여 정상적인 작동할 수 있는 성능을 가져야 함\n참고자료 및 제출서류\n참고자료 - 화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률, 소방청\n- 자동화재탐지설비 및 시각경보장치의 화재안전기준(NFSC 203), 소방청\n- 옥내소화전설비의 화재안전기준(NFSC 102), 소방청\n제출서류 - 배치도, 계통도, 평면도, 상세도, 소방시설 내역서 및 시방서, 소방시설 설치계획표 등"
+        },
+        {
+          "criterion_id": "R-8.10",
+          "출처": {
+            "페이지": 79,
+            "종료페이지": 79,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.10",
+            "명칭": "제연설비",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "공동주택의 화재감지 및 경보, 제연설비, 내화성능 등의 안전성과 용이성 평가를 바탕으로 화재에 안전한 성능 확보를 목적으로 한다.",
+            "평가방법": "제연설비 설치여부에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                79
+              ],
+              "input_variables": [
+                {
+                  "name": "living_room_mechanical_smoke_control_installed",
+                  "label": "거실 제연설비 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "ancillary_space_mechanical_smoke_control_installed",
+                  "label": "부속실 제연설비 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "evacuation_stair_mechanical_smoke_control_installed",
+                  "label": "피난층 포함 계단실 제연설비 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "living_room_natural_smoke_control_installed",
+                  "label": "거실 배연설비 또는 자연배연 설비 설치 여부",
+                  "type": "boolean"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "전층 계단실 및 부속실 제연설비 설치",
+                  "condition": "evacuation_stair_mechanical_smoke_control_installed and ancillary_space_mechanical_smoke_control_installed",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "거실 제연설비 또는 부속실 제연설비 설치",
+                  "condition": "living_room_mechanical_smoke_control_installed or ancillary_space_mechanical_smoke_control_installed",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "부속실 제연설비(피난층 포함) 설치",
+                  "condition": "ancillary_space_mechanical_smoke_control_installed",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "법규상의 제연설비(자연/기계식) 설치",
+                  "condition": "living_room_natural_smoke_control_installed or living_room_mechanical_smoke_control_installed or ancillary_space_mechanical_smoke_control_installed or evacuation_stair_mechanical_smoke_control_installed",
+                  "performance_grade": "★"
+                }
+              ],
+              "special_rule": "피난층 포함 계단실 및 부속실 전실 제연설비가 전 층일 경우 1급으로 평가한다."
+            }
+          },
+          "참고자료": [
+            "건축물의 피난･방화구조 등의 기준에 관한 규칙, 국토교통부",
+            "국가화재안전기준 (NFSC)",
+            "KS F 2257 (건축부재의 내화시험방법)"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "평면도, 단면도, 소방설비 내역서, 내화구조 내역서, 시방서 등"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.10 제연설비\n세부평가기준\n평가목적 공동주택의 화재감지 및 경보, 제연설비, 내화성능 등의 안전성과 용이성 평가를 바탕으로 화재에 안전한\n성능 확보를 목적으로 한다.\n평가방법 제연설비 설치여부에 따라 평가\n산출기준 구분 등급기준 성능등급\n1급 전층 계단실 및 부속실 제연설비 설치 ★★★★\n2급 계단실 제연설비(피난층 포함) 설치 ★★★\n3급 부속실 제연설비(피난층 포함) 설치 ★★\n4급 법규상의 제연설비(자연/기계식) 설치 ★\n- 피난층 포함 계단실 및 부속실(전실) 제연설비가 전 층일 경우 1급으로 평가\n참고자료 및 제출서류\n참고자료 - 건축물의 피난･방화구조 등의 기준에 관한 규칙, 국토교통부\n- 국가화재안전기준 (NFSC)\n- KS F 2257 (건축부재의 내화시험방법)\n제출서류 - 평면도, 단면도, 소방설비 내역서, 내화구조 내역서, 시방서 등"
+        },
+        {
+          "criterion_id": "R-8.11",
+          "출처": {
+            "페이지": 80,
+            "종료페이지": 80,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.11",
+            "명칭": "내화성능",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "공동주택의 화재감지 및 경보, 제연설비, 내화성능 등의 안전성과 용이성 평가를 바탕으로 화재에 안전한 성능 확보를 목적으로 한다.",
+            "평가방법": "콘크리트 피복두께에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                80
+              ],
+              "input_variables": [
+                {
+                  "name": "legal_minimum_concrete_cover_thickness_mm",
+                  "label": "법규상 내화구조 기준의 콘크리트 피복두께",
+                  "type": "number",
+                  "unit": "mm"
+                },
+                {
+                  "name": "planned_concrete_cover_thickness_mm",
+                  "label": "계획 콘크리트 피복두께",
+                  "type": "number",
+                  "unit": "mm"
+                },
+                {
+                  "name": "water_tank_or_fire_fighting_water_tank_installed",
+                  "label": "전 층 수직공용부 내화충전재 설치 또는 소방수조 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "building_fire_resistance_required_structure_secured",
+                  "label": "건축법상의 내화성능 확보 구조 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "concrete_cover_thickness_increase_mm",
+                  "label": "법규 기준 대비 콘크리트 피복두께 증가량",
+                  "formula": "planned_concrete_cover_thickness_mm - legal_minimum_concrete_cover_thickness_mm",
+                  "unit": "mm"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "법규상의 내화구조에 콘크리트 피복두께 20mm 증가, 전 층 수직공용부 내화충전재 설치 또는 철골내화피복두께 10mm 증가 적용",
+                  "condition": "building_fire_resistance_required_structure_secured and concrete_cover_thickness_increase_mm >= 20 and water_tank_or_fire_fighting_water_tank_installed",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "법규상의 내화구조에 콘크리트 피복두께 15mm 증가, 전 층 수직공용부 내화충전재 설치 또는 철골내화피복두께 5mm 증가 적용",
+                  "condition": "building_fire_resistance_required_structure_secured and concrete_cover_thickness_increase_mm >= 15 and water_tank_or_fire_fighting_water_tank_installed",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "법규상의 내화구조에 콘크리트 피복두께 10mm 증가, 전 층 수직공용부 내화충전재 설치",
+                  "condition": "building_fire_resistance_required_structure_secured and concrete_cover_thickness_increase_mm >= 10 and water_tank_or_fire_fighting_water_tank_installed",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "건축법상의 내화성능을 확보한 구조",
+                  "condition": "building_fire_resistance_required_structure_secured",
+                  "performance_grade": "★"
+                }
+              ],
+              "notes": [
+                "콘크리트 피복두께 기준은 콘크리트구조 설계기준의 최소피복두께이며, 철골의 경우 내화구조인 피복두께로 평가한다."
+              ]
+            }
+          },
+          "참고자료": [
+            "건축물의 피난･방화구조 등의 기준에 관한 규칙, 국토교통부",
+            "국가화재안전기준 (NFSC)",
+            "KS F 2257 (건축부재의 내화시험방법)",
+            "콘크리트구조 설계기준(KDS 14 20 00), 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "평면도, 단면도, 소방설비 내역서, 내화구조 내역서, 시방서 등"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.11 내화성능\n세부평가기준\n평가목적 공동주택의 화재감지 및 경보, 제연설비, 내화성능 등의 안전성과 용이성 평가를 바탕으로 화재에 안전한\n성능확보를 목적으로 한다.\n평가방법 콘크리트 피복두께에 따라 평가\n산출기준 구분 등급기준 성능등급\n법규상의 내화구조에 콘크리트피복두께 20mm 증가, 전 층 수직공용부 내화충전재\n1급 ★★★★\n설치 또는 철골내화피복두께 10mm 증가 적용\n법규상의 내화구조에 콘크리트피복두께 15mm 증가, 전 층 수직공용부 내화충전재\n2급 ★★★\n설치 또는 철골내화피복두께 5mm 증가 적용\n법규상의 내화구조에 콘크리트피복두께 10mm 증가, 전 층 수직공용부 내화충전재\n3급 ★★\n설치\n4급 건축법상의 내화성능을 확보한 구조 ★\n- 콘크리트 피복두께의 기준은 ‘콘크리트구조 설계기준(KDS 14 20 00)’의 최소피복두께로 하며, 철골의 경\n우는 내화구조인정 피복두께로 함\n참고자료 및 제출서류\n참고자료 - 건축물의 피난･방화구조 등의 기준에 관한 규칙, 국토교통부\n- 국가화재안전기준 (NFSC)\n- KS F 2257 (건축부재의 내화시험방법)\n- 콘크리트구조 설계기준(KDS 14 20 00), 국토교통부\n제출서류 - 평면도, 단면도, 소방설비 내역서, 내화구조 내역서, 시방서 등"
+        },
+        {
+          "criterion_id": "R-8.12",
+          "출처": {
+            "페이지": 81,
+            "종료페이지": 81,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.12",
+            "명칭": "수평피난거리",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "공동주택 수평피난거리의 안전성과 용이성 평가를 바탕으로 피난에 안전한 성능확보를 목적으로 한다.",
+            "평가방법": "각 세대 및 지하층의 가장 먼 거실로부터 피난 가능한 직통계단까지의 보행거리 단축 수준을 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                81
+              ],
+              "input_variables": [
+                {
+                  "name": "legal_required_horizontal_evacuation_distance_m",
+                  "label": "건축법 시행령 기준상 직통계단까지 허용 보행거리",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "planned_horizontal_evacuation_distance_m",
+                  "label": "계획상 가장 먼 거실에서 직통계단까지의 보행거리",
+                  "type": "number",
+                  "unit": "m"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "horizontal_evacuation_distance_reduction_m",
+                  "label": "법규 기준 대비 수평피난거리 단축 길이",
+                  "formula": "legal_required_horizontal_evacuation_distance_m - planned_horizontal_evacuation_distance_m",
+                  "unit": "m"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "4급의 거리 기준 15m 이상 단축",
+                  "condition": "horizontal_evacuation_distance_reduction_m >= 15",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "4급의 거리 기준 10m 이상 15m 미만 단축",
+                  "condition": "10 <= horizontal_evacuation_distance_reduction_m < 15",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "4급의 거리 기준 5m 이상 10m 미만 단축",
+                  "condition": "5 <= horizontal_evacuation_distance_reduction_m < 10",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "건축법 규정에 따른 거실의 각 부분에서 직통계단까지의 거리 확보",
+                  "condition": "horizontal_evacuation_distance_reduction_m >= 0",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "건축물의 피난･방화구조 등에 관한 규칙, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "평면도, 단면도, 시방서 등"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.12 수평피난거리\n세부평가기준\n평가목적 공동주택의 수평피난거리의 안전성과 용이성 평가를 바탕으로 피난에 안전한 성능확보를 목적으로 한다.\n평가방법 각 세대 및 지하층의 가장 먼 거실로부터 피난이 가능한 직통계단까지의 보행거리 측정\n산출기준 구분 등급기준 성능등급\n1급 4급의 거리 기준 15m 이상 단축 ★★★★\n2급 4급의 거리 기준 10m 이상 15m 미만 단축 ★★★\n3급 4급의 거리 기준 5m 이상 10m 미만 단축 ★★\n4급 건축법 규정에 따른 거실의 각 부분에서 직통계단까지의 거리 확보* ★\n* 건축법 시행령 제34조에 근거하여 직통계단으로부터 가장 먼 세대의 거실까지의 보행거리\n참고자료 및 제출서류\n참고자료 - 건축물의 피난･방화구조 등에 관한 규칙, 국토교통부\n제출서류 - 평면도, 단면도, 시방서 등"
+        },
+        {
+          "criterion_id": "R-8.13",
+          "출처": {
+            "페이지": 82,
+            "종료페이지": 82,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.13",
+            "명칭": "복도 및 계단 유효너비",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "공동주택 복도 및 계단 유효너비의 안전성과 용이성 평가를 바탕으로 피난에 안전한 성능확보를 목적으로 한다.",
+            "평가방법": "피난용으로 쓰이는 출입구의 유효너비와 복도의 유효너비를 측정하여 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                82
+              ],
+              "input_variables": [
+                {
+                  "name": "exit_effective_width_m",
+                  "label": "내부에서 계단실로 통하는 출입구 유효너비",
+                  "type": "number",
+                  "unit": "m"
+                },
+                {
+                  "name": "corridor_effective_width_ratio",
+                  "label": "복도 유효너비의 법정기준 대비 비율",
+                  "type": "number",
+                  "unit": "%"
+                },
+                {
+                  "name": "corridor_and_stair_legal_width_secured",
+                  "label": "건축법 규정에 따른 계단실 출입구 및 복도 유효너비 확보 여부",
+                  "type": "boolean"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "내부에서 계단실로 통하는 출입구 유효너비 1m 이상이며, 복도의 유효너비 10% 이상 증가",
+                  "condition": "exit_effective_width_m >= 1.0 and corridor_effective_width_ratio >= 110",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "내부에서 계단실로 통하는 출입구 유효너비 1m 이상이며, 복도의 유효너비 5% 이상 10% 미만 증가",
+                  "condition": "exit_effective_width_m >= 1.0 and 105 <= corridor_effective_width_ratio < 110",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "내부에서 계단실로 통하는 출입구 유효너비 1m 이상이며, 복도의 유효너비 5% 미만 증가",
+                  "condition": "exit_effective_width_m >= 1.0 and 100 <= corridor_effective_width_ratio < 105",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "건축법 규정에 따른 계단실 출입구 및 복도의 유효너비 확보",
+                  "condition": "corridor_and_stair_legal_width_secured",
+                  "performance_grade": "★"
+                }
+              ],
+              "notes": [
+                "출입구 유효너비는 건축물의 피난·방화구조 등의 기준에 관한 규칙 제9조에 따르고, 복도 유효너비는 같은 규칙 제15조의2 기준으로 한다."
+              ]
+            }
+          },
+          "참고자료": [
+            "건축물의 피난･방화구조 등에 관한 규칙, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "평면도, 단면도, 시방서 등"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.13 복도 및 계단 유효너비\n세부평가기준\n평가목적 공동주택의 복도 및 계단 유효너비의 안전성과 용이성 평가를 바탕으로 피난에 안전한 성능확보를 목적으\n로 한다.\n평가방법 피난용으로 쓰이는 출입구의 유효너비와 복도의 유효너비 측정\n산출기준 구분 등급기준 성능등급\n내부에서 계단실로 통하는 출입구 유효너비 1m 이상이며, 복도의 유효너비 10%\n1급 ★★★★\n이상 증가\n내부에서 계단실로 통하는 출입구 유효너비 1m 이상이며, 복도의 유효너비 5%\n2급 ★★★\n이상 10% 미만 증가\n내부에서 계단실로 통하는 출입구 유효너비 1m 이상이며, 복도의 유효너비 5%\n3급 ★★\n미만 증가\n4급 건축법 규정에 따른 계단실 출입구 및 복도의 유효너비 확보* ★\n* 출입구의 유효너비는 건축물의 피난ㆍ방화구조 등의 기준에 관한 규칙 제9조(피난계단 및 특별피난계단\n의 구조)에 따르며 복도의 유효너비는 같은 규칙 제15조의2(복도의 너비 및 설치기준)를 기준으로 함\n참고자료 및 제출서류\n참고자료 - 건축물의 피난･방화구조 등에 관한 규칙, 국토교통부\n제출서류 - 평면도, 단면도, 시방서 등"
+        },
+        {
+          "criterion_id": "R-8.14",
+          "출처": {
+            "페이지": 83,
+            "종료페이지": 83,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.14",
+            "명칭": "피난설비",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "공동주택 피난설비의 안전성과 용이성 평가를 바탕으로 피난에 안전한 성능확보를 목적으로 한다.",
+            "평가방법": "평면도, 단면도, 소방설비 내역서 및 관련도서의 체크리스트에 의해 피난설비 설치 수준을 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                83
+              ],
+              "input_variables": [
+                {
+                  "name": "indoor_evacuation_safety_zone_secured",
+                  "label": "인명구조기구 중 1종 이상 확보 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "all_households_shared_balcony_evacuable",
+                  "label": "전 세대 복합형 유도등 설치 또는 피난안전구역 확보 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "all_households_guidance_light_medium_installed",
+                  "label": "전 층 유도등(중형) 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "legal_evacuation_facility_installed",
+                  "label": "법규상의 피난설비 설치 여부",
+                  "type": "boolean"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "2급 + 인명구조기구 중 1종 이상 확보",
+                  "condition": "all_households_shared_balcony_evacuable and indoor_evacuation_safety_zone_secured",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "전 층의 복합형 유도등 설치 또는 피난안전구역 설치",
+                  "condition": "all_households_shared_balcony_evacuable",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "전 층 유도등(중형) 설치",
+                  "condition": "all_households_guidance_light_medium_installed",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "법규상의 피난설비 설치",
+                  "condition": "legal_evacuation_facility_installed",
+                  "performance_grade": "★"
+                }
+              ],
+              "life_saving_equipment_examples": [
+                "방화복",
+                "공기호흡기(보조마스크 포함)",
+                "인공소생기"
+              ]
+            }
+          },
+          "참고자료": [
+            "건축물의 피난･방화구조 등에 관한 규칙, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "평면도, 단면도, 소방설비 내역서 및 관련도서 등"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.14 피난설비\n세부평가기준\n평가목적 공동주택의 피난설비의 안전성과 용이성 평가를 바탕으로 피난에 안전한 성능확보를 목적으로 한다.\n평가방법 평면도, 단면도, 소방설비 내역서 및 관련도서의 체크리스트에 의한 평가\n산출기준 구분 등급기준 성능등급\n1급 2급 + 인명구조기구* 중 1종 이상 확보 ★★★★\n2급 전 층에 복합형 유도등 설치 또는 피난유도선 설치 ★★★\n3급 전 층 유도등(중형) 설치 ★★\n4급 법규상의 피난설비 설치 ★\n* 인명구조기구 : 방화복, 공기호흡기(보조마스크 포함), 인공소생기\n참고자료 및 제출서류\n참고자료 - 건축물의 피난･방화구조 등에 관한 규칙, 국토교통부\n제출서류 - 평면도, 단면도, 소방설비 내역서 및 관련도서 등"
+        },
+        {
+          "criterion_id": "R-8.15",
+          "출처": {
+            "페이지": 84,
+            "종료페이지": 84,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.15",
+            "명칭": "수리용이성 전용부분",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "공동주택 전용부분의 리모델링 및 유지관리계획에 대한 정보를 제공함으로써 장수명 주택의 구현을 목적으로 한다.",
+            "평가방법": "전용배관의 설계 수준, 배관 및 배선의 개보수 및 점검 용이성, 세대 수평·수직 통합/분리 계획 수립 여부를 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                84
+              ],
+              "input_variables": [
+                {
+                  "name": "exclusive_area_repairability_selected_item_count",
+                  "label": "수리용이성 전용부분 선택항목 충족 개수",
+                  "type": "number",
+                  "unit": "개"
+                }
+              ],
+              "selection_items": [
+                "욕실의 바닥 건식공법 적용여부",
+                "모든 욕실 천장이 600mm × 600mm 이상 크기의 점검구 적용 여부",
+                "배관 및 배선의 구조체 매립 여부",
+                "난방용 분배기 전용함 설치",
+                "구조체에 매립되지 않은 수직 2중배관 구조",
+                "급수 급탕 분배기 밸브 차단 밸브 설치"
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "수리용이성 전용부분 선택항목 중 4개 이상 선택한 경우",
+                  "condition": "exclusive_area_repairability_selected_item_count >= 4",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "수리용이성 전용부분 선택항목 중 3개 선택한 경우",
+                  "condition": "exclusive_area_repairability_selected_item_count == 3",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "수리용이성 전용부분 선택항목 중 2개 선택한 경우",
+                  "condition": "exclusive_area_repairability_selected_item_count == 2",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "수리용이성 전용부분 선택항목 중 1개 선택한 경우",
+                  "condition": "exclusive_area_repairability_selected_item_count == 1",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "리모델링이 용이한 공동주택 기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "개보수 계획을 적용한 단위세대 평면도, 동별 주단면도 등 설계도서",
+              "개보수 계획을 적용한 전기 및 기계설비 등 설계도서",
+              "배관 상세도 포함 계통도(flow diagram) 등"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.15 수리용이성 전용부분\n세부평가기준\n평가목적 공동주택 전용부분의 리모델링 및 유지관리계획에 대한 정보를 제공함으로써 장수명 주택의 구현을 목적으\n로 한다.\n평가방법 전용배관의 설계 수준, 배관 및 배선의 개보수 및 점검의 용이성 여부, 세대 수평 및 수직 통합/분리 계획\n수립 여부에 대한 정도를 평가\n산출기준 구분 등급기준 성능등급\n1급 수리용이성 전용부분 선택항목 중 4개 이상 선택한 경우 ★★★★\n2급 수리용이성 전용부분 선택항목 중 3개 선택한 경우 ★★★\n3급 수리용이성 전용부분 선택항목 중 2개 선택한 경우 ★★\n4급 수리용이성 전용부분 선택항목 중 1개 선택한 경우 ★\n수리용이성 전용부분 선택항목\n(1) 욕실의 바닥 건식공법 적용여부\n(2) 모든 욕실 천장에 600㎜ × 600㎜ 이상 크기의 점검구 적용 여부\n(3) 배관 및 배선의 구조체 매립여부\n(4) 난방용 분배기 전용함 설치\n(5) 구조체에 매립되지 않은 수평 2중배관 구조\n(6) 급수 급탕 분배기 존별 차단 볼밸브 설치\n참고자료 및 제출서류\n참고자료 - 리모델링이 용이한 공동주택 기준, 국토교통부\n제출서류 - 개보수 계획을 적용한 단위세대 평면도, 동별 주단면도 등 설계도서\n- 개보수 계획을 적용한 전기 및 기계설비 등 설계도서\n- 배관 상세도 포함 계통도(flow diagram) 등"
+        },
+        {
+          "criterion_id": "R-8.16",
+          "출처": {
+            "페이지": 85,
+            "종료페이지": 85,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.16",
+            "명칭": "수리용이성 공용부분",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "공동주택 공용부분의 리모델링 및 유지관리계획에 대한 정보를 제공함으로써 장수명 주택의 구현을 목적으로 한다.",
+            "평가방법": "난방, 급배수, 환기, 전기, 정보통신설비의 유지관리에 적합한 공간설정과 배관·배선 계획의 용이성을 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                85
+              ],
+              "input_variables": [
+                {
+                  "name": "common_area_repairability_selected_item_count",
+                  "label": "수리용이성 공용부분 선택항목 충족 개수",
+                  "type": "number",
+                  "unit": "개"
+                }
+              ],
+              "selection_items": [
+                "배관배선: 공용입상 배관의 공용부분 배치계획",
+                "배관구조: 조립이 가능한 배관구조의 적용",
+                "예비배관: 예비 배관의 설정",
+                "전기실: 향후 용량 증가 및 관리를 위한 공간 확보",
+                "전기실: 수변전실의 보수 및 점검 교체에 지장이 없는 구조 확보",
+                "점검구: 개보수를 고려한 점검구의 크기, 위치, 구조 확보",
+                "점검구: 점검시설 및 계측시설의 확보",
+                "수요의 증가와 통합 분리를 고려한 공용 PS의 추가 배치 계획 수립의 적용",
+                "PS(Pipe Shaft)에 개폐문이나 패널 등의 설치",
+                "PS(Pipe Shaft) 입상관에서 세대 인입관 사이에 유니온 또는 유니온 이음형 밸브 설치"
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "수리용이성 공용부분 선택항목 중 7개 이상 선택한 경우",
+                  "condition": "common_area_repairability_selected_item_count >= 7",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "수리용이성 공용부분 선택항목 중 5~6개 선택한 경우",
+                  "condition": "5 <= common_area_repairability_selected_item_count <= 6",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "수리용이성 공용부분 선택항목 중 2~4개 선택한 경우",
+                  "condition": "2 <= common_area_repairability_selected_item_count <= 4",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "수리용이성 공용부분 선택항목 중 1개 선택한 경우",
+                  "condition": "common_area_repairability_selected_item_count == 1",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "리모델링이 용이한 공동주택 기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "옥외위생, 난방배관도, 난방위생배관 확대평면도, 지하층 배관 평면도, 샤프트 상세도, 계통도",
+              "전기⋅기계설비 도면 및 시방서",
+              "토목의 오배수 관로도 및 맨홀상세도",
+              "기본설계도서(확대평면도, 지하층, 주차장, 시방서, 장비일람표 포함)"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.16 수리용이성 공용부분\n세부평가기준\n평가목적 공동주택 공용부분의 리모델링 및 유지관리계획에 대한 정보를 제공함으로써 장수명 주택의 구현을 목적으\n로 한다.\n평가방법 난방/급배수/환기/전기/정보통신설비의 유지관리에 적합한 공간설정 계획 검토\n적정 용량의 산정에 의한 공간, 배관재 선정여부 평가\n하자보수/열손실/시공성/공사비 등을 고려한 설비 배치계획 평가\n산출기준 구분 등급기준 성능등급\n1급 수리용이성 공용부분 선택항목 중 7개 이상 선택한 경우 ★★★★\n2급 수리용이성 공용부분 선택항목 중 5~6개 선택한 경우 ★★★\n3급 수리용이성 공용부분 선택항목 중 2~4개 선택한 경우 ★★\n4급 수리용이성 공용부분 선택항목 중 1개 선택한 경우 ★\n수리용이성 공용부분 선택항목\n(1) 배관배치: 공용입상 배관의 공용부분 배치계획\n(2) 배관구조: 조립이 가능한 배관구조의 적용\n(3) 예비배관: 예비 배관의 설정\n(4) 전기실: 향후 용량 증가 및 관리를 위한 공간 확보\n(5) 전기실: 수배전반의 보수 및 점검 교체에 지장이 없는 구조 확보\n(6) 점검구: 개보수를 고려한 점검구의 크기, 위치, 구조 확보\n(7) 점검구: 점검시설 및 계측시설의 확보\n(8) 수요의 증가와 통합 분리를 고려한 공용 PS의 추가 배치 계획 수립의 적용\n(9) PS(Pipe Shaft)에 개폐문이나 패널 등의 설치\n(10) PS(Pipe Shaft) 입상관에서 세대 인입관 사이에 유니온 또는 유니온 일체형 밸브 설치\n참고자료 및 제출서류\n참고자료 - 리모델링이 용이한 공동주택 기준, 국토교통부\n제출서류 - 옥외위생, 난방배관도, 난방위생배관 확대평면도, 지하층 배관 평면도, 샤프트 상세도, 계통도\n- 전기⋅기계설비 도면 및 시방서\n- 토목의 오배수 관로도 및 맨홀상세도\n- 기본설계도서(확대평면도, 지하층, 주차장, 시방서, 장비일람표 포함)"
+        },
+        {
+          "criterion_id": "R-8.17",
+          "출처": {
+            "페이지": 86,
+            "종료페이지": 86,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "8",
+            "명칭": "주택성능분야"
+          },
+          "인증항목": {
+            "번호": "8.17",
+            "명칭": "주차공간 추가 확보",
+            "구분": null,
+            "배점": null
+          },
+          "평가": {
+            "평가목적": "공동주택 주차공간 부족에 따른 이웃 간 불편 및 갈등 해소를 목적으로 한다.",
+            "평가방법": "주차단위구획 설치비율 점수와 확장형 주차단위구획 설치비율 점수를 합산하여 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                86
+              ],
+              "input_variables": [
+                {
+                  "name": "legal_required_parking_space_count",
+                  "label": "법정 주차 대수",
+                  "type": "number",
+                  "unit": "대"
+                },
+                {
+                  "name": "planned_parking_space_count",
+                  "label": "주차단위구획 총수",
+                  "type": "number",
+                  "unit": "대"
+                },
+                {
+                  "name": "expanded_parking_space_count",
+                  "label": "확장형 주차단위구획 총수",
+                  "type": "number",
+                  "unit": "대"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "parking_space_installation_ratio",
+                  "label": "주차단위구획 설치비율",
+                  "formula": "planned_parking_space_count / legal_required_parking_space_count * 100",
+                  "unit": "%"
+                },
+                {
+                  "name": "expanded_parking_space_installation_ratio",
+                  "label": "확장형 주차단위구획 설치비율",
+                  "formula": "expanded_parking_space_count / planned_parking_space_count * 100",
+                  "unit": "%"
+                },
+                {
+                  "name": "parking_additional_score_total",
+                  "label": "주차공간 추가확보 점수 합계",
+                  "formula": "parking_space_installation_ratio_score + expanded_parking_space_installation_ratio_score",
+                  "unit": "점"
+                }
+              ],
+              "point_tables": {
+                "parking_space_installation_ratio_score": [
+                  {
+                    "condition": "parking_space_installation_ratio >= 160",
+                    "point": 8
+                  },
+                  {
+                    "condition": "140 <= parking_space_installation_ratio < 160",
+                    "point": 6
+                  },
+                  {
+                    "condition": "120 <= parking_space_installation_ratio < 140",
+                    "point": 4
+                  },
+                  {
+                    "condition": "100 < parking_space_installation_ratio < 120",
+                    "point": 2
+                  }
+                ],
+                "expanded_parking_space_installation_ratio_score": [
+                  {
+                    "condition": "expanded_parking_space_installation_ratio >= 60",
+                    "point": 4
+                  },
+                  {
+                    "condition": "50 <= expanded_parking_space_installation_ratio < 60",
+                    "point": 3
+                  },
+                  {
+                    "condition": "40 <= expanded_parking_space_installation_ratio < 50",
+                    "point": 2
+                  },
+                  {
+                    "condition": "30 < expanded_parking_space_installation_ratio < 40",
+                    "point": 1
+                  }
+                ]
+              },
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "주차단위구획 설치 점수 및 확장형 주차단위구획 설치 점수 합계 12점",
+                  "condition": "parking_additional_score_total >= 12",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "합계 9점 이상 12점 미만",
+                  "condition": "9 <= parking_additional_score_total < 12",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "합계 6점 이상 9점 미만",
+                  "condition": "6 <= parking_additional_score_total < 9",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "합계 3점 이상 6점 미만",
+                  "condition": "3 <= parking_additional_score_total < 6",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "주택법, 국토교통부",
+            "주택건설기준에 관한 규정, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "설계개요 및 사업개요 도서",
+              "단지배치도, 지하층 평면도 및 지상층 평면도",
+              "(주차구획 확인 가능 모든 도서)"
+            ],
+            "본인증": []
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 8 주택성능분야\n인증항목 8.17 주차공간 추가 확보\n세부평가기준\n평가목적 공동주택 주차 공간 부족에 따른 이웃 간 불편 및 갈등 해소를 목적으로 한다.\n평가방법 주차단위구획 설치비율(법정주차 대수 대비 주차단위구획 총수)로 평가\n확장형 주차단위구획 설치비율(주차단위구획총수 대비 확장형 주차단위구획 총수)로 평가\n산출기준 구분 등급기준 성능등급\n1급 주차단위구획 설치 점수 및 확장형 주차단위구획 설치 점수 합계 12점 ★★★★\n2급 주차단위구획 설치 점수 및 확장형 주차단위구획 설치 점수 9점 이상 12점 미만 ★★★\n3급 주차단위구획 설치 점수 및 확장형 주차단위구획 설치 점수 6점 이상 9점 미만 ★★\n4급 주차단위구획 설치 점수 및 확장형 주차단위구획 설치 점수 3점 이상 6점 미만 ★\n주차단위구획 설치 확장형 주차단위구획 설치\n구분\n설치비율 점수 설치비율 점수\n1급 160% 이상 8 60% 이상 4\n2급 140% 이상 160% 미만 6 50% 이상 60% 미만 3\n3급 120% 이상 140% 미만 4 40% 이상 50% 미만 2\n4급 100% 초과 120% 미만 2 30% 초과 40% 미만 1\n- 주차공간 추가확보 등급 기준 = 주차단위구획 설치 비율 점수 + 확장형 주차단위구획 설치 비율 점수\n주차단위구획 총수\n■ 주차단위구획 설치비율 = × 100\n법정주차 대수\n확장형 주차단위 구획 총수\n■ 확장형 주차단위구획 설치비율 = × 100\n주차단위구획 총수\n참고자료 및 제출서류\n참고자료 - 주택법, 국토교통부\n- 주택건설기준에 관한 규정, 국토교통부\n제출서류 - 설계개요 및 사업개요 도서\n- 단지배치도, 지하층 평면도 및 지상층 평면도\n(주차구획 확인 가능 모든 도서)"
+        }
+      ]
+    }
+  ]
+}

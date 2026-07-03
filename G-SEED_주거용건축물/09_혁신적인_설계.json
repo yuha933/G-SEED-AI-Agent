@@ -1,0 +1,1013 @@
+{
+  "metadata": {
+    "인증기준명": "녹색건축 인증기준",
+    "버전": "G-SEED 2016-8",
+    "건축물유형": "신축 주거용 건축물",
+    "전문분야번호": "ID",
+    "전문분야명": "혁신적인 설계",
+    "시작페이지": 87,
+    "종료페이지": 96,
+    "항목수": 10,
+    "원본PDF": "G-SEED 2016-8_개정전문.pdf",
+    "참조데이터": "G-SEED/01_신축_주거용_건축물.json",
+    "생성방식": "PDF 원문·평가기준·계산식 구조를 전문분야별로 분리"
+  },
+  "전문분야": [
+    {
+      "번호": "ID",
+      "명칭": "혁신적인 설계",
+      "인증항목": [
+        {
+          "criterion_id": "R-ID-57",
+          "출처": {
+            "페이지": 87,
+            "종료페이지": 87,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "ID",
+            "명칭": "혁신적인 설계",
+            "세부분야": "토지이용 및 교통"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "대안적 교통 관련 시설의 설치",
+            "구분": "가산항목",
+            "배점": 1
+          },
+          "평가": {
+            "평가목적": "대지 내 대안적 교통 관련 시설의 설치함으로써 녹색환경을 조성하며, 에너지 소비와 공해발생 저감을 도모한다.",
+            "평가방법": "대지 내 대안적 교통 관련 시설의 설치 및 이용공간의 조성 여부에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                87
+              ],
+              "max_score": 1,
+              "score_formula": "score = weight * 1",
+              "input_variables": [
+                {
+                  "name": "car_sharing_parking_and_signage_installed",
+                  "label": "승용차공동이용(car-sharing) 주차공간 조성 및 표지판 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "low_emission_vehicle_parking_charging_installed",
+                  "label": "환경친화적 자동차 전용주차시설 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "low_emission_vehicle_charging_station_installed",
+                  "label": "환경친화적 자동차 충전시설 설치 여부",
+                  "type": "boolean"
+                }
+              ],
+              "point_items": [
+                {
+                  "name": "car_sharing_parking_and_signage_score",
+                  "condition": "car_sharing_parking_and_signage_installed",
+                  "point": 1
+                },
+                {
+                  "name": "low_emission_vehicle_parking_charging_score",
+                  "condition": "low_emission_vehicle_parking_charging_installed",
+                  "point": 1
+                },
+                {
+                  "name": "low_emission_vehicle_charging_station_score",
+                  "condition": "low_emission_vehicle_charging_station_installed",
+                  "point": 2
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "alternative_transport_facility_score_total",
+                  "label": "대안적 교통 관련 시설 설치 및 조성 점수 합계",
+                  "formula": "car_sharing_parking_and_signage_score + low_emission_vehicle_parking_charging_score + low_emission_vehicle_charging_station_score",
+                  "unit": "점"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "대안적 교통 관련 시설 설치 및 조성 점수 합계 4점",
+                  "condition": "alternative_transport_facility_score_total >= 4",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "대안적 교통 관련 시설 설치 및 조성 점수 합계 3점",
+                  "condition": "alternative_transport_facility_score_total == 3",
+                  "weight": 0.75
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "대안적 교통 관련 시설 설치 및 조성 점수 합계 2점",
+                  "condition": "alternative_transport_facility_score_total == 2",
+                  "weight": 0.5
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "대안적 교통 관련 시설 설치 및 조성 점수 합계 1점",
+                  "condition": "alternative_transport_facility_score_total == 1",
+                  "weight": 0.25
+                }
+              ],
+              "low_emission_vehicle_definition": "전기자동차, 태양광자동차, 하이브리드자동차, 수소전기자동차 등 환경친화적자동차의 개발 및 보급 촉진에 관한 법률 및 산업통상자원부 고시에 따른 자동차"
+            }
+          },
+          "참고자료": [
+            "환경친화적 자동차의 개발 및 보급 촉진에 관한 법률, 산업통상자원부",
+            "대기환경보전법, 환경부",
+            "환경친화적 자동차의 요건 등에 관한 규정, 산업통상자원부",
+            "주차장법 시행령, 국토교통부",
+            "전기자동차 충전인프라 설치·운영지침, 환경부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "대안적 교통수단 시설설치 계획 관련 도면",
+              "환경친화적 자동차 전용주차시설 계획 관련 도면",
+              "환경친화적 자동차 충전시설 계획 관련 도면",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "해당 시설 설치 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계 : 토지이용 및 교통\n인증항목 대안적 교통 관련 시설의 설치\n세부평가기준\n평가목적 대지 내 대안적 교통 관련 시설의 설치함으로써 녹색환경을 조성하며, 에너지 소비와 공해발생 저감을 도모\n한다.\n평가방법 대지 내 대안적 교통 관련 시설의 설치 및 이용공간의 조성여부에 따라 평가\n배 점 1점(가산항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 대안적 교통 관련 시설의 설치 및 조성 점수 합계 가중치\n1급 4점 1.00\n2급 3점 0.75\n3급 2점 0.50\n4급 1점 0.25\n대안적 교통 관련 시설의 설치 및 이용 공간의 조성 여부 점수\n승용차공동이용(car-sharing)주차 공간 조성 및 표지판 설치 1\n환경친화적 자동차 전용주차시설 설치(하이브리드자동차, 클린디젤자동차 제외) 1\n환경친화적 자동차 충전시설 설치 2\n- 환경친화적 자동차란 전기자동차, 태양광자동차, 하이브리드자동차, 수소전기자동차를 말함(환경친화적자\n동차의 개발 및 보급 촉진에 관한 법률, 산업통상자원부)\n참고자료 및 제출서류\n참고자료 - 환경친화적 자동차의 개발 및 보급 촉진에 관한 법률, 산업통상자원부\n- 대기환경보전법, 환경부\n- 환경친화적 자동차의 요건 등에 관한 규정, 산업통상자원부\n- 주차장법 시행령, 국토교통부\n- 전기자동차 충전인프라 설치·운영지침, 환경부\n제출서류\n- 대안적 교통수단 시설설치 계획 관련 도면\n예비\n- 환경친화적 자동차 전용주차시설 계획 관련 도면\n인증\n- 환경친화적 자동차 충전시설 계획 관련 도면\n- 예비인증 시와 동일\n본인증\n- 해당 시설 설치 사진"
+        },
+        {
+          "criterion_id": "R-ID-58",
+          "출처": {
+            "페이지": 88,
+            "종료페이지": 88,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "ID",
+            "명칭": "혁신적인 설계",
+            "세부분야": "에너지 및 환경오염"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "제로에너지건축물",
+            "구분": "가산항목",
+            "배점": 3
+          },
+          "평가": {
+            "평가목적": "에너지 요구량을 최소화하고 신재생에너지 이용을 극대화하여 건축물에 필요한 에너지 대부분을 자급자족할 수 있는 제로에너지건축물을 보급한다.",
+            "평가방법": "제로에너지건축물 인증등급에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                88
+              ],
+              "max_score": 3,
+              "score_formula": "score = weight * 3",
+              "input_variables": [
+                {
+                  "name": "zero_energy_building_certification_grade",
+                  "label": "제로에너지건축물 인증 등급",
+                  "type": "number",
+                  "unit": "등급"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "제로에너지건축물 인증을 1등급 받은 경우",
+                  "condition": "zero_energy_building_certification_grade == 1",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "제로에너지건축물 인증을 2등급 받은 경우",
+                  "condition": "zero_energy_building_certification_grade == 2",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "제로에너지건축물 인증을 3등급 받은 경우",
+                  "condition": "zero_energy_building_certification_grade == 3",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "제로에너지건축물 인증을 4등급 받은 경우",
+                  "condition": "zero_energy_building_certification_grade == 4",
+                  "weight": 0.4
+                },
+                {
+                  "grade": "5급",
+                  "original_text": "제로에너지건축물 인증을 5등급 받은 경우",
+                  "condition": "zero_energy_building_certification_grade == 5",
+                  "weight": 0.2
+                }
+              ],
+              "application_note": "건축물 에너지효율등급 인증 및 제로에너지건축물 인증에 관한 규칙과 기준에서 정하는 바에 따라 평가하되, 인증 의무가 아닌 경우에 대하여 인정한다."
+            }
+          },
+          "참고자료": [
+            "녹색건축물 조성 지원법, 국토교통부",
+            "건축물 에너지효율등급 인증 및 제로에너지건축물 인증에 관한 규칙, 국토교통부 및 산업통상자원부",
+            "건축물 에너지효율등급 인증 및 제로에너지건축물 인증 기준, 국토교통부 및 산업통상자원부",
+            "건축물의 에너지절약설계기준, 국토교통부",
+            "건축물의 에너지절약설계기준 해설서, 한국에너지공단"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "제로에너지건축물 예비인증서 및 관련 근거자료(도면, 성적서 등)"
+            ],
+            "본인증": [
+              "제로에너지건축물 인증서 및 관련 근거자료(도면, 성적서 등)"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계 : 에너지 및 환경오염\n인증항목 제로에너지건축물\n세부평가기준\n평가목적 에너지요구량을 최소화하고 신재생에너지 이용을 최대화하여 건축물에 필요한 에너지의 대부분을 자급자족\n할 수 있는 제로에너지건축물을 보급 촉진하고 이를 조기에 활성화시킴으로서 궁극적으로 건축물부문의 온\n실가스 감축 목표 달성에 기여한다.\n평가방법 제로에너지건축물 인증등급에 따라 평가\n배 점 3점(가산항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 제로에너지건축물 인증 등급에 따라 평가 가중치\n1급 제로에너지건축물 인증을 1등급 받은 경우 1.0\n2급 제로에너지건축물 인증을 2등급 받은 경우 0.8\n3급 제로에너지건축물 인증을 3등급 받은 경우 0.6\n4급 제로에너지건축물 인증을 4등급 받은 경우 0.4\n5급 제로에너지건축물 인증을 5등급 받은 경우 0.2\n- 건축물 에너지효율등급 인증 및 제로에너지건축물 인증에 관한 규칙 및 기준에서 정하는 바에 따라 평가\n한 경우에 대하여 인정함\n참고자료 및 제출서류\n참고자료 - 녹색건축물 조성 지원법, 국토교통부\n- 건축물 에너지효율등급 인증 및 제로에너지건축물 인증에 관한 규칙, 국토교통부 및 산업통상자원부\n- 건축물 에너지효율등급 인증 및 제로에너지건축물 인증 기준, 국토교통부 및 산업통상자원부\n- 건축물의 에너지절약설계기준, 국토교통부\n- 건축물의 에너지절약설계기준 해설서, 한국에너지공단\n제출서류\n예비\n- 제로에너지건축물 예비인증서 및 관련 근거자료(도면, 성적서 등)\n인증\n본인증 - 제로에너지건축물 인증서 및 관련 근거자료(도면, 성적서 등)"
+        },
+        {
+          "criterion_id": "R-ID-59",
+          "출처": {
+            "페이지": 89,
+            "종료페이지": 89,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "ID",
+            "명칭": "혁신적인 설계",
+            "세부분야": "에너지 및 환경오염"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "외피 열교 방지",
+            "구분": "가산항목",
+            "배점": 1
+          },
+          "평가": {
+            "평가목적": "구조체 접합부의 외단열 공법을 제한함으로써 열교를 방지하고 에너지 손실을 줄이며 실내 표면결로 발생을 차단하여 쾌적한 실내 환경을 조성한다.",
+            "평가방법": "외피 열교 방지를 위한 외단열 설치 비율로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                89
+              ],
+              "max_score": 1,
+              "score_formula": "score = weight * 1",
+              "input_variables": [
+                {
+                  "name": "opaque_exterior_wall_area_m2",
+                  "label": "외단열 설치 대상 불투명 외벽 면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "external_insulation_installed_area_m2",
+                  "label": "외단열 설치 면적",
+                  "type": "number",
+                  "unit": "m2"
+                },
+                {
+                  "name": "external_insulation_average_thermal_transmittance",
+                  "label": "외단열 부위 평균 열관류율",
+                  "type": "number",
+                  "unit": "W/m2K"
+                },
+                {
+                  "name": "external_wall_average_thermal_transmittance",
+                  "label": "외벽 평균 열관류율",
+                  "type": "number",
+                  "unit": "W/m2K"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "external_insulation_installation_ratio",
+                  "label": "외단열 설치 비율",
+                  "formula": "external_insulation_installed_area_m2 / opaque_exterior_wall_area_m2 * 100",
+                  "unit": "%"
+                },
+                {
+                  "name": "external_insulation_valid_condition",
+                  "label": "외단열 인정 조건",
+                  "formula": "external_insulation_average_thermal_transmittance <= external_wall_average_thermal_transmittance * 0.5"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "외단열 설치 비율이 90% 이상인 경우",
+                  "condition": "external_insulation_valid_condition and external_insulation_installation_ratio >= 90",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "외단열 설치 비율이 80% 이상 90% 미만인 경우",
+                  "condition": "external_insulation_valid_condition and 80 <= external_insulation_installation_ratio < 90",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "외단열 설치 비율이 70% 이상 80% 미만인 경우",
+                  "condition": "external_insulation_valid_condition and 70 <= external_insulation_installation_ratio < 80",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "외단열 설치 비율이 60% 이상 70% 미만인 경우",
+                  "condition": "external_insulation_valid_condition and 60 <= external_insulation_installation_ratio < 70",
+                  "weight": 0.4
+                }
+              ],
+              "exclusion_note": "외단열 설치 비율 계산 시 창, 문, 천창 등 외피 면적에서 제외되는 부위와 외기에 직접 또는 간접으로 면하지 않는 부위는 제외한다. 외기에 직접 또는 간접으로 면하는 벽과 면적 및 문이 면적의 50% 미만이면 해당 부위는 평가한다."
+            }
+          },
+          "참고자료": [
+            "건축물의 에너지절약설계기준, 국토교통부",
+            "건축물의 에너지절약설계기준 해설서, 한국에너지공단"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "외단열 설치 비율 계산서 및 관련 도서",
+              "예비 - 창 및 문 면적비 계산서 및 관련 도서",
+              "인증 - 외벽과 바닥 접합부, 외벽과 내벽 접합부, 외벽과 지붕 접합부, 지붕과 내벽 접합부 등의",
+              "단열상세도",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "외단열 공사 전경 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계 : 에너지 및 환경오염\n인증항목 외피 열교 방지\n세부평가기준\n평가목적 구조체 접합부에 외단열 공법을 채택함으로써, 열교를 방지하여 에너지 손실을 줄이고 실내 표면결로 발생\n을 차단하여 쾌적한 실내 환경을 조성한다.\n평가방법 외피 열교 방지를 위한 외단열 설치 비율로 평가\n배 점 1점(가산항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 외단열 설치 비율 가중치\n1급 외단열 설치 비율이 90% 이상인 경우 1.0\n2급 외단열 설치 비율이 80% 이상 90% 미만인 경우 0.8\n3급 외단열 설치 비율이 70% 이상 80% 미만인 경우 0.6\n4급 외단열 설치 비율이 60% 이상 70% 미만인 경우 0.4\n- 외단열 설치 비율은 외기에 직접 또는 간접으로 면하는 부위로서 창, 문, 천창 등을 제외한 단열시공이\n되는 외벽 및 지붕 면적에 대한 외단열 시공 면적 비율을 의미함\n- 커튼월은 외단열에 해당하지 않으며, 지붕 면적은 에너지성능지표인 지붕의 평균 열관류율 계산 대상 부\n위 면적의 합으로 함\n- 외기에 직접 또는 간접으로 면하는 부위로서 단열시공이 되는 외벽 면적(창 및 문 포함)에 대한 창 및 문\n의 면적비가 50% 미만인 경우에 한해 평가함\n참고자료 및 제출서류\n참고자료 - 건축물의 에너지절약설계기준, 국토교통부\n- 건축물의 에너지절약설계기준 해설서, 한국에너지공단\n제출서류\n- 외단열 설치 비율 계산서 및 관련 도서\n예비 - 창 및 문 면적비 계산서 및 관련 도서\n인증 - 외벽과 바닥 접합부, 외벽과 내벽 접합부, 외벽과 지붕 접합부, 지붕과 내벽 접합부 등의\n단열상세도\n- 예비인증 시와 동일\n본인증\n- 외단열 공사 전경 사진"
+        },
+        {
+          "criterion_id": "R-ID-60",
+          "출처": {
+            "페이지": 90,
+            "종료페이지": 90,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "ID",
+            "명칭": "혁신적인 설계",
+            "세부분야": "재료 및 자원"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "건축물 전과정평가 수행",
+            "구분": "가산항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "건축물 전과정에 대한 환경영향 평가를 통해 전 생애주기 동안 발생하는 환경부하 정보를 제공하고 이를 고려한 환경부하 저감 계획 수립을 유도한다.",
+            "평가방법": "건축물 전과정평가(Life Cycle Assessment, LCA)에 대한 수행보고서로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                90
+              ],
+              "max_score": 2,
+              "input_variables": [
+                {
+                  "name": "full_lca_performed",
+                  "label": "전과정평가(LCA) 수행 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "streamlined_lca_performed",
+                  "label": "개략 전과정평가(streamlined LCA) 수행 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "third_party_verification_performed",
+                  "label": "제3자 검증 실시 여부",
+                  "type": "boolean"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "2점",
+                  "original_text": "전과정평가(LCA)를 수행하고 제3자 검증을 실시한 경우",
+                  "condition": "full_lca_performed and third_party_verification_performed"
+                },
+                {
+                  "grade": "1점",
+                  "original_text": "개략 전과정평가(streamlined LCA)를 수행하고 제3자 검증을 실시한 경우",
+                  "condition": "streamlined_lca_performed and third_party_verification_performed"
+                }
+              ],
+              "score_formula": "score = 2 if full_lca_performed and third_party_verification_performed else 1 if streamlined_lca_performed and third_party_verification_performed else 0",
+              "lca_scope": [
+                "건축물 전과정평가 수행요건",
+                "건축물 투입 자재의 생산과정, 시공, 사용 및 해체까지의 모든 과정",
+                "투입량 및 산출량 작성과 환경성 평가결과",
+                "에너지사용에 따른 환경성 평가결과",
+                "수명 50년을 가정한 유지관리단계 자재 투입 시나리오 및 평가결과"
+              ],
+              "lca_report_required_contents": [
+                "개요",
+                "평가대상과 경계기준",
+                "시스템경계",
+                "데이터수집 요건",
+                "가정 및 제한사항",
+                "할당 방법",
+                "데이터수집 및 계산",
+                "전과정 목록분석",
+                "시공 및 운송 내용",
+                "유지관리 및 폐기단계",
+                "건물 전과정 환경부하 평가결과",
+                "전과정 환경영향 배출량 및 기여도",
+                "배출량 결과",
+                "온실가스 감축방안",
+                "LCI 데이터목록"
+              ]
+            }
+          },
+          "참고자료": [
+            "ISO 21931-1:2010 – Framework for methods of assessment of the environmental performance of",
+            "construction works - Part 1: Buildings",
+            "EN 15643-2:2011 Sustainability of construction works - Assessment of buildings – Part 2:",
+            "Framework for the assessment of environmental performance",
+            "EN 15804:2012 Sustainability of construction works - Environmental product declarations - Core",
+            "rules for the product category of construction products",
+            "The British standards PAS 2050:2011 – Specification for the assessment of life cycle greenhouse",
+            "gas emissions of goods and services, and PAS 2060:2010 - Specification for the demonstration of",
+            "carbon neutrality"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "건축물 개요 및 기본 정보",
+              "예비 - 건축물 LCA 평가서",
+              "인증 - 건축(설계)내역서 또는 물량산출서",
+              "적용 LCI DB 출처 및 입력 값"
+            ],
+            "본인증": [
+              "예비인증 시와 동일"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계 : 재료 및 자원\n인증항목 건축물 전과정평가 수행\n세부평가기준\n평가목적 건축물 전과정에 대한 환경영향 평가를 통해 건축물 전생애주기 동안 발생하는 환경부하에 대한 정보를 평\n가하고 이를 근거로 전과정 단계별 환경부하 저감 계획 수립을 유도한다.\n평가방법 건축물 전과정평가(Life Cycle Assessment, LCA)에 대한 수행보고서 평가\n배 점 2점(가산항목)\n산출기준 • 평점 2점 : 전과정평가(LCA)를 수행하고 제3자 검증을 실시한 경우\n• 평점 1점 : 개략 전과정평가(streamlined LCA)를 수행하고 제3자 검증을 실시한 경우\n- 건축물 전과정평가 수행요건\n· 건축물 투입 자재의 생산과정, 시공, 사용 및 건축물의 해체까지의 모든 과정\n· LCA 평가를 통한 환경영향 산출서 또는 건축물 LCA 평가 프로그램을 활용한 환경영향 평가결과\n· 건축물 에너지사용에 대한 시뮬레이션 결과 또는 평균값을 적용한 사용단계 영향 평가결과\n· 건축물 수명 50년을 가정한 유지관리단계 자재 투입 시나리오 및 평가결과\n- 전과정평가 보고서 요구사항\n· 개요 : 평가대상개요, 평가기준, 시스템경계, 데이터수집 요건, 가정 및 제한사항, 할당 방법\n· 데이터수집 및 계산 : 제외기준, 자재생산, 시공 및 운송 사용, 유지관리 및 폐기단계\n· 건물 전과정 환경부하 평가결과 : 전과정 환경영향 배출량 및 기여도, 배출량 결과\n· 온실가스 감축방안, LCI데이터목록\n- 전과정평가(LCA) 보고서에는 다음 사항이 포함되어야 함\n· 투입자재에 대한 99% 제외기준 적용 및 제외(cut-off) 결과\n· 환경성적표지심사원에 의한 제3자 검증보고서\n- 개략 전과정평가(streamlined LCA) 보고서에서는 투입자재에 대하여 다음과 같이 평가를 수행할 수 있음\n· 레미콘, 시멘트, 석재, 골재, 철근, 철골, 목재, 유리 등에 대한 10개 이내의 주요자재 대상\n· 환경성적표지심사원에 의한 제3자 검증보고서\n참고자료 및 제출서류\n참고자료 - ISO 21931-1:2010 – Framework for methods of assessment of the environmental performance of\nconstruction works - Part 1: Buildings\n- EN 15643-2:2011 Sustainability of construction works - Assessment of buildings – Part 2:\nFramework for the assessment of environmental performance\n- EN 15804:2012 Sustainability of construction works - Environmental product declarations - Core\nrules for the product category of construction products\n- The British standards PAS 2050:2011 – Specification for the assessment of life cycle greenhouse\ngas emissions of goods and services, and PAS 2060:2010 - Specification for the demonstration of\ncarbon neutrality\n제출서류\n- 건축물 개요 및 기본 정보\n예비 - 건축물 LCA 평가서\n인증 - 건축(설계)내역서 또는 물량산출서\n- 적용 LCI DB 출처 및 입력 값\n본인증 - 예비인증 시와 동일"
+        },
+        {
+          "criterion_id": "R-ID-61",
+          "출처": {
+            "페이지": 91,
+            "종료페이지": 91,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "ID",
+            "명칭": "혁신적인 설계",
+            "세부분야": "재료 및 자원"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "기존 건축물의 주요구조부 재사용",
+            "구분": "가산항목",
+            "배점": 5
+          },
+          "평가": {
+            "평가목적": "기존 건축물의 주요구조부 재사용률을 높여 재료 및 자원의 낭비를 줄이고 폐자원에 의한 환경오염을 줄인다.",
+            "평가방법": "전면 리모델링 건축물에 대하여 주요구조부의 재사용률에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                91
+              ],
+              "max_score": 5,
+              "score_formula": "score = weight * 5",
+              "input_variables": [
+                {
+                  "name": "major_structural_part_reuse_ratio",
+                  "label": "주요구조부 재사용률",
+                  "type": "number",
+                  "unit": "%"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "주요구조부 중 60% 이상을 재사용하는 경우",
+                  "condition": "major_structural_part_reuse_ratio >= 60",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "주요구조부 중 50% 이상 60% 미만을 재사용하는 경우",
+                  "condition": "50 <= major_structural_part_reuse_ratio < 60",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "주요구조부 중 40% 이상 50% 미만을 재사용하는 경우",
+                  "condition": "40 <= major_structural_part_reuse_ratio < 50",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "주요구조부 중 30% 이상 40% 미만을 재사용하는 경우",
+                  "condition": "30 <= major_structural_part_reuse_ratio < 40",
+                  "weight": 0.4
+                }
+              ],
+              "application_note": "전면 리모델링이란 건축물의 노후화 억제 또는 기능향상 등을 위하여 건축물 전체를 기록 또는 대수선하는 행위를 말하며, 주요구조부 재사용률은 철거비율 기준으로 산정한다."
+            }
+          },
+          "참고자료": [
+            "주택법, 국토교통부",
+            "건축법, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 기존 건축물의 설계도서 및 현황 사진",
+              "인증 - 재사용을 위한 주요구조부(기존, 리모델링 후) 설계도서 및 부재별 재사용률 산출자료"
+            ],
+            "본인증": [
+              "예비인증 시와 동일"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계 : 재료 및 자원\n인증항목 기존 건축물의 주요구조부 재사용\n세부평가기준\n평가목적 기존 건축물의 주요구조부 재사용률을 높여 재료 및 자원의 낭비를 줄이고 폐자원에 의한 환경오염을 줄인다.\n평가방법 전면 리모델링 건축물에 대하여 주요구조부의 재사용률에 따라 평가\n배 점 5점(가산항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 주요구조부의 재사용률 가중치\n1급 주요구조부중 60% 이상을 재사용하는 경우 1.0\n2급 주요구조부중 50% 이상 60% 미만을 재사용하는 경우 0.8\n3급 주요구조부중 40% 이상 50% 미만을 재사용하는 경우 0.6\n4급 주요구조부중 30% 이상 40% 미만을 재사용하는 경우 0.4\n- 전면 리모델링이란 건축물의 노후화 억제 또는 기능향상 등을 위하여, 건축물의 전체를 개축 또는 대수선\n을 하는 행위를 말함\n- 주요구조부의 재사용률은 체적비율을 기준으로 산정함\n참고자료 및 제출서류\n참고자료 - 주택법, 국토교통부\n- 건축법, 국토교통부\n제출서류\n예비 - 기존 건축물의 설계도서 및 현황 사진\n인증 - 재사용을 위한 주요구조부(기존, 리모델링 후) 설계도서 및 부재별 재사용률 산출자료\n본인증 - 예비인증 시와 동일"
+        },
+        {
+          "criterion_id": "R-ID-62",
+          "출처": {
+            "페이지": 92,
+            "종료페이지": 92,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "ID",
+            "명칭": "혁신적인 설계",
+            "세부분야": "물순환관리"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "중수도 및 하·폐수처리수 재이용",
+            "구분": "가산항목",
+            "배점": 1
+          },
+          "평가": {
+            "평가목적": "사용한 수돗물을 처리하여 생활용수 등으로 재활용함으로써 수자원을 절감하고 공공수역 오염부하 저감 및 오수 처리시설 비용 감소에 기여한다.",
+            "평가방법": "중수도 또는 하·폐수처리수 재이용 시설로 생산한 중수를 살수용수, 조경용수 등으로 사용하는 비율에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                92
+              ],
+              "max_score": 1,
+              "score_formula": "score = weight * 1",
+              "input_variables": [
+                {
+                  "name": "reused_water_use_volume_m3",
+                  "label": "대상건축물의 중수 또는 재이용수 사용량 X",
+                  "type": "number",
+                  "unit": "m3"
+                },
+                {
+                  "name": "target_water_use_total_m3",
+                  "label": "대상건축물의 발생 배수 총량 또는 생활용 상수 사용량 Y",
+                  "type": "number",
+                  "unit": "m3"
+                },
+                {
+                  "name": "reused_water_connected_before_middle_water_tank",
+                  "label": "중수도 또는 하폐수처리수 재이용 시설에서 발생하는 중수가 중수도 수질 기준 이전에 접합 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "reused_water_used_for_eligible_purpose",
+                  "label": "살수용수·조경용수 등 인정 용도로 사용 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "reused_water_use_ratio",
+                  "label": "중수 사용률",
+                  "formula": "reused_water_use_volume_m3 / target_water_use_total_m3 * 100",
+                  "unit": "%"
+                },
+                {
+                  "name": "reused_water_valid_condition",
+                  "formula": "reused_water_connected_before_middle_water_tank and reused_water_used_for_eligible_purpose"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "중수 사용률이 10% 이상인 경우",
+                  "condition": "reused_water_valid_condition and reused_water_use_ratio >= 10",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "중수 사용률이 8% 이상 10% 미만인 경우",
+                  "condition": "reused_water_valid_condition and 8 <= reused_water_use_ratio < 10",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "중수 사용률이 6% 이상 8% 미만인 경우",
+                  "condition": "reused_water_valid_condition and 6 <= reused_water_use_ratio < 8",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "중수 사용률이 4% 이상 6% 미만인 경우",
+                  "condition": "reused_water_valid_condition and 4 <= reused_water_use_ratio < 6",
+                  "weight": 0.4
+                }
+              ],
+              "purpose_note": "중수도 용도는 수세식 변소 세정용수, 살수용수, 조경용수, 공업용수, 공용시설 내 화장실 세정용수, 청소용수, 잡용수 등으로 사용하는 경우에 인정한다."
+            }
+          },
+          "참고자료": [
+            "물의 재이용 촉진 및 지원에 관한 법률, 시행령, 시행규칙, 환경부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "대상건축물 중수 사용률 산출서",
+              "중수도 시설관련 도면 및 시방서",
+              "외부 중수도 이용 계획서(대상건축물 이외의 지역에서 재이용하는 경우)",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "외부 중수도 이용에 관한 계약서(대상건축물 이외의 지역에서 재이용하는 경우)",
+              "관련 사진 및 자료"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계 : 물순환관리\n인증항목 중수도 및 하·폐수처리수 재이용\n세부평가기준\n평가목적 사용한 수돗물을 처리하여 생활용수 등으로 재활용함으로써 수자원을 절감하고, 공공수역에의 오염부하 저\n감 및 오수 처리시설 비용의 감소를 기대할 수 있다.\n평가방법 중수도 또는 하·폐수처리수 재이용 시설로 생산한 중수를 살수용수, 조경용수 등으로 사용하는 비율에 따라\n평가\n배 점 1점(가산항목)\n산출기준 • 평점 = (가중치)×(배점)\n대상건축물 중수 사용률 (V) = X ÷ Y × 100 (%)\nX : 대상건축물의 중수도 또는 하·폐수처리수 재이용 시설에 의한 중수 사용량\nY : 대상건축물의 발생 배수 총량 (대상건축물 생활용 상수 사용량 기준 및 그 밖의 사용량)\n구분 중수 사용률 가중치\n1급 중수 사용률(V)이 10% 이상인 경우 1.0\n2급 중수 사용률(V)이 8% 이상 10% 미만인 경우 0.8\n3급 중수 사용률(V)이 6% 이상 8% 미만인 경우 0.6\n4급 중수 사용률(V)이 4% 이상 6% 미만인 경우 0.4\n- 중수도 또는 하·폐수처리수 재이용 시설에서 발생하는 중수는 중수도 수질 기준에 적합하여야 함\n- 대상건축물 이외 지역에서 중수 또는 하·폐수처리수를 유입하여 재이용하는 경우도 중수 사용률에 따라\n평가함\n- 중수는 옥외에 중수도 시설 기준에 의해 청소용수, 살수용수, 조경용수 등으로 사용하거나 공용시설 내의\n화장실 세정용수, 청소용수, 조경용수 등으로 사용하는 경우에 인정함\n- 중수도 또는 하·폐수처리수 재이용 시설은 1/2 이상이 위생기구(양변기 등)에 연결되어 있어야함\n참고자료 및 제출서류\n참고자료 - 물의 재이용 촉진 및 지원에 관한 법률, 시행령, 시행규칙, 환경부\n제출서류 - 대상건축물 중수 사용률 산출서\n예비\n- 중수도 시설관련 도면 및 시방서\n인증\n- 외부 중수도 이용 계획서(대상건축물 이외의 지역에서 재이용하는 경우)\n- 예비인증 시와 동일\n본인증 - 외부 중수도 이용에 관한 계약서(대상건축물 이외의 지역에서 재이용하는 경우)\n- 관련 사진 및 자료"
+        },
+        {
+          "criterion_id": "R-ID-63",
+          "출처": {
+            "페이지": 93,
+            "종료페이지": 93,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "ID",
+            "명칭": "혁신적인 설계",
+            "세부분야": "유지관리"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "녹색 건설현장 환경관리 수행",
+            "구분": "가산항목",
+            "배점": 1
+          },
+          "평가": {
+            "평가목적": "녹색 건설현장을 조성하기 위하여 시공 시 현장 내외부의 친환경적인 활동과 환경관리 수행 여부를 평가하여 환경영향을 최소화하도록 한다.",
+            "평가방법": "녹색 건설현장 조성을 위한 현장 환경관리 수행 여부에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                93
+              ],
+              "max_score": 1,
+              "score_formula": "score = weight * 1",
+              "input_variables": [
+                {
+                  "name": "construction_environmental_management_report_including_items_1_2_3_exists",
+                  "label": "건설현장 환경관리 수행범위 (1)(2)(3)의 모니터링 기록 및 설정 목표·부합여부 확인 자료 존재 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "construction_environmental_management_item_count",
+                  "label": "건설현장 환경관리 수행범위 충족 항목 수",
+                  "type": "number",
+                  "unit": "개"
+                }
+              ],
+              "management_items": [
+                "건설현장 활동에 있어서 이산화탄소 또는 에너지의 목표 설정, 모니터링 및 리포트 작성",
+                "건설현장 운송 교통수단에 대한 이산화탄소 또는 에너지의 모니터링 및 리포트 작성",
+                "건설현장 활동에 있어서 물의 소비에 대한 목표 설정, 모니터링 및 리포트 작성",
+                "건설현장에서 발생하는 폐기물에 대한 목표 설정, 모니터링 및 리포트 작성",
+                "건설현장 공기오염 방지 계획 수립, 시행 및 리포트 작성",
+                "건설현장 수질오염 방지 계획 수립, 시행 및 리포트 작성",
+                "건설현장 소음·진동 방지 계획 수립, 시행 및 리포트 작성"
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "건설현장 환경관리 수행범위의 모든 항목을 수행한 경우",
+                  "condition": "construction_environmental_management_report_including_items_1_2_3_exists and construction_environmental_management_item_count >= 7",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "3급 + 건설현장 환경관리 수행범위의 (1), (2), (3) 중 1개 이상의 항목을 수행한 경우",
+                  "condition": "construction_environmental_management_report_including_items_1_2_3_exists and construction_environmental_management_item_count >= 5",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "4급 + 건설현장 환경관리 수행범위의 (4) 항목을 수행한 경우",
+                  "condition": "construction_environmental_management_item_count >= 4",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "건설현장 환경관리 수행범위 중 (5), (6), (7) 항목을 수행한 경우",
+                  "condition": "construction_environmental_management_item_count >= 3",
+                  "weight": 0.4
+                }
+              ],
+              "note": "수행범위 (1), (2), (3)의 모니터링은 월 간격으로 기록되어 있어야 하며 설정 목표와 부합여부를 확인할 수 있어야 한다."
+            }
+          },
+          "참고자료": [
+            "건설환경관리 표준시방서, 2004, 국토교통부",
+            "LH 건설현장의 친환경성 제고를 위한 현장관리 기반구축 방안, 2011, LH",
+            "친환경 건설 가이드라인, 2013, 환경부",
+            "Global Reporting Initiative, (http://www.globalreporting.org)"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 건설현장 환경관리 적용 내용을 확인할 수 있는 계획서",
+              "인증 - 건설현장 환경관리 적용 내용을 확인할 수 있는 적용예정확인서",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "건설현장 환경관리 적용 내용을 확인할 수 있는 리포트",
+              "건설현장 환경관리 활동 내용을 확인할 수 있는 현장사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계 : 유지관리\n인증항목 녹색 건설현장 환경관리 수행\n세부평가기준\n평가목적 녹색 건설현장을 조성하기 위하여 시공시 현장 내외부의 친환경적인 활동과 현장관리 수행 여부를 평가하여\n환경영향을 최소화 하도록 한다.\n평가방법 녹색 건설현장 조성을 위한 현장 환경관리 수행 여부에 따라 평가\n배 점 1점(가산항목)\n산출기준 • 평점 = (가중치)×(배점)\n구 분 건설현장 환경관리의 수행 가중치\n1급 건설현장 환경관리 수행범위의 모든 항목을 수행한 경우 1.0\n2급 3급 + 건설현장 환경관리 수행범위의 (1), (2), (3) 중 1개 이상의 항목을 수행한 경우 0.8\n3급 4급 + 건설현장 환경관리 수행범위의 (4) 항목을 수행한 경우 0.6\n4급 건설현장 환경관리 수행범위 중 (5), (6), (7) 항목을 수행한 경우 0.4\n건설현장 환경관리 수행범위\n(1) 건설현장 활동에 있어서 이산화탄소 또는 에너지의 목표 설정, 모니터링 및 리포트 작성\n(2) 건설현장을 오가는 교통수단에 대한 이산화탄소 또는 에너지의 모니터링 및 리포트 작성\n(3) 건설현장 활동에 있어서 물의 소비에 대한 목표 설정, 모니터링 및 리포트 작성\n(4) 건설현장에서 발생하는 폐기물에 대한 목표 설정, 모니터링 및 리포트 작성\n(5) 건설현장 공기오염 방지 계획 수립, 시행 및 리포트 작성\n(6) 건설현장 수질오염 방지 계획 수립, 시행 및 리포트 작성\n(7) 건설현장 소음·진동 방지 계획 수립, 시행 및 리포트 작성\n- 건설현장 환경관리 수행범위 (1), (2), (3)의 모니터링은 월 간격으로 기록되어 있어야하며, 설정된 목표와\n부합여부를 확인할 수 있어야 함\n참고자료 및 제출서류\n참고자료 - 건설환경관리 표준시방서, 2004, 국토교통부\n- LH 건설현장의 친환경성 제고를 위한 현장관리 기반구축 방안, 2011, LH\n- 친환경 건설 가이드라인, 2013, 환경부\n- Global Reporting Initiative, (http://www.globalreporting.org)\n제출서류\n예비 - 건설현장 환경관리 적용 내용을 확인할 수 있는 계획서\n인증 - 건설현장 환경관리 적용 내용을 확인할 수 있는 적용예정확인서\n- 예비인증 시와 동일\n본인증 - 건설현장 환경관리 적용 내용을 확인할 수 있는 리포트\n- 건설현장 환경관리 활동 내용을 확인할 수 있는 현장사진"
+        },
+        {
+          "criterion_id": "R-ID-64",
+          "출처": {
+            "페이지": 94,
+            "종료페이지": 94,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "ID",
+            "명칭": "혁신적인 설계",
+            "세부분야": "생태환경"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "표토재활용 비율",
+            "구분": "가산항목",
+            "배점": 1
+          },
+          "평가": {
+            "평가목적": "식재지역에 표토의 재활용 여부를 평가하여 자연생태계의 유지를 도모한다.",
+            "평가방법": "대지 자체의 표토를 식재지역에 재활용하는 경우에 해당하며, 전체 표토량 대비 식재지반에 이용되는 재활용 표토량의 비율로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                94
+              ],
+              "max_score": 1,
+              "score_formula": "score = weight * 1",
+              "input_variables": [
+                {
+                  "name": "reused_topsoil_volume_m3",
+                  "label": "재활용 표토량",
+                  "type": "number",
+                  "unit": "m3"
+                },
+                {
+                  "name": "excluded_topsoil_volume_m3",
+                  "label": "건축면적을 제외한 대지 표토량",
+                  "type": "number",
+                  "unit": "m3"
+                },
+                {
+                  "name": "topsoil_from_project_site_reused_in_landscape_area",
+                  "label": "대지 자체 표토를 식재지역에 재활용 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "topsoil_reuse_ratio",
+                  "label": "표토재활용 비율",
+                  "formula": "reused_topsoil_volume_m3 / excluded_topsoil_volume_m3 * 100",
+                  "unit": "%"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "표토재활용 비율이 40% 이상인 경우",
+                  "condition": "topsoil_from_project_site_reused_in_landscape_area and topsoil_reuse_ratio >= 40",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "표토재활용 비율이 30% 이상 40% 미만인 경우",
+                  "condition": "topsoil_from_project_site_reused_in_landscape_area and 30 <= topsoil_reuse_ratio < 40",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "표토재활용 비율이 20% 이상 30% 미만인 경우",
+                  "condition": "topsoil_from_project_site_reused_in_landscape_area and 20 <= topsoil_reuse_ratio < 30",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "표토재활용 비율이 10% 이상 20% 미만인 경우",
+                  "condition": "topsoil_from_project_site_reused_in_landscape_area and 10 <= topsoil_reuse_ratio < 20",
+                  "weight": 0.4
+                }
+              ],
+              "calculation_note": "재활용 표토량은 신청인이 제출한 표토재활용 계획서의 명시된 수량이며, 건축면적을 제외한 전체 표토량은 대지면적에서 건축면적을 제외한 토심 15cm 기준으로 산정한다."
+            }
+          },
+          "참고자료": [
+            "표토보전 및 침식(유실)방지 대책에 관한 연구, 2001, 환경부",
+            "조경설계기준, 2013, 한국조경학회"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 표토재활용 계획서(공사 중 표토관리 계획서 포함)",
+              "인증 - 관련 시방서 및 도면",
+              "표토활용대장"
+            ],
+            "본인증": [
+              "관련 시방서 및 도면",
+              "표토재활용 현장사진(공사 전/공사 중/공사 후 단계 포함)"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계 : 생태환경\n인증항목 표토재활용 비율\n세부평가기준\n평가목적 식재지역에 표토의 재활용 여부를 평가하여 자연생태계의 유지를 도모한다.\n평가방법 대지 자체의 표토를 식재지역에 재활용하는 경우에 해당되며 전체 표토량 대비 식재지반에 이용되는 재활용\n표토량의 비율(%)을 산정하여 평가\n배 점 1점(가산항목)\n산출기준 • 평점 = (가중치)×(배점)\n재활용 표토량\n표토재활용 비율(V) = × 100\n건축면적을 제외한 전체 표토량\n재활용 표토량 : 신청인이 제출한 ‘표토재활용 계획서’에 명시된 수량 (m3)\n건축면적을 제외한 전체 표토량 : {대지면적(m2)-건축면적((m2)} × 0.15m(표토는 토심 15cm를 기준)\n구분 표토재활용 비율 가중치\n1급 표토재활용 비율(V)이 40% 이상인 경우 1.0\n2급 표토재활용 비율(V)이 30% 이상 40% 미만인 경우 0.8\n3급 표토재활용 비율(V)이 20% 이상 30% 미만인 경우 0.6\n4급 표토재활용 비율(V)이 10% 이상 20% 미만인 경우 0.4\n- 표토란 자연지반의 최상부에 있는 토층으로서 일반적으로 풍화되어 유기물을 포함하는 부드러운 층을 말함\n- 자연지반 녹지율을 40%이상 확보한 경우에 해당함\n참고자료 및 제출서류\n참고자료 - 표토보전 및 침식(유실)방지 대책에 관한 연구, 2001, 환경부\n- 조경설계기준, 2013, 한국조경학회\n제출서류\n예비 - 표토재활용 계획서(공사 중 표토관리 계획서 포함)\n인증 - 관련 시방서 및 도면\n- 표토활용대장\n본인증 - 관련 시방서 및 도면\n- 표토재활용 현장사진(공사 전/공사 중/공사 후 단계 포함)"
+        },
+        {
+          "criterion_id": "R-ID-65",
+          "출처": {
+            "페이지": 95,
+            "종료페이지": 95,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": null,
+            "명칭": "ID 혁신적인 설계"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "녹색건축인증전문가의 설계 참여",
+            "구분": "가산항목",
+            "배점": 1
+          },
+          "평가": {
+            "평가목적": "설계 초기단계에서부터 녹색건축 통합설계를 통해 녹색건축물의 조성을 도모한다.",
+            "평가방법": "녹색건축인증전문가의 설계참여 여부에 따라 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                95
+              ],
+              "max_score": 1,
+              "input_variables": [
+                {
+                  "name": "green_building_certification_expert_participated_in_design",
+                  "label": "녹색건축인증전문가 설계 참여 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "expert_qualification_document_submitted",
+                  "label": "녹색건축인증전문가 자격 확인 서류 제출 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "expert_participation_confirmation_submitted",
+                  "label": "녹색건축인증전문가 설계참여 증명서 제출 여부",
+                  "type": "boolean"
+                }
+              ],
+              "score_formula": "score = 1 if green_building_certification_expert_participated_in_design and expert_qualification_document_submitted and expert_participation_confirmation_submitted else 0",
+              "award_condition": "녹색건축인증전문가의 설계 참여 여부에 따른 점수 부여",
+              "expert_requirement": "녹색건축물 조성 지원법 제21조 및 녹색건축 인증에 관한 규칙 제8조의3에 따른 교육 이수 또는 자격을 갖춘 전문가로서 설계 초기단계부터 통합설계가 이루어질 수 있도록 참여해야 한다."
+            }
+          },
+          "참고자료": [
+            "녹색건축물 조성 지원법, 국토교통부",
+            "녹색건축 인증에 관한 규칙, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 녹색건축인증전문가 자격 확인 서류",
+              "인증 - 녹색건축인증전문가 설계참여 증명서"
+            ],
+            "본인증": [
+              "예비인증 시와 동일"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계\n인증항목 녹색건축인증전문가의 설계 참여\n세부평가기준\n평가목적 설계 초기단계에서부터의 녹색건축 통합설계를 통해 녹색건축물의 조성을 도모한다.\n평가방법 녹색건축인증전문가의 설계참여 여부에 따라 평가\n배 점 1점(가산항목)\n산출기준 ※ 녹색건축인증전문가의 설계 참여 여부에 따른 점수 부여\n- 녹색건축인증전문가는 녹색건축물 조성 지원법 제21조 및 녹색건축 인증에 관한 규칙 제8조3항에 따라\n관련 교육을 이수한 녹색건축물 전문인력을 말함\n- 녹색건축인증전문가는 설계 초기단계에서부터 통합설계가 이루어 질 수 있도록 녹색건축의 제반 지식을\n지원하고 설계과정에 참여하여야 함\n- 녹색건축인증전문가는 경력증명서, 프로젝트 참여이력, 참여실적서 등을 제출해야 함\n참고자료 및 제출서류\n참고자료 - 녹색건축물 조성 지원법, 국토교통부\n- 녹색건축 인증에 관한 규칙, 국토교통부\n제출서류\n예비 - 녹색건축인증전문가 자격 확인 서류\n인증 - 녹색건축인증전문가 설계참여 증명서\n본인증 - 예비인증 시와 동일"
+        },
+        {
+          "criterion_id": "R-ID-66",
+          "출처": {
+            "페이지": 96,
+            "종료페이지": 96,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": null,
+            "명칭": "ID 혁신적인 설계"
+          },
+          "인증항목": {
+            "번호": null,
+            "명칭": "혁신적인 녹색건축 계획 및 설계",
+            "구분": "가산항목",
+            "배점": 3
+          },
+          "평가": {
+            "평가목적": "건축물의 독창적이고 창의적인 아이디어를 포함한 녹색건축설계, 신기술, 신제품의 혁신성에 대하여 평가한다.",
+            "평가방법": "혁신적인 녹색건축 심의회의를 통해 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_image_refined_v3",
+              "source_pages": [
+                96
+              ],
+              "max_score": 3,
+              "score_formula": "score = weight * 3",
+              "input_variables": [
+                {
+                  "name": "integrated_design_score",
+                  "label": "통합설계 점수",
+                  "type": "number",
+                  "unit": "점"
+                },
+                {
+                  "name": "innovative_green_design_score",
+                  "label": "혁신적인 계획 및 설계, 신기술, 신제품 적용 점수",
+                  "type": "number",
+                  "unit": "점"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "innovative_green_building_design_score_total",
+                  "label": "혁신적인 녹색건축설계 점수 합계",
+                  "formula": "integrated_design_score + innovative_green_design_score",
+                  "unit": "점"
+                }
+              ],
+              "evaluation_components": [
+                {
+                  "name": "통합설계",
+                  "score_range": "0~30"
+                },
+                {
+                  "name": "혁신적인 계획 및 설계, 신기술, 신제품 적용",
+                  "score_range": "0~70",
+                  "examples": [
+                    "토지이용 및 교통",
+                    "생태환경",
+                    "에너지 및 환경오염",
+                    "물순환관리",
+                    "재료 및 자원",
+                    "유지관리",
+                    "실내환경",
+                    "녹색건축 관련 신기술",
+                    "신제품 적용"
+                  ]
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "혁신적인 녹색건축설계 점수 합계 90점 이상",
+                  "condition": "innovative_green_building_design_score_total >= 90",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "혁신적인 녹색건축설계 점수 합계 80점 이상 90점 미만",
+                  "condition": "80 <= innovative_green_building_design_score_total < 90",
+                  "weight": 0.7
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "혁신적인 녹색건축설계 점수 합계 60점 이상 80점 미만",
+                  "condition": "60 <= innovative_green_building_design_score_total < 80",
+                  "weight": 0.4
+                }
+              ],
+              "notes": [
+                "통합설계는 건축물 설계초기단계에서부터 진행된 설계과정에 대해 평가한다.",
+                "혁신적인 계획 및 설계는 각 전문분야에 대한 특화된 계획 및 설계의 우수성에 대해 평가한다.",
+                "신기술 및 신제품 적용은 지정, 적용, 우수함으로 신청하는 건축물에 대해서만 평가한다."
+              ]
+            }
+          },
+          "참고자료": [],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 혁신적인 녹색건축 계획 및 설계 제안서",
+              "인증 - 혁신적인 녹색건축 계획 및 설계 관련도서 및 근거자료",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "혁신적인 녹색건축 계획 및 설계 관련 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 ID 혁신적인 설계\n인증항목 혁신적인 녹색건축 계획 및 설계\n세부평가기준\n평가목적 건축물의 독창적이고 창의적인 아이디어를 포함한 녹색건축설계, 신기술, 신제품의 혁신성에 대하여 평가함\n을 목적으로 한다.\n평가방법 혁신적인 녹색건축 심의회의를 통해 평가\n배 점 3점(가산항목)\n• 평점 = (가중치)×(배점)\n산출기준\n구분 혁신적인 녹색건축설계 점수 합계 가중치\n1급 90점 이상 1.0\n2급 80점 이상 90점 미만 0.7\n3급 60점 이상 80점 미만 0.4\n혁신적인 녹색건축설계 평가항목 점수\n통합설계 0~30\n토지이용 및 교통, 생태환경, 에너지 및 환경오염,\n혁신적인 계획 및 설계\n물순환관리, 재료 및 자원, 유지관리, 실내환경 0~70\n신기술, 신제품 적용\n녹색건축관련 신기술, 신제품 적용\n- 통합설계는 건축물 설계초기단계에서부터 진행된 설계과정에 대해 평가함\n- 혁신적인 계획 및 설계는 각 전문분야에 대한 특화된 계획 및 설계의 우수성에 대해 평가함\n- 신기술, 신제품은 운영기관 장이 정한 절차에 따라 지정받은 기술 또는 제품을 말함\n- 신기술, 신제품의 적용은 자원 및 에너지절약 등 녹색건축관련 신기술 등의 적용성에 대해 평가함\n※ 혁신적인 녹색건축 계획 및 설계는 자체평가서가 최우수 및 우수등급으로 신청하는 건축물에 대해서만\n평가함\n※ 신기술, 신제품에 대한 평가는 해당 기술, 제품이 해당 공정 또는 부위에 모두 적용될 경우 평가함\n참고자료 및 제출서류\n참고자료\n제출서류\n예비 - 혁신적인 녹색건축 계획 및 설계 제안서\n인증 - 혁신적인 녹색건축 계획 및 설계 관련도서 및 근거자료\n- 예비인증 시와 동일\n본인증\n- 혁신적인 녹색건축 계획 및 설계 관련 사진"
+        }
+      ]
+    }
+  ]
+}

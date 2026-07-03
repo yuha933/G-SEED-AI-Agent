@@ -1,0 +1,34 @@
+{
+  "documents": [
+    {
+      "document_id": "material_finish_list",
+      "path": "마감자재목록표.pdf",
+      "document_type": "material",
+      "merge_allowed": false
+    },
+    {
+      "document_id": "construction_plan",
+      "path": "시공계획서.pdf",
+      "document_type": "construction",
+      "merge_allowed": false
+    },
+    {
+      "document_id": "energy_use_plan",
+      "path": "에너지사용계획서.pdf",
+      "document_type": "energy",
+      "merge_allowed": false
+    },
+    {
+      "document_id": "landscape_design",
+      "path": "조경설계도.pdf",
+      "document_type": "landscape",
+      "merge_allowed": false
+    },
+    {
+      "document_id": "building_drawing",
+      "path": "건축도면.pdf",
+      "document_type": "drawing",
+      "merge_allowed": false
+    }
+  ]
+}

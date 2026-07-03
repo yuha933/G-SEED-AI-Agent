@@ -1,0 +1,668 @@
+{
+  "metadata": {
+    "인증기준명": "녹색건축 인증기준",
+    "버전": "G-SEED 2016-8",
+    "건축물유형": "신축 주거용 건축물",
+    "전문분야번호": "2",
+    "전문분야명": "에너지 및 환경오염",
+    "시작페이지": 21,
+    "종료페이지": 27,
+    "항목수": 5,
+    "원본PDF": "G-SEED 2016-8_개정전문.pdf",
+    "참조데이터": "G-SEED_energy copy/01_신축_주거용_건축물.json",
+    "생성방식": "계산식·가중치표·필요변수가 구조화된 G-SEED_energy copy 항목을 우선 적용"
+  },
+  "전문분야": [
+    {
+      "번호": "2",
+      "명칭": "에너지 및 환경오염",
+      "인증항목": [
+        {
+          "criterion_id": "R-2.1",
+          "출처": {
+            "페이지": 21,
+            "종료페이지": 22,
+            "버전": "G-SEED 2016-8"
+          },
+          "인증항목": {
+            "번호": "2.1",
+            "명칭": "에너지 성능",
+            "구분": "필수항목, 최우수등급 최소평점 9.6점 우수등급 최소평점 7.2점",
+            "배점": 12
+          },
+          "참고자료": [
+            "건축물 에너지효율등급 인증 및 제로에너지건축물 인증에 관한 규칙, 국토교통부 및 산업통상자원부",
+            "건축물 에너지효율등급 인증 및 제로에너지건축물 인증 기준, 국토교통부 및 산업통상자원부",
+            "건축물의 에너지절약설계기준, 국토교통부",
+            "건축물의 에너지절약설계기준 해설서, 한국에너지공단",
+            "에너지절약형 친환경주택의 건설기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "에너지절약계획서 및 관련 근거자료(도면, 성적서 등)",
+              "건축물 에너지효율등급 예비인증서, 에너지절약계획서 검토 필증",
+              "에너지절약형 친환경주택 건설기준 관련 제출서류",
+              "※ 녹색건축물 조성지원법 시행령 제11조의3에 따라 인증의 취득 의무 대상 건축물에 대해서",
+              "는 건축물 에너지효율등급 예비인증 신청서 및 등급적용 예정확인서로 갈음 가능",
+              "에너지절약계획서 및 관련 근거자료(도면, 성적서, 인증서, 거래명세서, 현장사진 등)"
+            ],
+            "본인증": [
+              "건축물 에너지효율등급 인증서",
+              "에너지절약형 친환경주택 건설기준 관련 제출서류"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 2 에너지 및 환경오염\n인증항목 2.1 에너지 성능\n세부평가기준\n평가목적 건축물의 에너지소비는 화석연료 사용에 의한 온실가스 배출과 밀접한 관계가 있으므로 건축물의 라이프사\n이클에서 가장 많은 에너지를 소비하는 운영단계에서의 에너지 소비를 저감하기 위한 평가로써 건축물의 에\n너지를 절감하고 나아가 온실가스의 배출을 저감한다.\n평가방법 1. 건축물의 에너지절약설계기준에 따른 에너지절약계획서의 에너지성능지표 검토서 평점 합계에 근거하여\n평가\n2. 건축물 에너지효율등급 (예비)인증서에 근거하여 평가\n3. 에너지절약형 친환경주택의 건설기준의 절감률에 근거하여 평가\n배 점 12점(필수항목, 최우수등급 최소평점 9.6점 우수등급 최소평점 7.2점)\n산출기준 ※ 평가방법 1, 2, 3 중 유리한 점수로 적용\n[평가방법 1] 에너지성능지표를 적용한 경우\n• 평점 = 12 × [0.4 + {(에너지성능지표 평점합계 - 70) ÷ 25} × 0.6]\n- 에너지성능지표 평점합계가 70점 미만인 경우 에너지 성능 점수는 0점임\n- 평가방법 1은 최대 12점까지 인정함\n- 평점은 소수점 셋째 자리에서 반올림함\n- 에너지성능지표 검토서는 인증 신청시점의 기준을 적용하며, 허가 또는 사업승인 신청 시에 검토기관에서\n발급한 에너지절약계획서 검토결과의 에너지성능지표 평점도 인정 가능함\n[평가방법 2] 건축물 에너지효율등급을 적용한 경우\n• 평점 = (가중치) × (배점)\n구분 건축물 에너지효율등급 가중치\n1급 1++등급 이상 1.0\n2급 1+등급 0.8\n3급 1등급 0.6\n4급 2등급 0.4\n[평가방법 3] 에너지절약형 친환경주택의 건설기준을 적용한 경우\n• 평점 = (가중치) × (배점)\n구분 에너지절약형 친환경주택의 건설기준을 적용한 경우 가중치\n1급 69% 이상 절감한 경우 1.0\n2급 66% 이상 69% 미만 절감한 경우 0.8\n3급 63% 이상 66% 미만 절감한 경우 0.6\n4급 60% 이상 63% 미만 절감한 경우 0.4\n※ 주택성능등급 평가 시 등급구분\n에너지성능지표 검토서 에너지절약형\n구분 건축물 에너지효율등급 성능등급\n평점합계 친환경주택의 건설기준\n1급 95점 이상 1++등급 이상 69% 이상 절감한 경우 ★★★★\n66% 이상 69% 미만\n2급 85점 이상 95점 미만 1+등급 ★★★\n절감한 경우\n63% 이상 66% 미만\n3급 75점 이상 85점 미만 1등급 ★★\n절감한 경우\n60% 이상 63% 미만\n4급 65점 이상 75점 미만 2등급 ★\n절감한 경우\n참고자료 및 제출서류\n참고자료 - 건축물 에너지효율등급 인증 및 제로에너지건축물 인증에 관한 규칙, 국토교통부 및 산업통상자원부\n- 건축물 에너지효율등급 인증 및 제로에너지건축물 인증 기준, 국토교통부 및 산업통상자원부\n- 건축물의 에너지절약설계기준, 국토교통부\n- 건축물의 에너지절약설계기준 해설서, 한국에너지공단\n- 에너지절약형 친환경주택의 건설기준, 국토교통부\n제출서류\n- 에너지절약계획서 및 관련 근거자료(도면, 성적서 등)\n- 건축물 에너지효율등급 예비인증서, 에너지절약계획서 검토 필증\n예비\n- 에너지절약형 친환경주택 건설기준 관련 제출서류\n인증\n※ 녹색건축물 조성지원법 시행령 제11조의3에 따라 인증의 취득 의무 대상 건축물에 대해서\n는 건축물 에너지효율등급 예비인증 신청서 및 등급적용 예정확인서로 갈음 가능\n- 에너지절약계획서 및 관련 근거자료(도면, 성적서, 인증서, 거래명세서, 현장사진 등)\n본인증 - 건축물 에너지효율등급 인증서\n- 에너지절약형 친환경주택 건설기준 관련 제출서류",
+          "평가": {
+            "평가목적": "운영단계 에너지 소비를 저감하여 건축물 에너지 절감 및 온실가스 배출 저감을 유도한다.",
+            "평가방법": "에너지성능지표, 건축물 에너지효율등급, 에너지절약형 친환경주택 절감률 중 유리한 점수로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                21,
+                22
+              ],
+              "max_score": 12,
+              "input_variables": [
+                {
+                  "name": "energy_performance_index_total_score",
+                  "label": "에너지성능지표 평점합계",
+                  "type": "number",
+                  "unit": "점"
+                },
+                {
+                  "name": "building_energy_efficiency_grade",
+                  "label": "건축물 에너지효율등급",
+                  "type": "enum",
+                  "values": [
+                    "1+++",
+                    "1++",
+                    "1+",
+                    "1",
+                    "2",
+                    "3"
+                  ]
+                },
+                {
+                  "name": "green_home_energy_saving_ratio",
+                  "label": "에너지절약형 친환경주택 절감률",
+                  "type": "number",
+                  "unit": "%"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "method_1_epi_score",
+                  "formula": "0 if energy_performance_index_total_score < 70 else min(12, round(12 * (0.4 + ((energy_performance_index_total_score - 70) / 25) * 0.6), 2))",
+                  "unit": "점"
+                },
+                {
+                  "name": "method_2_energy_efficiency_score",
+                  "formula": "12 * weight_by_building_energy_efficiency_grade",
+                  "unit": "점"
+                },
+                {
+                  "name": "method_3_green_home_score",
+                  "formula": "12 * weight_by_green_home_energy_saving_ratio",
+                  "unit": "점"
+                },
+                {
+                  "name": "energy_performance_score",
+                  "formula": "max(method_1_epi_score, method_2_energy_efficiency_score, method_3_green_home_score)",
+                  "unit": "점"
+                }
+              ],
+              "method_2_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "1++등급 이상",
+                  "condition": "building_energy_efficiency_grade in [\"1+++\", \"1++\"]",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "1+등급",
+                  "condition": "building_energy_efficiency_grade == \"1+\"",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "1등급",
+                  "condition": "building_energy_efficiency_grade == \"1\"",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "2등급",
+                  "condition": "building_energy_efficiency_grade == \"2\"",
+                  "weight": 0.4
+                }
+              ],
+              "method_3_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "69% 이상 절감",
+                  "condition": "green_home_energy_saving_ratio >= 69",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "66% 이상 69% 미만 절감",
+                  "condition": "66 <= green_home_energy_saving_ratio < 69",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "63% 이상 66% 미만 절감",
+                  "condition": "63 <= green_home_energy_saving_ratio < 66",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "60% 이상 63% 미만 절감",
+                  "condition": "60 <= green_home_energy_saving_ratio < 63",
+                  "weight": 0.4
+                }
+              ],
+              "performance_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "에너지성능지표 95점 이상 또는 1++등급 이상 또는 절감률 69% 이상",
+                  "condition": "energy_performance_index_total_score >= 95 or building_energy_efficiency_grade in [\"1+++\", \"1++\"] or green_home_energy_saving_ratio >= 69",
+                  "performance_grade": "★★★★"
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "에너지성능지표 85점 이상 95점 미만 또는 1+등급 또는 절감률 66% 이상 69% 미만",
+                  "condition": "85 <= energy_performance_index_total_score < 95 or building_energy_efficiency_grade == \"1+\" or 66 <= green_home_energy_saving_ratio < 69",
+                  "performance_grade": "★★★"
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "에너지성능지표 75점 이상 85점 미만 또는 1등급 또는 절감률 63% 이상 66% 미만",
+                  "condition": "75 <= energy_performance_index_total_score < 85 or building_energy_efficiency_grade == \"1\" or 63 <= green_home_energy_saving_ratio < 66",
+                  "performance_grade": "★★"
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "에너지성능지표 65점 이상 75점 미만 또는 2등급 또는 절감률 60% 이상 63% 미만",
+                  "condition": "65 <= energy_performance_index_total_score < 75 or building_energy_efficiency_grade == \"2\" or 60 <= green_home_energy_saving_ratio < 63",
+                  "performance_grade": "★"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "criterion_id": "R-2.2",
+          "출처": {
+            "페이지": 23,
+            "종료페이지": 23,
+            "버전": "G-SEED 2016-8"
+          },
+          "인증항목": {
+            "번호": "2.2",
+            "명칭": "에너지 모니터링 및 관리지원 장치",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "참고자료": [
+            "건축물의 에너지절약설계기준, 국토교통부",
+            "지능형 홈 네트워크 설치 및 기술기준, 국토교통부 및 산업통상자원부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "에너지 모니터링 및 관리지원 장치 설계도서",
+              "에너지 모니터링 및 관리지원 장치 기능 확인할 수 있는 증빙도서"
+            ],
+            "본인증": [
+              "에너지 모니터링 및 관리지원 장치 설치 내역 및 도서",
+              "에너지 모니터링 및 관리지원 장치의 설치와 기능 확인할 수 있는 증빙도서 및 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 2 에너지 및 환경오염\n인증항목 2.2 에너지 모니터링 및 관리지원 장치\n세부평가기준\n평가목적 거주자 및 건축물 관리자가 세대 및 단지 전체 에너지소비량, 에너지비용, 온실가스 배출량 등에 대한 실시\n간 데이터 및 누적 데이터를 쉽게 확인하고, 효율적으로 관리할 수 있게 함으로써 에너지 절약을 유도하고\n자 한다.\n평가방법 에너지 모니터링 및 관리지원 장치 설치 여부로 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 에너지 모니터링 및 관리지원 장치 설치 여부 가중치\n1급 2급 + 통합 에너지관리시스템을 구축한 경우 1.0\n2급 3급 + 설치된 장치에 에너지 분석 기능이 포함되어 있는 경우 0.8\n3급 4급 + 공용부분에서 소비되는 모든 에너지를 모니터링 할 수 있는 장치를 설치한 경우 0.6\n4급 세대 전체에 에너지 모니터링 장치를 설치한 경우 0.4\n- 에너지 모니터링 및 관리지원 장치는 세대의 경우 모든 세대 내, 공용부분의 경우 관리사무소 등에 모니\n터링 장치를 설치한 경우 인정함\n- 공용부분은 세대를 제외한 모든 부분을 말하며, 상가 등 분양면적에 해당되지 않는 부분은 제외함\n- 에너지 모니터링 장치는 전력, 가스, 지역냉난방, 유류 등 사용 에너지원의 에너지소비량 구분이 가능하여\n야 함\n- 세대에 설치되는 에너지 모니터링 및 관리지원 장치는 월패드와 같이 필요한 정보를 원활히 표시하고 조\n작할 수 있는 것을 의미함\n- 에너지 분석 기능이란 세대 및 공용부분에서 사용자 또는 관리자가 분석을 위하여 에너지원(비용포함), 사\n용기간, 시스템별 정보(관제점) 등을 선택 및 지정하여 비교할 수 있도록 하는 설정 기능을 의미함\n- 통합 에너지관리시스템이란 세대 전체 및 공용부분의 에너지 소비 및 생산 전반에 대하여 주요 시스템별\n에너지 낭비요소를 분석할 수 있도록 지원 기능을 하는 시스템을 의미함\n- 통합 에너지관리시스템은 1)개별난방 방식의 경우 ‘난방+급탕, 조명, 전열, 등’으로, 2)중앙집중식(집단에\n너지 사업법에 의한 지역난방 공급방식을 포함) 난방방식의 경우 난방, 급탕, 조명, 전열 취사 등으로, 3)\n공용부분의 경우 ‘승강기, 조명, 팬·펌프 등으로’ 용도 분류가 가능하여야 함\n참고자료 및 제출서류\n참고자료 - 건축물의 에너지절약설계기준, 국토교통부\n- 지능형 홈 네트워크 설치 및 기술기준, 국토교통부 및 산업통상자원부\n제출서류\n예비 - 에너지 모니터링 및 관리지원 장치 설계도서\n인증 - 에너지 모니터링 및 관리지원 장치 기능 확인할 수 있는 증빙도서\n- 에너지 모니터링 및 관리지원 장치 설치 내역 및 도서\n본인증\n- 에너지 모니터링 및 관리지원 장치의 설치와 기능 확인할 수 있는 증빙도서 및 사진",
+          "평가": {
+            "평가목적": "거주자 및 관리자가 에너지소비량, 비용, 온실가스 배출량 데이터를 확인하고 효율적으로 관리하도록 유도한다.",
+            "평가방법": "에너지 모니터링 및 관리지원 장치 설치 여부로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                23
+              ],
+              "max_score": 2,
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "all_household_energy_monitoring_device_installed",
+                  "label": "모든 세대 내 에너지 모니터링 장치 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "common_area_energy_monitoring_device_installed",
+                  "label": "공용부분 에너지 모니터링 장치 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "energy_analysis_function_included",
+                  "label": "설치 장치의 에너지 분석 기능 포함 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "integrated_energy_management_system_installed",
+                  "label": "통합 에너지관리시스템 구축 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "grade_4_energy_monitoring_condition",
+                  "formula": "all_household_energy_monitoring_device_installed"
+                },
+                {
+                  "name": "grade_3_energy_monitoring_condition",
+                  "formula": "grade_4_energy_monitoring_condition and common_area_energy_monitoring_device_installed"
+                },
+                {
+                  "name": "grade_2_energy_monitoring_condition",
+                  "formula": "grade_3_energy_monitoring_condition and energy_analysis_function_included"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "2급 + 통합 에너지관리시스템을 구축한 경우",
+                  "condition": "grade_2_energy_monitoring_condition and integrated_energy_management_system_installed",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "3급 + 설치된 장치에 에너지 분석 기능이 포함된 경우",
+                  "condition": "grade_2_energy_monitoring_condition",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "4급 + 공용부분 모든 에너지를 모니터링할 수 있는 장치를 설치한 경우",
+                  "condition": "grade_3_energy_monitoring_condition",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "세대 전체에 에너지 모니터링 장치를 설치한 경우",
+                  "condition": "grade_4_energy_monitoring_condition",
+                  "weight": 0.4
+                }
+              ]
+            }
+          }
+        },
+        {
+          "criterion_id": "R-2.3",
+          "출처": {
+            "페이지": 24,
+            "종료페이지": 24,
+            "버전": "G-SEED 2016-8"
+          },
+          "인증항목": {
+            "번호": "2.3",
+            "명칭": "신·재생에너지 이용",
+            "구분": "평가항목",
+            "배점": 3
+          },
+          "참고자료": [
+            "신에너지 및 재생에너지 개발 ․ 이용 ․ 보급 촉진법, 산업통상자원부",
+            "신·재생에너지 설비의 지원 등에 관한 규정, 산업통상자원부",
+            "신·재생에너지 설비의 지원 등에 관한 지침, 산업통상자원부",
+            "에너지절약설계기준, 국토교통부",
+            "신재생에너지센터 (http://www.knrec.or.kr), 한국에너지공단 신·재생에너지센터"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "신·재생에너지 설비 설계도서",
+              "신·재생에너지 공급비율 계산서 및 근거 자료",
+              "설치 계획서"
+            ],
+            "본인증": [
+              "신·재생에너지 설비 설치 도서",
+              "신·재생에너지 공급비율 계산서 및 근거자료",
+              "신·재생에너지 설비 용량 확인할 수 있는 계약 및 납품 서류",
+              "신·재생에너지 설비 인증서",
+              "신·재생에너지 설비 설치 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 2 에너지 및 환경오염\n인증항목 2.3 신·재생에너지 이용\n세부평가기준\n평가목적 신·재생에너지의 사용은 화석연료의 사용을 줄이면서 이로 인해 발생할 수 있는 온실가스 배출량을 줄일 수\n있으므로 신·재생에너지를 보급 촉진코자 한다.\n평가방법 신·재생에너지 시설의 설치 비율로 평가\n배 점 3점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n신·재생에너지 시설의 설치비율(%)\n신·재생에너지 (난방용량 + 냉방용량 + 전기용량 + 급탕용량)\n= × 100\n전체 설비용량(난방 + 냉방 + 전기 + 급탕)의 합\n구분 신·재생에너지 시설의 설치비율 가중치\n1급 신·재생에너지 설치비율이 2.5% 이상인 경우 1.0\n2급 신·재생에너지 설치비율이 2.0% 이상 2.5% 미만인 경우 0.8\n3급 신·재생에너지 설치비율이 1.5% 이상 2.0% 미만인 경우 0.6\n4급 신·재생에너지 설치비율이 1.0% 이상 1.5% 미만인 경우 0.4\n- 신에너지 및 재생에너지(신․재생에너지)란 신에너지 및 재생에너지 개발 ․ 이용 ․ 보급 촉진법에서 정의하\n는 석유, 석탄, 원자력 및 천연가스가 아닌 태양에너지, 바이오에너지, 풍력에너지 등을 말함\n- 대상 건축물 이외의 장소에 별도의 신재생에너지 시설을 직접 설치하고 공급받는 경우 이를 인정할 수 있음\n참고자료 및 제출서류\n참고자료 - 신에너지 및 재생에너지 개발 ․ 이용 ․ 보급 촉진법, 산업통상자원부\n- 신·재생에너지 설비의 지원 등에 관한 규정, 산업통상자원부\n- 신·재생에너지 설비의 지원 등에 관한 지침, 산업통상자원부\n- 에너지절약설계기준, 국토교통부\n- 신재생에너지센터 (http://www.knrec.or.kr), 한국에너지공단 신·재생에너지센터\n제출서류\n- 신·재생에너지 설비 설계도서\n예비\n- 신·재생에너지 공급비율 계산서 및 근거 자료\n인증\n- 설치 계획서\n- 신·재생에너지 설비 설치 도서\n- 신·재생에너지 공급비율 계산서 및 근거자료\n본인증 - 신·재생에너지 설비 용량 확인할 수 있는 계약 및 납품 서류\n- 신·재생에너지 설비 인증서\n- 신·재생에너지 설비 설치 사진",
+          "평가": {
+            "평가목적": "신·재생에너지 사용을 통해 화석연료 사용과 온실가스 배출량을 줄인다.",
+            "평가방법": "신·재생에너지 시설의 설치비율로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                24
+              ],
+              "max_score": 3,
+              "score_formula": "score = weight * 3",
+              "input_variables": [
+                {
+                  "name": "renewable_heating_capacity",
+                  "label": "신재생에너지 난방용량",
+                  "type": "number"
+                },
+                {
+                  "name": "renewable_cooling_capacity",
+                  "label": "신재생에너지 냉방용량",
+                  "type": "number"
+                },
+                {
+                  "name": "renewable_electric_capacity",
+                  "label": "신재생에너지 전기용량",
+                  "type": "number"
+                },
+                {
+                  "name": "renewable_hot_water_capacity",
+                  "label": "신재생에너지 급탕용량",
+                  "type": "number"
+                },
+                {
+                  "name": "total_heating_capacity",
+                  "label": "전체 난방용량",
+                  "type": "number"
+                },
+                {
+                  "name": "total_cooling_capacity",
+                  "label": "전체 냉방용량",
+                  "type": "number"
+                },
+                {
+                  "name": "total_electric_capacity",
+                  "label": "전체 전기용량",
+                  "type": "number"
+                },
+                {
+                  "name": "total_hot_water_capacity",
+                  "label": "전체 급탕용량",
+                  "type": "number"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "renewable_energy_installation_ratio",
+                  "formula": "(renewable_heating_capacity + renewable_cooling_capacity + renewable_electric_capacity + renewable_hot_water_capacity) / (total_heating_capacity + total_cooling_capacity + total_electric_capacity + total_hot_water_capacity) * 100",
+                  "unit": "%"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "신·재생에너지 설치비율 2.5% 이상",
+                  "condition": "renewable_energy_installation_ratio >= 2.5",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "신·재생에너지 설치비율 2.0% 이상 2.5% 미만",
+                  "condition": "2.0 <= renewable_energy_installation_ratio < 2.5",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "신·재생에너지 설치비율 1.5% 이상 2.0% 미만",
+                  "condition": "1.5 <= renewable_energy_installation_ratio < 2.0",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "신·재생에너지 설치비율 1.0% 이상 1.5% 미만",
+                  "condition": "1.0 <= renewable_energy_installation_ratio < 1.5",
+                  "weight": 0.4
+                }
+              ]
+            }
+          }
+        },
+        {
+          "criterion_id": "R-2.4",
+          "출처": {
+            "페이지": 25,
+            "종료페이지": 25,
+            "버전": "G-SEED 2016-8"
+          },
+          "인증항목": {
+            "번호": "2.4",
+            "명칭": "저탄소 에너지원 기술의 적용",
+            "구분": "평가항목",
+            "배점": 1
+          },
+          "참고자료": [
+            "집단에너지사업법, 시행령, 시행규칙, 산업통상자원부",
+            "에너지 이용합리화법, 에너지이용합리화 기본계획, 산업통상자원부",
+            "신·재생에너지 설비의 지원 등에 관한 규정, 산업통상자원부",
+            "신·재생에너지 설비의 지원 등에 관한 지침, 산업통상자원부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 관련 시스템 도서 및 부하계산서",
+              "인증 - 에너지성능검토서 및 관련자료"
+            ],
+            "본인증": [
+              "예비인증 시와 동일"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물(공동주택)\n전문분야 2 에너지 및 환경오염\n인증항목 2.4 저탄소 에너지원 기술의 적용\n세부평가기준\n평가목적 건축물의 설계 및 운영단계에서의 저탄소 에너지원의 적용 기술 및 시스템을 사용함으로써 환경부하를 저감\n코자 한다.\n평가방법 저탄소 에너지원 기술 및 시스템의 적용 여부 평가\n배 점 1점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 저탄소 에너지원 적용 방식 점수 합계 가중치\n1급 4점 이상 1.0\n2급 3점 0.8\n3급 2점 0.6\n4급 1점 0.4\n저탄소 에너지원 적용 방식 점수\n열병합 발전 배열로 전체세대가 연간 필요한 난방과 급탕을 합한 용량의 15% 이상을 담당할\n2\n수 있도록 설계한 경우\n지역난방방식 건축물 2\n지역냉방방식 건축물 1\n2.3 신․재생에너지 이용 인증항목이 4급 이상인 경우 2\n- 냉수직접공급방식과 중온수를 이용한 흡수식 냉방방식 모두 지역냉방방식으로 인정함\n참고자료 및 제출서류\n참고자료 - 집단에너지사업법, 시행령, 시행규칙, 산업통상자원부\n- 에너지 이용합리화법, 에너지이용합리화 기본계획, 산업통상자원부\n- 신·재생에너지 설비의 지원 등에 관한 규정, 산업통상자원부\n- 신·재생에너지 설비의 지원 등에 관한 지침, 산업통상자원부\n제출서류\n예비 - 관련 시스템 도서 및 부하계산서\n인증 - 에너지성능검토서 및 관련자료\n본인증 - 예비인증 시와 동일",
+          "평가": {
+            "평가목적": "설계 및 운영단계에서 저탄소 에너지원 기술 및 시스템을 적용하여 환경부하를 저감한다.",
+            "평가방법": "저탄소 에너지원 적용 방식 점수 합계로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                25
+              ],
+              "max_score": 1,
+              "score_formula": "score = weight * 1",
+              "input_variables": [
+                {
+                  "name": "cogeneration_heat_capacity_15_percent_designed",
+                  "label": "열병합 발전 배열로 전체세대 연간 난방+급탕 용량의 15% 이상 담당하도록 설계 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "district_heating_building",
+                  "label": "지역난방방식 건축물 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "district_cooling_building",
+                  "label": "지역냉방방식 건축물 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "renewable_energy_criterion_2_3_grade_4_or_higher",
+                  "label": "2.3 신재생에너지 이용 인증항목 4급 이상 여부",
+                  "type": "boolean"
+                }
+              ],
+              "point_items": [
+                {
+                  "name": "cogeneration_score",
+                  "condition": "cogeneration_heat_capacity_15_percent_designed",
+                  "point": 2
+                },
+                {
+                  "name": "district_heating_score",
+                  "condition": "district_heating_building",
+                  "point": 2
+                },
+                {
+                  "name": "district_cooling_score",
+                  "condition": "district_cooling_building",
+                  "point": 1
+                },
+                {
+                  "name": "renewable_energy_linked_score",
+                  "condition": "renewable_energy_criterion_2_3_grade_4_or_higher",
+                  "point": 2
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "low_carbon_energy_source_score_total",
+                  "formula": "cogeneration_score + district_heating_score + district_cooling_score + renewable_energy_linked_score",
+                  "unit": "점"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "저탄소 에너지원 적용 방식 점수 합계 4점 이상",
+                  "condition": "low_carbon_energy_source_score_total >= 4",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "합계 3점",
+                  "condition": "low_carbon_energy_source_score_total == 3",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "합계 2점",
+                  "condition": "low_carbon_energy_source_score_total == 2",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "합계 1점",
+                  "condition": "low_carbon_energy_source_score_total == 1",
+                  "weight": 0.4
+                }
+              ]
+            }
+          }
+        },
+        {
+          "criterion_id": "R-2.5",
+          "출처": {
+            "페이지": 26,
+            "종료페이지": 27,
+            "버전": "G-SEED 2016-8"
+          },
+          "인증항목": {
+            "번호": "2.5",
+            "명칭": "오존층 보호 및 지구온난화 저감",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "참고자료": [
+            "오존층보호를 위한 특정물질의 제조규제 등에 관한 법률, 시행령, 시행규칙, 산업통상자원부",
+            "IPCC Fourth Assessment Report(http://www.ipcc.ch/ipccreports/ar4-wg1.htm), Chapter2",
+            "국제연합 기후변화 기본협약에 대한 교토의정서",
+            "환경표지 대상제품 및 인증기준, 환경부",
+            "환경표지(마크) 공식 웹사이트 (http://el.keiti.re.kr), 환경부",
+            "저녹스버너 설치 지원사업 업무편람, 환경부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "단열재의 종류 및 사용된 특정물질의 명세서",
+              "냉방기기의 사용냉매 명세서",
+              "환경표지(마크) 인증서 또는 저녹스버너 인정 검사결과서",
+              "※ 적용예정확인서 및 시방서로 갈음 가능"
+            ],
+            "본인증": [
+              "예비인증 시와 동일",
+              "해당 제품의 납품내역서 및 거래명세서"
+            ]
+          },
+          "원문": "오존층 보호 및 지구온난화 저감: 전체 소요 단열재의 ODP/GWP 기준, 냉방기기 냉매의 ODP/GWP 기준, 환경표지 인증 보일러 또는 저녹스버너 적용 여부를 점수화하여 평가한다.",
+          "평가": {
+            "평가목적": "특정 오존층 파괴물질과 대기오염물질 배출을 줄여 지구온난화 방지에 기여한다.",
+            "평가방법": "오존층 보호 및 대기오염물질 저감 점수 합계로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                26,
+                27
+              ],
+              "max_score": 2,
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "insulation_80_percent_odp_0_gwp_100_or_less",
+                  "label": "전체 소요 단열재 80% 이상 ODP 0 및 GWP 100 이하 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "cooling_refrigerant_odp",
+                  "label": "냉방기기 냉매 ODP",
+                  "type": "number"
+                },
+                {
+                  "name": "cooling_refrigerant_gwp",
+                  "label": "냉방기기 냉매 GWP",
+                  "type": "number"
+                },
+                {
+                  "name": "eco_label_boiler_or_low_nox_burner_applied",
+                  "label": "환경표지 인증 보일러 또는 저녹스버너 인정 제품 적용 여부",
+                  "type": "boolean"
+                }
+              ],
+              "point_items": [
+                {
+                  "name": "insulation_odp_gwp_score",
+                  "condition": "insulation_80_percent_odp_0_gwp_100_or_less",
+                  "point": 1
+                },
+                {
+                  "name": "refrigerant_score",
+                  "condition": "cooling_refrigerant_odp == 0 and cooling_refrigerant_gwp <= 50",
+                  "point": 2
+                },
+                {
+                  "name": "refrigerant_score",
+                  "condition": "cooling_refrigerant_odp == 0 and 50 < cooling_refrigerant_gwp <= 750",
+                  "point": 1
+                },
+                {
+                  "name": "boiler_low_nox_score",
+                  "condition": "eco_label_boiler_or_low_nox_burner_applied",
+                  "point": 1
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "ozone_global_warming_reduction_score_total",
+                  "formula": "insulation_odp_gwp_score + refrigerant_score + boiler_low_nox_score",
+                  "unit": "점"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "오존층 보호 및 대기오염물질 저감 점수 합계 4점 이상",
+                  "condition": "ozone_global_warming_reduction_score_total >= 4",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "합계 3점",
+                  "condition": "ozone_global_warming_reduction_score_total == 3",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "합계 2점",
+                  "condition": "ozone_global_warming_reduction_score_total == 2",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "합계 1점",
+                  "condition": "ozone_global_warming_reduction_score_total == 1",
+                  "weight": 0.4
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

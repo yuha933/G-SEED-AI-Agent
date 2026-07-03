@@ -1,0 +1,1319 @@
+{
+  "metadata": {
+    "인증기준명": "녹색건축 인증기준",
+    "버전": "G-SEED 2016-8",
+    "건축물유형": "신축 주거용 건축물",
+    "전문분야번호": "7",
+    "전문분야명": "실내환경",
+    "시작페이지": 51,
+    "종료페이지": 65,
+    "항목수": 9,
+    "원본PDF": "G-SEED 2016-8_개정전문.pdf",
+    "참조데이터": "G-SEED/01_신축_주거용_건축물.json",
+    "생성방식": "PDF 원문·평가기준·계산식 구조를 전문분야별로 분리"
+  },
+  "전문분야": [
+    {
+      "번호": "7",
+      "명칭": "실내환경",
+      "인증항목": [
+        {
+          "criterion_id": "R-7.1",
+          "출처": {
+            "페이지": 51,
+            "종료페이지": 52,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.1",
+            "명칭": "실내공기 오염물질 저방출 제품의 적용",
+            "구분": "필수항목",
+            "배점": 6
+          },
+          "평가": {
+            "평가목적": "실내 마감재와 붙박이 가구 등에서 방출되는 유해물질을 줄여 건강한 실내공기질을 확보한다.",
+            "평가방법": "세대별 적용 자재 점수를 산정하고, 세대수 가중 평균으로 전체 점수를 계산한 뒤 등급을 부여한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                51,
+                52
+              ],
+              "max_score": 6,
+              "input_variables": [
+                {
+                  "name": "total_households",
+                  "label": "총 세대수",
+                  "type": "number",
+                  "unit": "세대"
+                },
+                {
+                  "name": "unit_type_scores",
+                  "label": "세대 유형별 적용 자재 점수 목록",
+                  "type": "array",
+                  "item_schema": {
+                    "unit_type": "string",
+                    "household_count": "number",
+                    "unit_material_score": "number"
+                  }
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "weighted_material_score_total",
+                  "formula": "sum(household_count * unit_material_score for each unit_type)"
+                },
+                {
+                  "name": "average_material_score_per_household",
+                  "formula": "weighted_material_score_total / total_households",
+                  "unit": "점"
+                }
+              ],
+              "material_point_table": [
+                {
+                  "category": "최종마감재",
+                  "part": "벽",
+                  "base_point": 1.0
+                },
+                {
+                  "category": "최종마감재",
+                  "part": "천장",
+                  "base_point": 0.5
+                },
+                {
+                  "category": "최종마감재",
+                  "part": "바닥",
+                  "base_point": 1.0
+                },
+                {
+                  "category": "접착제",
+                  "part": "벽",
+                  "base_point": 1.0
+                },
+                {
+                  "category": "접착제",
+                  "part": "천장",
+                  "base_point": 0.5
+                },
+                {
+                  "category": "접착제",
+                  "part": "바닥",
+                  "base_point": 1.0
+                },
+                {
+                  "category": "기타 내장재",
+                  "part": "벽",
+                  "base_point": 1.0
+                },
+                {
+                  "category": "기타 내장재",
+                  "part": "천장",
+                  "base_point": 0.5
+                },
+                {
+                  "category": "기타 내장재",
+                  "part": "바닥",
+                  "base_point": 0.5
+                },
+                {
+                  "category": "붙박이 가구",
+                  "part": "부엌가구",
+                  "base_point": 1.0
+                },
+                {
+                  "category": "붙박이 가구",
+                  "part": "현관 수납가구",
+                  "base_point": 1.0
+                },
+                {
+                  "category": "붙박이 가구",
+                  "part": "침실·거실 수납가구",
+                  "base_point": 1.0
+                },
+                {
+                  "category": "실란트",
+                  "part": "붙박이 가구",
+                  "base_point": 0.5
+                },
+                {
+                  "category": "실란트",
+                  "part": "욕실",
+                  "base_point": 0.5
+                },
+                {
+                  "category": "실란트",
+                  "part": "내부마감",
+                  "base_point": 0.5
+                },
+                {
+                  "category": "천연석재",
+                  "part": "방사능 지수",
+                  "base_point": 1.0
+                }
+              ],
+              "additional_point_note": "원문 두 번째 표의 저감제품·인증제품 추가점수는 항목별 적용 여부에 따라 unit_material_score에 합산한다.",
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "세대 평균 점수 19점 이상",
+                  "condition": "average_material_score_per_household >= 19",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "세대 평균 점수 15점 이상 19점 미만",
+                  "condition": "15 <= average_material_score_per_household < 19",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "세대 평균 점수 11점 이상 15점 미만",
+                  "condition": "11 <= average_material_score_per_household < 15",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "세대 평균 점수 7점 이상 11점 미만",
+                  "condition": "7 <= average_material_score_per_household < 11",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = weight * 6"
+            }
+          },
+          "참고자료": [
+            "「환경표지 대상제품 및 인증기준」, 환경부",
+            "환경표지 공식 웹사이트 (http://el.keiti.re.kr), 환경부",
+            "실내공기질 공정시험기준, 환경부",
+            "건강친화형 주택 건설기준, 국토교통부",
+            "건축자재 라돈 저감·관리 지침서, 관계부처 합동"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "기준층 단위세대에 대한 설계설명서(자재목록 등), 가구재료목록표, 기본설계도",
+              "예비 - 자재시방서, 건축자재의 오염물질 방출량에 대한 KOLAS 인정기관에서 발행한 시험성적서",
+              "인증 - 환경표지 인증서 또는 「환경표지 대상제품 및 인증기준」에 적합함을 증빙하는 서류",
+              "※ 적용예정확인서",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "납품내역서, 거래명세서, 설치 사진",
+              "감리책임자(또는 감독, 건설사업관리자) 확인서 (자재사용 내역, 수량, 적용부위, 모델명 등)"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.1 실내공기 오염물질 저방출 제품의 적용\n세부평가기준\n평가목적 실내에 사용되는 건축자재 및 붙박이 가구에서 실내공기로 방출되는 폼알데하이드(HCHO) 및 총휘발성유기\n화합물(TVOC), 라돈 등 실내공기 오염물질 저방출 제품 적용을 유도한다.\n평가방법 실내공기 오염물질 저방출 제품의 적용 정도 및 방출 수준에 대해 평가\n배 점 6점 (필수항목)\n산출기준 • 평점 = ∑ {(단위세대 가중치) × (배점)} ÷ (총 세대 수)\n단위세대\n구분 실내공기 오염물질 저방출 제품의 적용기준 점수합계\n가중치\n1급 19점 이상 1.0\n2급 15점 이상 19점 미만 0.8\n3급 11점 이상 15점 미만 0.6\n4급 7점 이상 11점 미만 0.4\n추가점수\n실내공기 적용기준 유해물질\n구분 항목 적용부위 적용점수\n오염물질 의 50% 감소\n감소제품 인증제품\n벽체 실내벽면(기둥, 간막이벽 포함) 1.0 0.5 0.5\n최종\n천장 천장면 0.5 0.5 0.5\n마감재\n바닥 바닥면 1.0 0.5 0.5\n벽체 실내벽면 1.0 0.5 0.5\n접착제 천장 천장면 0.5 0.5 0.5\n바닥 바닥면 1.0 0.5 0.5\n폼알데하이드\n(HCHO) 벽체 실내벽면(기둥, 간막이벽 포함) 1.0 0.5 0.5\n그 밖의\n및 총휘발성 천장 천장면 0.5 0.5 0.5\n내장재\n유기화합물 바닥 바닥면 0.5 0.5 0.5\n(TVOC)\n주방 싱크대 등 주방가구 1.0 0.5 0.5\n붙박이\n현관 신발장 등 1.0 0.5 0.5\n가구\n침실 및 거실 단순선반 제외 1.0 0.5 0.5\n붙박이 가구 0.5\n실란트(실링재) 욕실 0.5\n실내마감재 0.5\n라돈 등 방사능 욕실상판, 현관바닥재, 주방가구\n천연석 기반 자재 1.0\n농도 지수 상판(아일랜드 식탁 포함) 등\n- 폼알데하이드(HCHO) 및 총휘발성유기화합물(TVOC) 적용기준은 「건강친화형 건설기준」[별표1] 및 [별\n표5]에서 제시하는 기준을 따름\n§ 최종마감재, 접착제, 그 밖의 내장재의 적용면적은 해당 부위 표면적의 70% 이상 적용되어야 함\n§ 유리, 자연석재와 대리석, 세라믹타일, 금속성 표면의 재료, 천연목재, 천연블록 등과 같은 휘발성 유기\n화합물을 방출하지 않는 재료는 기준에 적합한 것으로 봄\n§ 접착제를 사용하지 않은 마감재 시공법을 적용하는 경우는 기준에 적합 한 것으로 보나, 추가점수는 적\n용하지 않음\n§ 그 밖의 내장재가 없이 단일 마감재로 시공되었을 경우에는 기준에 적합 한 것으로 보나, 추가점수는\n적용하지 않음\n§ 입주전 설치되는 붙박이 가구가 없는 경우 기준에 적합한 것으로 보나, 추가점수는 적용하지 않음\n§ 붙박이 가구의 HCHO 및 TVOC 방출량 기준은 ｢환경표지 대상제품 및 인증기준｣에 따름\n§ 실란트(실링재)는 적용되는 모든 부위에 기준이 적합하여야 함\n- 적용점수 외에 추가점수는 적용기준의 50% 감소자재, 유해물질 감소 인증제품을 적용하였을 경우 부여함\n§ 적용기준의 50% 감소자재는 폼알데하이드(HCHO) 및 총휘발성유기화합물(TVOC)의 방출량 수준이 「건\n강친화형 건설기준」[별표1] 및 [별표5]에서 제시하는 기준보다 50% 이상 낮은 제품을 말함\n§ 유해물질 감소 인증제품은 유해물질[납(Pb), 카드뮴(Cd), 수은(Hg), 6가 크로뮴(Cr6+) 등]감소의 사유로\n｢환경표지 대상제품 및 인증기준｣에 적합함을 인증 받은 제품을 말함\n§ ｢환경표지 대상제품 및 인증기준｣ 이란 ｢환경기술 및 환경산업 지원법｣ 제17조 제3항에 따라 환경부장\n관이 정하여 고시하는 대상 제품별 인증기준을 말함\n- 라돈 등 방사능 농도 지수 적용기준은 ｢환경표지 대상제품 및 인증기준｣에서 제시하는 기준을 따름 (방사\n능 농도 지수(C , C , C ) 1.0 이하)\nRa Th K\n§ 천연석 기반 자재는 단위세대 내에 설치되는 모든 천연석 기반 자재를 대상으로 하며, 적용하지 않는\n경우 기준에 적합한 것으로 봄\n참고자료 및 제출서류\n참고자료 -「환경표지 대상제품 및 인증기준」, 환경부\n- 환경표지 공식 웹사이트 (http://el.keiti.re.kr), 환경부\n- 실내공기질 공정시험기준, 환경부\n- 건강친화형 주택 건설기준, 국토교통부\n- 건축자재 라돈 저감·관리 지침서, 관계부처 합동\n제출서류 - 기준층 단위세대에 대한 설계설명서(자재목록 등), 가구재료목록표, 기본설계도\n예비 - 자재시방서, 건축자재의 오염물질 방출량에 대한 KOLAS 인정기관에서 발행한 시험성적서\n인증 - 환경표지 인증서 또는 「환경표지 대상제품 및 인증기준」에 적합함을 증빙하는 서류\n※ 적용예정확인서\n- 예비인증 시와 동일\n본인증 - 납품내역서, 거래명세서, 설치 사진\n- 감리책임자(또는 감독, 건설사업관리자) 확인서 (자재사용 내역, 수량, 적용부위, 모델명 등)"
+        },
+        {
+          "criterion_id": "R-7.2",
+          "출처": {
+            "페이지": 53,
+            "종료페이지": 53,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.2",
+            "명칭": "자연 환기성능 확보",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "개폐가능한 창을 통해 신선한 외부 공기를 제공하고 제어하여 건강한 실내공기환경을 조성한다.",
+            "평가방법": "세대별 개폐가능한 창의 유효면적 비율을 산정하고 세대수 가중 평균으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_pdf_verified_v4",
+              "source_pages": [
+                53
+              ],
+              "max_score": 2,
+              "score_formula": "score = sum(unit_household_count * unit_weight * 2) / total_households",
+              "input_variables": [
+                {
+                  "name": "total_households",
+                  "label": "총 세대 수",
+                  "type": "number",
+                  "unit": "세대"
+                },
+                {
+                  "name": "unit_type_natural_ventilation_items",
+                  "label": "세대 유형별 자연환기 평가 목록",
+                  "type": "array",
+                  "item_schema": {
+                    "unit_type": "string",
+                    "household_count": "number",
+                    "openable_window_effective_area_m2": "number",
+                    "exclusive_and_expanded_area_m2": "number"
+                  }
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "unit_openable_window_effective_area_ratio",
+                  "formula": "openable_window_effective_area_m2 / exclusive_and_expanded_area_m2 * 100",
+                  "unit": "%"
+                },
+                {
+                  "name": "unit_weight",
+                  "formula": "1.0 if ratio>=14 else 0.8 if 12<=ratio<14 else 0.6 if 10<=ratio<12 else 0.4 if 8<=ratio<10 else 0"
+                }
+              ],
+              "unit_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "개폐가능한 창의 유효면적이 전용면적 및 확장면적의 14% 이상",
+                  "condition": "unit_openable_window_effective_area_ratio >= 14",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "12% 이상 14% 미만",
+                  "condition": "12 <= unit_openable_window_effective_area_ratio < 14",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "10% 이상 12% 미만",
+                  "condition": "10 <= unit_openable_window_effective_area_ratio < 12",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "8% 이상 10% 미만",
+                  "condition": "8 <= unit_openable_window_effective_area_ratio < 10",
+                  "weight": 0.4
+                }
+              ],
+              "notes": [
+                "개폐가능한 창의 유효면적 산정은 건축물의 설비기준 등에 관한 규칙 별표 2의 배연창 유효면적 산정기준에 따른다.",
+                "공동주택성능등급은 전체 세대가 각 등급에 적합하게 적용된 경우에 한하여 인정한다."
+              ]
+            }
+          },
+          "참고자료": [
+            "건축법 시행령, 국토교통부",
+            "건축물의 설비기준 등에 관한 규칙, 국토교통부",
+            "건축물의 피난·방화구조 등의 기준에 관한 규칙, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "단위세대 평면도, 창호 상세도",
+              "단위세대별 창 유효면적 비율 산출서",
+              "적용세대 비율 산출서",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "현장 적용 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.2 자연 환기성능 확보\n세부평가기준\n평가목적 개폐가능한 창을 통해 거주자에게 신선한 외부 공기를 제공하고 제어함으로써 건강한 실내공기환경을 조성\n하고자 한다.\n평가방법 자연환기가 가능한 창의 설치 여부를 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = ∑ {(단위세대 가중치) × (배점)} ÷ (총 세대 수)\n개폐가능한 창의 유효면적의 합(m2)\n개폐가능한 창의 유효면적 비율(%) = × 100\n전용면적 및 확장면적의 합(m2)\n단위세대\n구분 세대별 개폐가능한 창의 유효면적 비율\n가중치\n1급 세대별 개폐가능한 창의 유효면적이 전용면적 및 확장면적의 14% 이상인 경우 1.0\n2급 세대별 개폐가능한 창의 유효면적이 전용면적 및 확장면적의 12% 이상 14% 미만인 경우 0.8\n3급 세대별 개폐가능한 창의 유효면적이 전용면적 및 확장면적의 10% 이상 12% 미만인 경우 0.6\n4급 세대별 개폐가능한 창의 유효면적이 전용면적 및 확장면적의 8% 이상 10% 미만인 경우 0.4\n- 개폐가능한 창의 유효면적의 산정은 건축물의 설비기준 등에 관한 규칙 [별표 2]의 배연창 유효면적 산정\n기준에 따름\n- 공동주택성능등급의 경우에는 전체 세대가 각 등급에 적합하게 적용된 경우에 한하여 인정함\n참고자료 및 제출서류\n참고자료 - 건축법 시행령, 국토교통부\n- 건축물의 설비기준 등에 관한 규칙, 국토교통부\n- 건축물의 피난·방화구조 등의 기준에 관한 규칙, 국토교통부\n제출서류\n- 단위세대 평면도, 창호 상세도\n예비\n- 단위세대별 창 유효면적 비율 산출서\n인증\n- 적용세대 비율 산출서\n- 예비인증 시와 동일\n본인증\n- 현장 적용 사진"
+        },
+        {
+          "criterion_id": "R-7.3",
+          "출처": {
+            "페이지": 54,
+            "종료페이지": 54,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.3",
+            "명칭": "단위세대 환기성능 확보",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "공동주택 세대의 환기성능을 확보하고 실내 오염물질에 대응하는 자동제어 수준을 평가한다.",
+            "평가방법": "0.5회/h 환기 가능 여부를 기본조건으로 하고, 건강친화형 주택 환기설비, 오염물질 측정 및 자동 풍량제어 범위를 단계적으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                54
+              ],
+              "max_score": 3,
+              "input_variables": [
+                {
+                  "name": "unit_ventilation_rate_0_5_ach_available",
+                  "label": "세대 내 시간당 0.5회 환기 가능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "health_friendly_housing_ventilation_equipment_installed",
+                  "label": "건강친화형 주택 기준의 효율적 환기성능 설비 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "unit_indoor_pollutant_measurement_and_airflow_auto_control",
+                  "label": "세대 단위 실내 오염물질 측정 및 환기풍량 자동제어 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "room_indoor_pollutant_measurement_and_airflow_auto_control",
+                  "label": "실별 실내 오염물질 측정 및 해당 환기풍량 자동제어 여부",
+                  "type": "boolean"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "2급 기준을 만족하고 실별 실내 오염물질을 측정하여 해당 실의 환기풍량을 자동제어하는 경우",
+                  "condition": "unit_ventilation_rate_0_5_ach_available and health_friendly_housing_ventilation_equipment_installed and unit_indoor_pollutant_measurement_and_airflow_auto_control and room_indoor_pollutant_measurement_and_airflow_auto_control",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "3급 기준을 만족하고 세대 내 실내 오염물질을 측정하여 환기풍량을 자동제어하는 경우",
+                  "condition": "unit_ventilation_rate_0_5_ach_available and health_friendly_housing_ventilation_equipment_installed and unit_indoor_pollutant_measurement_and_airflow_auto_control",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "건강친화형 주택 건설기준의 효율적인 환기성능 설비를 설치한 경우",
+                  "condition": "unit_ventilation_rate_0_5_ach_available and health_friendly_housing_ventilation_equipment_installed",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "세대 내 시간당 0.5회 환기가 가능한 환기설비를 설치한 경우",
+                  "condition": "unit_ventilation_rate_0_5_ach_available",
+                  "weight": 0.4
+                }
+              ],
+              "pollutants": [
+                "PM2.5",
+                "CO2"
+              ],
+              "score_formula": "score = weight * 3"
+            }
+          },
+          "참고자료": [
+            "건강친화형 주택 건설기준, 국토교통부",
+            "건축물의 설비기준 등에 관한 규칙, 국토교통부",
+            "KS B 6141 (환기용 공기 필터 유니트)",
+            "KS B 6879 (열회수형 환기장치)"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "환기설비 설계시방서 등",
+              "예비 - KOLAS 인정기관에서 발행한 시험성적서",
+              "인증 - 적용세대 비율 산출서",
+              "※ 적용예정확인서",
+              "환기설비 적용여부가 확인가능한 도면 및 서류",
+              "KOLAS 인정기관에서 발행한 시험성적서"
+            ],
+            "본인증": [
+              "납품내역서, 거래명세서, 설치 사진",
+              "감리책임자(또는 감독, 건설사업관리자)의 확인서"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.3 단위세대 환기성능 확보\n세부평가기준\n평가목적 외부의 신선한 공기를 실내로 도입하고 미세먼지 등 실내공기 오염물질을 효과적으로 실외로 배출하거나 제\n거할 수 있는 환기성능을 확보하여 건강하고 안전한 실내공기환경을 조성한다.\n평가방법 최소환기량 및 일정수준 이상의 환기성능 및 실내공기 오염물질 제거효과 확보에 필요한 적정 환기설비의\n설치 여부를 평가\n배 점 2점 (평가항목)\n산출기준 • 평점 = ∑ {(단위세대 가중치) × (배점)} ÷ (총 세대 수)\n단위세대\n구분 단위세대 환기성능 확보\n가중치\n2급 + 단위세대 내에서 실별로 실내공기 오염물질이 측정되고 이에 따른 환기풍량이\n1급 1.0\n자동으로 제어가 되는 경우\n3급 + 단위세대 내에서 실내공기 오염물질이 측정되고 이에 따른 환기풍량이 자동으\n2급 0.8\n로 제어가 되는 경우\n「건강친화형 주택 건설기준」 [별표3]의 효율적인 환기성능의 확보에 적합한 환기설\n3급 0.6\n비가 설치된 경우\n단위세대 내에서 시간당 0.5회에 상응하는 환기회수의 확보가 가능한 환기설비가 설\n4급 0.4\n치된 경우\n- 실내공기 오염물질은 초미세먼지(PM2.5) 및 이산화탄소(CO )를 포함하여 측정할 수 있어야 함\n2\n- 공동주택성능등급의 경우에는 전체 세대가 각 등급에 적합하게 적용된 경우에 한하여 인정함\n참고자료 및 제출서류\n참고자료 - 건강친화형 주택 건설기준, 국토교통부\n- 건축물의 설비기준 등에 관한 규칙, 국토교통부\n- KS B 6141 (환기용 공기 필터 유니트)\n- KS B 6879 (열회수형 환기장치)\n제출서류\n- 환기설비 설계시방서 등\n예비 - KOLAS 인정기관에서 발행한 시험성적서\n인증 - 적용세대 비율 산출서\n※ 적용예정확인서\n- 환기설비 적용여부가 확인가능한 도면 및 서류\n- KOLAS 인정기관에서 발행한 시험성적서\n본인증\n- 납품내역서, 거래명세서, 설치 사진\n- 감리책임자(또는 감독, 건설사업관리자)의 확인서"
+        },
+        {
+          "criterion_id": "R-7.4",
+          "출처": {
+            "페이지": 55,
+            "종료페이지": 55,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.4",
+            "명칭": "자동온도조절장치 설치 수준",
+            "구분": "평가항목",
+            "배점": 1
+          },
+          "평가": {
+            "평가목적": "난방 운전의 세대 및 실별 제어성을 높여 쾌적성과 에너지 절감을 유도한다.",
+            "평가방법": "세대 일괄제어, 세대 시간예약 제어, 실별 온도제어 및 실별 시간예약 제어 가능 여부를 조합해 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                55
+              ],
+              "max_score": 2,
+              "input_variables": [
+                {
+                  "name": "household_heating_batch_on_off_control_available",
+                  "label": "세대 난방 일괄 on/off 제어 가능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "household_heating_batch_timer_control_available",
+                  "label": "세대 난방 일괄 시간예약 제어 가능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "room_heating_temperature_control_with_valves_available",
+                  "label": "각 실 자동온도조절장치 및 제어밸브를 통한 실별 온도제어 가능 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "room_heating_timer_temperature_control_available",
+                  "label": "실별 시간예약 온도제어 가능 여부",
+                  "type": "boolean"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "세대 일괄 on/off 시간예약 제어와 실별 시간예약 온도제어가 모두 가능한 경우",
+                  "condition": "household_heating_batch_timer_control_available and room_heating_timer_temperature_control_available",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "세대 일괄 on/off 시간예약 제어 또는 실별 시간예약 온도제어가 가능한 경우",
+                  "condition": "household_heating_batch_timer_control_available or room_heating_timer_temperature_control_available",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "세대 일괄 on/off 제어가 가능하고 실별 온도제어가 가능한 경우",
+                  "condition": "household_heating_batch_on_off_control_available and room_heating_temperature_control_with_valves_available",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "세대 일괄 on/off 제어가 가능하거나 실별 온도제어가 가능한 경우",
+                  "condition": "household_heating_batch_on_off_control_available or room_heating_temperature_control_with_valves_available",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = weight * 2"
+            }
+          },
+          "참고자료": [
+            "건축물의 에너지절약설계기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 온도제어가 가능한 자동온도조절장치 제어계통도",
+              "인증 - 적용세대 비율 산출서",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "납품내역서, 거래명세서, 설치 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.4 자동온도조절장치 설치 수준\n세부평가기준\n평가목적 자동온도조절장치 설치 수준을 평가하여 쾌적한 실내온열환경을 조성하고 난방에너지를 절감하는데 그 목적\n이 있다.\n평가방법 각 세대의 실별 또는 난방 존별로 온도제어가 가능한 자동온도조절장치 설치 수준에 따라 평가\n배 점 1점(평가항목)\n산출기준 • 평점 = ∑ {(단위세대 가중치) × (배점)} ÷ (총 세대 수)\n단위세대\n구분 자동온도조절장치 설치 수준\n가중치\n난방장치의 세대별 일괄 가동·정지(on/off)에 대한 시간대별 제어가 가능하며, 실별\n1급 1.0\n로도 시간대별 온도제어가 가능한 온도조절기와 온도조절 밸브 설치\n난방장치의 세대별 일괄 가동·정지(on/off)에 대한 시간대별 제어가 가능하거나, 실\n2급 0.8\n별로는 시간대별 온도제어가 가능한 온도조절기와 온도조절 밸브 설치\n난방장치의 세대별 일괄 가동·정지(on/off)가 가능하며, 실별 온도제어가 가능한 온\n3급 0.6\n도조절기와 온도조절 밸브 설치\n난방장치의 세대별 일괄 가동·정지(on/off)가 가능하거나, 실별 온도제어가 가능한\n4급 0.4\n온도조절기와 온도조절 밸브 설치\n- 각 세대의 실별 또는 난방 존(zone)마다 별도의 실내 온도조절기를 설치한 경우와 각 실에 온도센서를 두\n고 특정 실에 통합 온도조절기를 설치한 경우를 모두 인정함\n- 공동주택성능등급의 경우에는 전체 세대가 각 등급에 적합하게 적용된 경우에 한하여 인정함\n- 온도조절밸브란 실별 난방배관 길이에 따른 유량조절을 미세유량조절밸브 또는 온도조절밸브(비례식)로\n조절할 수 있는 밸브를 말함\n참고자료 및 제출서류\n참고자료 - 건축물의 에너지절약설계기준, 국토교통부\n제출서류\n예비 - 온도제어가 가능한 자동온도조절장치 제어계통도\n인증 - 적용세대 비율 산출서\n- 예비인증 시와 동일\n본인증\n- 납품내역서, 거래명세서, 설치 사진"
+        },
+        {
+          "criterion_id": "R-7.5",
+          "출처": {
+            "페이지": 56,
+            "종료페이지": 57,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.5",
+            "명칭": "경량충격음 차단성능",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "경량충격음 차단성능을 확보하여 세대 간 바닥충격음 민원을 저감한다.",
+            "평가방법": "평가방법 1은 역A특성 가중 규준화 바닥충격음레벨, 평가방법 2는 표준화 바닥충격음레벨을 기준으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                56,
+                57
+              ],
+              "max_score": 2,
+              "input_variables": [
+                {
+                  "name": "floor_impact_sound_method",
+                  "type": "enum",
+                  "values": [
+                    "method_1_Ln_AW",
+                    "method_2_LnT_W"
+                  ]
+                },
+                {
+                  "name": "lightweight_floor_impact_level_Ln_AW_dB",
+                  "label": "역A특성 가중 규준화 바닥충격음레벨",
+                  "type": "number",
+                  "unit": "dB"
+                },
+                {
+                  "name": "lightweight_floor_impact_level_LnT_W_dB",
+                  "label": "표준화 바닥충격음레벨",
+                  "type": "number",
+                  "unit": "dB"
+                }
+              ],
+              "method_1_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "L'n,AW 43dB 이하",
+                  "condition": "lightweight_floor_impact_level_Ln_AW_dB <= 43",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "L'n,AW 43dB 초과 48dB 이하",
+                  "condition": "43 < lightweight_floor_impact_level_Ln_AW_dB <= 48",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "L'n,AW 48dB 초과 53dB 이하",
+                  "condition": "48 < lightweight_floor_impact_level_Ln_AW_dB <= 53",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "L'n,AW 53dB 초과 58dB 이하",
+                  "condition": "53 < lightweight_floor_impact_level_Ln_AW_dB <= 58",
+                  "weight": 0.4
+                }
+              ],
+              "method_2_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "L'nT,W 37dB 이하",
+                  "condition": "lightweight_floor_impact_level_LnT_W_dB <= 37",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "L'nT,W 37dB 초과 41dB 이하",
+                  "condition": "37 < lightweight_floor_impact_level_LnT_W_dB <= 41",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "L'nT,W 41dB 초과 45dB 이하",
+                  "condition": "41 < lightweight_floor_impact_level_LnT_W_dB <= 45",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "L'nT,W 45dB 초과 49dB 이하",
+                  "condition": "45 < lightweight_floor_impact_level_LnT_W_dB <= 49",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = selected_method_weight * 2"
+            }
+          },
+          "참고자료": [
+            "공동주택 바닥충격음 차단구조인정 및 검사기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "기준층 바닥구조 단면 상세도",
+              "예비 - 바닥충격음 차단구조 성능인정서",
+              "인증 * 다만, 2022.08.04.~2023.03.13. 기간에 사업계획승인을 신청한 공동주택의 경우에는【별표",
+              "1】 [평가방법 2] 적용 시 적용예정확인서로 대체 가능",
+              "바닥충격음 성능검사 결과서(보완시공 후 성능 재검사 결과서 포함)",
+              "바닥구조 시공 확인 서류(슬래브두께, 완충재 등 주요 구성품의 시공 상태를 확인할 수 있는",
+              "사진 등 포함)"
+            ],
+            "본인증": [
+              "완충재 등 바닥충격음을 줄이기 위해 사용한 주요 구성품에 대한 시험성적서",
+              "감리책임자(또는 감독, 건설사업관리자)의 확인서",
+              "사용검사권자의 개선권고 내용 및 조치결과 보고사항(성능검사기준에 미달한 경우에 한함)"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.5 경량충격음 차단성능\n세부평가기준\n평가목적 바닥구조체를 통하여 아래 층 세대로 전달되는 경량충격음의 차단성능을 확보하여 거주자에게 쾌적한 주거\n공간을 제공한다.\n평가방법 1. 공동주택 바닥충격음 차단구조인정 및 관리기준에 따라 취득한 인정서 등으로 평가\n2. 공동주택 바닥충격음 차단구조인정 및 검사기준에 따라 발급한 바닥충격음 차단구조 성능인정서에 따라 평가\n배 점 2점(평가항목)\n산출기준 ※ 주택법 제15조 사업계획승인 시점에 따라 평가방법 선택\n[평가방법 1]\n• 평점 = (가중치) × (배점)\n구분 역A특성 가중 규준화 바닥충격음레벨 (단위 : dB) 가중치\n1급 L'n,AW ≤ 43 1.0\n2급 43 ＜ L'n,AW ≤ 48 0.8\n3급 48 ＜ L'n,AW ≤ 53 0.6\n4급 53 ＜ L'n,AW ≤ 58 0.4\n- L'n,AW는 역A특성 가중 규준화 바닥충격음레벨을 말함\n- 상․하층간 경계바닥구조-화장실, 현관, 발코니(확장한 경우에는 포함) 등의 바닥구조는 제외함\n- 슬래브두께가 150mm이고, 공동주택 바닥충격음 차단구조인정 및 관리기준에 적합한 라멘구조는 4급으로\n표기하고, 동 고시에 따라 성능인정을 받은 라멘구조는 해당 등급을 표기함\n[평가방법 2]\n• 평점 = (가중치) × (배점)\n구분 가중 표준화 바닥충격음레벨 (단위 : dB) 가중치\n1급 L' ≤ 37 1.0\nnT,W\n2급 37 ＜ L' ≤ 41 0.8\nnT,W\n3급 41 ＜ L' ≤ 45 0.6\nnT,W\n4급 45 ＜ L' ≤ 49 0.4\nnT,W\n- L' 는 가중 표준화 바닥충격음레벨을 말함\nnT,W\n- 상․하층간 경계바닥구조-화장실, 현관, 발코니(확장한 경우에는 포함) 등의 바닥구조는 제외함\n- 슬래브두께가 150mm이고, 공동주택 바닥충격음 차단구조인정 및 관리기준에 적합한 라멘구조는 4급으로\n표기하고, 동 고시에 따라 성능인정을 받은 라멘구조는 해당 등급을 표기함\n- 예비인증 : 「공동주택 바닥충격음 차단구조인정 및 검사기준」(국토교통부고시)에 따라 인정기관의 장이\n발급한 “바닥충격음 차단구조 성능인정서”로 평가하되 인증신청자가 성능인정서의 등급보다 떨어지는 등\n급을 표기한 경우에는 이를 허용함\n- 본 인증 : 「공동주택 바닥충격음 차단구조인정 및 검사기준」(국토교통부고시)에 따라 성능검사기관의 장\n이 발급한 “바닥충격음 성능검사 결과서”로 평가하되 바닥충격음 성능검사 결과가 성능기준에 미달하여\n사용검사권자가 보완시공, 손해보상 등의 조치를 권고한 후 보완시공을 통해 성능기준을 만족하는 경우에\n는 측정값에 해당하는 등급을 부여하고, 손해 배상 조치를 취한 경우에는 등급을 부여하지 않음\n참고자료 및 제출서류\n참고자료 - 공동주택 바닥충격음 차단구조인정 및 검사기준, 국토교통부\n제출서류\n- 기준층 바닥구조 단면 상세도\n예비 - 바닥충격음 차단구조 성능인정서\n인증 * 다만, 2022.08.04.~2023.03.13. 기간에 사업계획승인을 신청한 공동주택의 경우에는【별표\n1】 [평가방법 2] 적용 시 적용예정확인서로 대체 가능\n- 바닥충격음 성능검사 결과서(보완시공 후 성능 재검사 결과서 포함)\n- 바닥구조 시공 확인 서류(슬래브두께, 완충재 등 주요 구성품의 시공 상태를 확인할 수 있는\n사진 등 포함)\n본인증\n- 완충재 등 바닥충격음을 줄이기 위해 사용한 주요 구성품에 대한 시험성적서\n- 감리책임자(또는 감독, 건설사업관리자)의 확인서\n- 사용검사권자의 개선권고 내용 및 조치결과 보고사항(성능검사기준에 미달한 경우에 한함)"
+        },
+        {
+          "criterion_id": "R-7.6",
+          "출처": {
+            "페이지": 58,
+            "종료페이지": 59,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.6",
+            "명칭": "중량충격음 차단성능",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "중량충격음 차단성능을 확보하여 세대 간 저주파 바닥충격음을 저감한다.",
+            "평가방법": "평가방법 1은 역A특성 가중 바닥충격음레벨, 평가방법 2는 A특성 최대 바닥충격음레벨을 기준으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                58,
+                59
+              ],
+              "max_score": 2,
+              "input_variables": [
+                {
+                  "name": "heavy_floor_impact_sound_method",
+                  "type": "enum",
+                  "values": [
+                    "method_1_Li_Fmax_AW",
+                    "method_2_LiA_Fmax"
+                  ]
+                },
+                {
+                  "name": "heavy_floor_impact_level_Li_Fmax_AW_dB",
+                  "label": "역A특성 가중 최대 바닥충격음레벨",
+                  "type": "number",
+                  "unit": "dB"
+                },
+                {
+                  "name": "heavy_floor_impact_level_LiA_Fmax_dB",
+                  "label": "A특성 최대 바닥충격음레벨",
+                  "type": "number",
+                  "unit": "dB"
+                }
+              ],
+              "method_1_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "L'i,Fmax,AW 40dB 이하",
+                  "condition": "heavy_floor_impact_level_Li_Fmax_AW_dB <= 40",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "L'i,Fmax,AW 40dB 초과 43dB 이하",
+                  "condition": "40 < heavy_floor_impact_level_Li_Fmax_AW_dB <= 43",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "L'i,Fmax,AW 43dB 초과 47dB 이하",
+                  "condition": "43 < heavy_floor_impact_level_Li_Fmax_AW_dB <= 47",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "L'i,Fmax,AW 47dB 초과 50dB 이하",
+                  "condition": "47 < heavy_floor_impact_level_Li_Fmax_AW_dB <= 50",
+                  "weight": 0.4
+                }
+              ],
+              "method_2_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "L'iA,Fmax 37dB 이하",
+                  "condition": "heavy_floor_impact_level_LiA_Fmax_dB <= 37",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "L'iA,Fmax 37dB 초과 41dB 이하",
+                  "condition": "37 < heavy_floor_impact_level_LiA_Fmax_dB <= 41",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "L'iA,Fmax 41dB 초과 45dB 이하",
+                  "condition": "41 < heavy_floor_impact_level_LiA_Fmax_dB <= 45",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "L'iA,Fmax 45dB 초과 49dB 이하",
+                  "condition": "45 < heavy_floor_impact_level_LiA_Fmax_dB <= 49",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = selected_method_weight * 2"
+            }
+          },
+          "참고자료": [
+            "공동주택 바닥충격음 차단구조인정 및 검사기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "기준층 바닥구조 단면 상세도",
+              "예비 - 바닥충격음 차단구조 성능인정서",
+              "인증 * 다만, 2022.08.04.~2023.03.13. 기간에 사업계획승인을 신청한 공동주택의 경우에는【별표",
+              "1】 [평가방법 2] 적용 시 적용예정확인서로 대체 가능",
+              "바닥충격음 성능검사 결과서(보완시공 후 성능 재검사 결과서 포함)",
+              "바닥구조 시공 확인 서류(슬래브두께, 완충재 등 주요 구성품의 시공 상태를 확인할 수 있는",
+              "사진 등 포함)"
+            ],
+            "본인증": [
+              "완충재 등 바닥충격음을 줄이기 위해 사용한 주요 구성품에 대한 시험성적서",
+              "감리책임자(또는 감독, 건설사업관리자)의 확인서",
+              "사용검사권자의 개선권고 내용 및 조치결과 보고사항(성능검사기준에 미달한 경우에 한함)"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.6 중량충격음 차단성능\n세부평가기준\n평가목적 바닥구조체를 통하여 아래 층 세대로 전달되는 중량 충격음의 차단성능을 확보하여 거주자에게 쾌적한 주거\n공간을 제공한다.\n평가방법 1. 공동주택 바닥충격음 차단구조인정 및 관리기준에 따라 취득한 인정서 등으로 평가\n2. 공동주택 바닥충격음 차단구조인정 및 검사기준에 따라 발급한 바닥충격음 차단구조 성능인정서에 따라 평가\n배 점 2점(평가항목)\n산출기준 ※ 주택법 제15조 사업계획승인 시점에 따라 평가방법 선택\n[평가방법 1]\n• 평점 = (가중치) × (배점)\n구분 역A특성 가중 바닥충격음레벨 (단위 : dB) 가중치\n1급 L'i,Fmax,AW ≤ 40 1.0\n2급 40 ＜ L'i,Fmax,AW ≤ 43 0.8\n3급 43 ＜ L'i,Fmax,AW ≤ 47 0.6\n4급 47 ＜ L'i,Fmax,AW ≤ 50 0.4\n- L'i,Fmax,AW는 역A특성 가중 바닥충격음레벨을 말함\n- 상․하층간 경계바닥구조에서 화장실, 현관, 발코니(확장한 경우에는 포함) 등의 바닥구조는 제외함\n- 슬래브두께가 150mm이고, 공동주택 바닥충격음 차단구조인정 및 관리기준에 적합한 라멘구조는 4급으로\n표기하고, 동 고시에 따라 성능인정을 받은 라멘구조는 해당 등급을 표기함\n[평가방법 2]\n• 평점 = (가중치) × (배점)\n구분 A특성 가중 최대 바닥충격음레벨 (단위 : dB) 가중치\n1급 L' ≤ 37 1.0\niA,Fmax\n2급 37 ＜ L' ≤ 41 0.8\niA,Fmax\n3급 41 ＜ L' ≤ 45 0.6\niA,Fmax\n4급 45 ＜ L' ≤ 49 0.4\niA,Fmax\n- L' 는 A특성 가중 최대 바닥충격음레벨을 말함\niA,Fmax\n- 상․하층간 경계바닥구조에서 화장실, 현관, 발코니(확장한 경우에는 포함) 등의 바닥구조는 제외함\n- 슬래브두께가 150mm이고, 공동주택 바닥충격음 차단구조인정 및 관리기준에 적합한 라멘구조는 4급으로\n표기하고, 동 고시에 따라 성능인정을 받은 라멘구조는 해당 등급을 표기함\n- 예비인증 : 「공동주택 바닥충격음 차단구조인정 및 검사기준」(국토교통부고시)에 따라 인정기관의 장이\n발급한 “바닥충격음 차단구조 성능인정서”로 평가하되 인증신청자가 성능인정서의 등급보다 떨어지는 등\n급을 표기한 경우에는 이를 허용함\n- 본 인증 : 「공동주택 바닥충격음 차단구조인정 및 검사기준」(국토교통부고시)에 따라 성능검사기관의 장\n이 발급한 “바닥충격음 성능검사 결과서”로 평가하되 바닥충격음 성능검사 결과가 성능기준에 미달하여\n사용검사권자가 보완시공, 손해보상 등의 조치를 권고한 후 보완시공을 통해 성능기준을 만족하는 경우에\n는 측정값에 해당하는 등급을 부여하고, 손해 배상 조치를 취한 경우에는 등급을 부여하지 않음\n참고자료 및 제출서류\n참고자료 - 공동주택 바닥충격음 차단구조인정 및 검사기준, 국토교통부\n제출서류\n- 기준층 바닥구조 단면 상세도\n예비 - 바닥충격음 차단구조 성능인정서\n인증 * 다만, 2022.08.04.~2023.03.13. 기간에 사업계획승인을 신청한 공동주택의 경우에는【별표\n1】 [평가방법 2] 적용 시 적용예정확인서로 대체 가능\n- 바닥충격음 성능검사 결과서(보완시공 후 성능 재검사 결과서 포함)\n- 바닥구조 시공 확인 서류(슬래브두께, 완충재 등 주요 구성품의 시공 상태를 확인할 수 있는\n사진 등 포함)\n본인증\n- 완충재 등 바닥충격음을 줄이기 위해 사용한 주요 구성품에 대한 시험성적서\n- 감리책임자(또는 감독, 건설사업관리자)의 확인서\n- 사용검사권자의 개선권고 내용 및 조치결과 보고사항(성능검사기준에 미달한 경우에 한함)"
+        },
+        {
+          "criterion_id": "R-7.7",
+          "출처": {
+            "페이지": 60,
+            "종료페이지": 61,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.7",
+            "명칭": "세대 간 경계벽의 차음성능",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "세대 간 경계벽의 차음성능을 확보하여 생활소음 전달을 저감한다.",
+            "평가방법": "평가방법 1은 공기전달음 차단성능 수치로, 평가방법 2는 경계벽 구조 종류별 두께 기준으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                60,
+                61
+              ],
+              "max_score": 2,
+              "input_variables": [
+                {
+                  "name": "boundary_wall_evaluation_method",
+                  "type": "enum",
+                  "values": [
+                    "method_1_Rw_plus_C",
+                    "method_2_wall_structure_thickness"
+                  ]
+                },
+                {
+                  "name": "boundary_wall_Rw_plus_C_dB",
+                  "label": "경계벽 Rw+C 값",
+                  "type": "number",
+                  "unit": "dB"
+                },
+                {
+                  "name": "no_shared_boundary_wall_between_units",
+                  "label": "세대 간 공유 경계벽 없음",
+                  "type": "boolean"
+                },
+                {
+                  "name": "boundary_wall_structure_type",
+                  "type": "enum",
+                  "values": [
+                    "reinforced_or_steel_reinforced_concrete",
+                    "plain_concrete_masonry_block_stone",
+                    "prefabricated_concrete_panel"
+                  ]
+                },
+                {
+                  "name": "boundary_wall_thickness_mm",
+                  "label": "경계벽 두께",
+                  "type": "number",
+                  "unit": "mm"
+                }
+              ],
+              "method_1_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "Rw+C 63dB 이상 또는 세대 간 공유 경계벽 없음",
+                  "condition": "boundary_wall_Rw_plus_C_dB >= 63 or no_shared_boundary_wall_between_units",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "Rw+C 58dB 이상 63dB 미만",
+                  "condition": "58 <= boundary_wall_Rw_plus_C_dB < 63",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "Rw+C 53dB 이상 58dB 미만",
+                  "condition": "53 <= boundary_wall_Rw_plus_C_dB < 58",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "Rw+C 48dB 이상 53dB 미만",
+                  "condition": "48 <= boundary_wall_Rw_plus_C_dB < 53",
+                  "weight": 0.4
+                }
+              ],
+              "method_2_thickness_tables": {
+                "reinforced_or_steel_reinforced_concrete": [
+                  {
+                    "grade": "1급",
+                    "condition": "boundary_wall_thickness_mm >= 250 or no_shared_boundary_wall_between_units",
+                    "weight": 1.0
+                  },
+                  {
+                    "grade": "2급",
+                    "condition": "210 <= boundary_wall_thickness_mm < 250",
+                    "weight": 0.8
+                  },
+                  {
+                    "grade": "3급",
+                    "condition": "180 <= boundary_wall_thickness_mm < 210",
+                    "weight": 0.6
+                  },
+                  {
+                    "grade": "4급",
+                    "condition": "150 <= boundary_wall_thickness_mm < 180",
+                    "weight": 0.4
+                  }
+                ],
+                "plain_concrete_masonry_block_stone": [
+                  {
+                    "grade": "1급",
+                    "condition": "boundary_wall_thickness_mm >= 300 or no_shared_boundary_wall_between_units",
+                    "weight": 1.0
+                  },
+                  {
+                    "grade": "2급",
+                    "condition": "260 <= boundary_wall_thickness_mm < 300",
+                    "weight": 0.8
+                  },
+                  {
+                    "grade": "3급",
+                    "condition": "230 <= boundary_wall_thickness_mm < 260",
+                    "weight": 0.6
+                  },
+                  {
+                    "grade": "4급",
+                    "condition": "200 <= boundary_wall_thickness_mm < 230",
+                    "weight": 0.4
+                  }
+                ],
+                "prefabricated_concrete_panel": [
+                  {
+                    "grade": "1급",
+                    "condition": "boundary_wall_thickness_mm >= 220 or no_shared_boundary_wall_between_units",
+                    "weight": 1.0
+                  },
+                  {
+                    "grade": "2급",
+                    "condition": "180 <= boundary_wall_thickness_mm < 220",
+                    "weight": 0.8
+                  },
+                  {
+                    "grade": "3급",
+                    "condition": "150 <= boundary_wall_thickness_mm < 180",
+                    "weight": 0.6
+                  },
+                  {
+                    "grade": "4급",
+                    "condition": "120 <= boundary_wall_thickness_mm < 150",
+                    "weight": 0.4
+                  }
+                ]
+              },
+              "score_formula": "score = selected_method_weight * 2"
+            }
+          },
+          "참고자료": [
+            "건축물의 피난․방화구조 등의 기준에 관한 규칙, 국토교통부",
+            "주택건설기준 등에 관한 규정, 국토교통부",
+            "벽체의 차음구조인정 및 관리기준, 국토교통부",
+            "KS F 2808 (건물부재의 공기전달음 차단성능 실험실 측정방법)",
+            "KS F 2862 (건물 및 건물부재의 공기전달음 차단성능 평가방법)"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 세대간 경계벽의 구조 및 두께를 표기한 설계도면",
+              "인증 - 차음구조 인성서 및 해당 벽체의 인정용 시험 성적서",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "감리책임자(또는 감독, 건설사업관리자)의 시공 확인서"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.7 세대 간 경계벽의 차음성능\n세부평가기준\n평가목적 인접한 세대 간의 소음전달을 최소화하여 쾌적한 주거공간의 창출과 프라이버시를 확보한다.\n평가방법 경계벽의 구성재료 또는 벽체의 차음구조인정 및 관리기준에 따라 차음구조인정을 받은 벽체의 시험성적서\n로 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치) × (배점)\n[평가방법 1] 차음성능에 의한 평가\n구분 공기전달음 차단성능 평가치 가중치\n1급 63dB ≤ Rw+C 또는 세대 간 경계벽을 공유하지 않는 경우 1.0\n2급 58dB ≤ Rw+C ＜ 63dB 0.8\n3급 53dB ≤ Rw+C ＜ 58dB 0.6\n4급 48dB ≤ Rw+C ＜ 53dB 0.4\n- Rw는 KS F 2808에 따라 실험실에서 측정한 음향감쇠계수(음향투과손실)를 KS F 2862에 따라 평가한 단\n일수치 평가량을 말함\n- C는 KS F 2862에서 규정하고 있는 스펙트럼조정항으로서 특정주파수대역에서 차음성능이 저하하는 것을\n평가하기 위해 적용함\n[평가방법 2] 경계벽 구조에 의한 평가\n- 철근콘크리트 및 철골철근콘크리트조(시멘트 모르터 등 바름두께 포함)\n구분 세대 간 경계벽체의 두께 가중치\n1급 250mm 이상 또는 세대 간 경계벽을 공유하지 않는 경우 1.0\n2급 210mm 이상 250mm 미만 0.8\n3급 180mm 이상 210mm 미만 0.6\n4급 150mm 이상 180mm 미만 0.4\n- 무근콘크리트, 조적조, 블록조, 석조(시멘트 모르터 등 바름두께 포함)\n구분 세대 간 경계벽체의 두께 가중치\n1급 300mm 이상 또는 세대 간 경계벽을 공유하지 않는 경우 1.0\n2급 260mm 이상 300mm 미만 0.8\n3급 230mm 이상 260mm 미만 0.6\n4급 200mm 이상 230mm 미만 0.4\n- 조립식 콘크리트판\n구분 세대 간 경계벽체의 두께 가중치\n1급 220mm 이상 또는 세대 간 경계벽을 공유하지 않는 경우 1.0\n2급 180mm 이상 220mm 미만 0.8\n3급 150mm 이상 180mm 미만 0.6\n4급 120mm 이상 150mm 미만 0.4\n- 경계벽의 구성재료가 철근콘크리트, 무근콘크리트, 조립식 콘크리트판 등 주택건설기준 등에 관한 규정\n에서 정하고 있는 구조는 각 재료별 설계두께로 평가함\n- 주택건설기준 등에 관한 규정에서 규정하고 있는 구조 이외인 경우, 벽체의 차음구조인정 및 관리기준에\n따라 차음구조인정을 받은 벽체의 시험성적서로 평가함(산출방법은 KS F2862 건물 및 건물부재의 공기\n전달음 차단성능 평가방법에 의함)\n- 평면구성상 인접 세대와 경계벽체를 공유하지 않는 경우에는 1급으로 인정함\n참고자료 및 제출서류\n참고자료 - 건축물의 피난․방화구조 등의 기준에 관한 규칙, 국토교통부\n- 주택건설기준 등에 관한 규정, 국토교통부\n- 벽체의 차음구조인정 및 관리기준, 국토교통부\n- KS F 2808 (건물부재의 공기전달음 차단성능 실험실 측정방법)\n- KS F 2862 (건물 및 건물부재의 공기전달음 차단성능 평가방법)\n제출서류\n예비 - 세대간 경계벽의 구조 및 두께를 표기한 설계도면\n인증 - 차음구조 인성서 및 해당 벽체의 인정용 시험 성적서\n- 예비인증 시와 동일\n본인증\n- 감리책임자(또는 감독, 건설사업관리자)의 시공 확인서"
+        },
+        {
+          "criterion_id": "R-7.8",
+          "출처": {
+            "페이지": 62,
+            "종료페이지": 63,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.8",
+            "명칭": "교통소음(도로, 철도)에 대한 실내․외 소음도",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "교통소음에 대한 외피 및 실내 차음성능을 확보하여 쾌적한 주거환경을 조성한다.",
+            "평가방법": "평가방법 1은 모든 층 실외소음도, 평가방법 2는 5층 이하 실외소음도와 6층 이상 실내소음도 점수 합산, 평가방법 3은 상업지역 등 공동주택의 실내소음도로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                62,
+                63
+              ],
+              "max_score": 2,
+              "input_variables": [
+                {
+                  "name": "traffic_noise_evaluation_method",
+                  "type": "enum",
+                  "values": [
+                    "method_1_outdoor_all_floors",
+                    "method_2_outdoor_below_5f_and_indoor_above_6f",
+                    "method_3_indoor_commercial_area"
+                  ]
+                },
+                {
+                  "name": "outdoor_traffic_noise_dB",
+                  "label": "실외 교통소음도",
+                  "type": "number",
+                  "unit": "dB"
+                },
+                {
+                  "name": "indoor_traffic_noise_dB",
+                  "label": "실내 교통소음도",
+                  "type": "number",
+                  "unit": "dB"
+                },
+                {
+                  "name": "is_commercial_area_apartment",
+                  "label": "상업지역 등 적용 대상 공동주택 여부",
+                  "type": "boolean"
+                }
+              ],
+              "method_1_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "실외소음도 50dB 미만",
+                  "condition": "outdoor_traffic_noise_dB < 50",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "실외소음도 50dB 이상 55dB 미만",
+                  "condition": "50 <= outdoor_traffic_noise_dB < 55",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "실외소음도 55dB 이상 60dB 미만",
+                  "condition": "55 <= outdoor_traffic_noise_dB < 60",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "실외소음도 60dB 이상 65dB 미만",
+                  "condition": "60 <= outdoor_traffic_noise_dB < 65",
+                  "weight": 0.4
+                }
+              ],
+              "method_2_point_tables": {
+                "outdoor_score_for_floors_1_to_5": [
+                  {
+                    "condition": "outdoor_traffic_noise_dB < 50",
+                    "point": 2
+                  },
+                  {
+                    "condition": "50 <= outdoor_traffic_noise_dB < 55",
+                    "point": 1.5
+                  },
+                  {
+                    "condition": "55 <= outdoor_traffic_noise_dB < 60",
+                    "point": 1
+                  },
+                  {
+                    "condition": "60 <= outdoor_traffic_noise_dB < 65",
+                    "point": 0.5
+                  }
+                ],
+                "indoor_score_for_floors_6_or_above": [
+                  {
+                    "condition": "indoor_traffic_noise_dB <= 30",
+                    "point": 2
+                  },
+                  {
+                    "condition": "30 < indoor_traffic_noise_dB <= 35",
+                    "point": 1.5
+                  },
+                  {
+                    "condition": "35 < indoor_traffic_noise_dB <= 40",
+                    "point": 1
+                  },
+                  {
+                    "condition": "40 < indoor_traffic_noise_dB <= 45",
+                    "point": 0.5
+                  }
+                ]
+              },
+              "method_2_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "실외소음도 점수와 실내소음도 점수 합계 4점",
+                  "condition": "traffic_noise_method_2_total_point == 4",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "합계 3점 이상 4점 미만",
+                  "condition": "3 <= traffic_noise_method_2_total_point < 4",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "합계 2점 이상 3점 미만",
+                  "condition": "2 <= traffic_noise_method_2_total_point < 3",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "합계 1점 이상 2점 미만",
+                  "condition": "1 <= traffic_noise_method_2_total_point < 2",
+                  "weight": 0.4
+                }
+              ],
+              "method_3_grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "상업지역 등 공동주택 실내소음도 30dB 이하",
+                  "condition": "is_commercial_area_apartment and indoor_traffic_noise_dB <= 30",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "상업지역 등 공동주택 실내소음도 30dB 초과 35dB 이하",
+                  "condition": "is_commercial_area_apartment and 30 < indoor_traffic_noise_dB <= 35",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "상업지역 등 공동주택 실내소음도 35dB 초과 40dB 이하",
+                  "condition": "is_commercial_area_apartment and 35 < indoor_traffic_noise_dB <= 40",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "상업지역 등 공동주택 실내소음도 40dB 초과 45dB 이하",
+                  "condition": "is_commercial_area_apartment and 40 < indoor_traffic_noise_dB <= 45",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = selected_method_weight * 2"
+            }
+          },
+          "참고자료": [
+            "공동주택의 소음측정기준, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "소음원 현황을 파악할 수 있는 지도 또는 항공사진/위성사진",
+              "설계도면(기준층 평면도 및 단면도, 외벽(창 포함) 상세도)",
+              "실별 실내소음도 예측 결과보고서",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "실내 소음도/실외소음도 측정 결과보고서"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.8 교통소음(도로, 철도)에 대한 실내․외 소음도\n세부평가기준\n평가목적 도로나 철도로부터 발생하는 교통소음으로부터 정온한 주거환경을 확보한다.\n평가방법 공동주택의 소음측정기준에서 정하고 있는 방법에 따라 실시한 실내⋅외 소음도 예측 및 측정결과로 평가\n배 점 2점(평가항목)\n산출기준 ※ 평가방법 1 또는 평가방법 2를 적용 (평가방법 3은 상업지역 주택에 한해 적용)\n• 평점 = (가중치)×(배점)\n[평가방법 1] 도로나 철도에 면한 공동주택 전 층에 대해 실외소음도 기준을 적용한 경우\n구분 소음도(LAeq (dB(A))) 가중치\n1급 소음도가 50dB(A) 미만 1.0\n2급 소음도가 50dB(A) 이상 55dB(A) 미만 0.8\n3급 소음도가 55dB(A) 이상 60dB(A) 미만 0.6\n4급 소음도가 60dB(A) 이상 65dB(A) 미만 0.4\n[평가방법 2] 도로나 철도에 면한 공동주택 중 5층 이하는 실외소음도 기준을, 6층 이상은 실내소음도 기준\n을 적용한 경우\n구분 실외소음도 및 실내소음도 취득 점수 합계 가중치\n1급 4점 1.0\n2급 3점 이상 4점 미만 0.8\n3급 2점 이상 3점 미만 0.6\n4급 1점 이상 2점 미만 0.4\n- 평가방법 2의 취득점수 산출기준\n실외소음도(단위:dB(A)) 점수 실내소음도 (단위:dB(A)) 점수\n50dB(A) 미만 2.0 30dB(A) 이하 2.0\n50dB(A) 이상 55dB(A) 미만 1.5 30dB(A) 초과 35dB(A) 이하 1.5\n55dB(A) 이상 60dB(A) 미만 1.0 35dB(A) 초과 40dB(A) 이하 1.0\n60dB(A) 이상 65dB(A) 미만 0.5 40dB(A) 초과 45dB(A) 이하 0.5\n[평가방법 3] 상업지역 주택에 한해 적용\n구분 실내소음도 (단위:dB(A)) 가중치\n1급 실내소음도가 30dB(A) 이하 1.0\n2급 실내소음도가 30dB(A) 초과 35dB(A) 이하 0.8\n3급 실내소음도가 35dB(A) 초과 40dB(A) 이하 0.6\n4급 실내소음도가 40dB(A) 초과 45dB(A) 이하 0.4\n참고자료 및 제출서류\n참고자료 - 공동주택의 소음측정기준, 국토교통부\n제출서류\n- 소음원 현황을 파악할 수 있는 지도 또는 항공사진/위성사진\n예비\n- 설계도면(기준층 평면도 및 단면도, 외벽(창 포함) 상세도)\n인증\n- 실별 실내소음도 예측 결과보고서\n- 예비인증 시와 동일\n본인증\n- 실내 소음도/실외소음도 측정 결과보고서"
+        },
+        {
+          "criterion_id": "R-7.9",
+          "출처": {
+            "페이지": 64,
+            "종료페이지": 65,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "7",
+            "명칭": "실내환경"
+          },
+          "인증항목": {
+            "번호": "7.9",
+            "명칭": "화장실 급배수 소음",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "화장실 급배수 설비와 배관방식의 저소음 성능을 확보하여 설비소음을 저감한다.",
+            "평가방법": "급수압, 저소음 변기, 배관 고정·절연·저소음 배관, 당해층 배관, AD/air duct 소음방지 점수를 합산하여 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                64,
+                65
+              ],
+              "max_score": 2,
+              "input_variables": [
+                {
+                  "name": "household_water_supply_pressure_MPa",
+                  "label": "세대별 급수압",
+                  "type": "number",
+                  "unit": "MPa"
+                },
+                {
+                  "name": "low_noise_toilet_used",
+                  "label": "저소음형 변기 채용 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "wall_hung_toilet_used",
+                  "label": "벽체 고정형 변기 채용 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "pipe_penetration_and_vibration_control_item_count",
+                  "label": "벽체 및 바닥의 배관 관통부·하부층 배수관 고정·욕조 하부 진동절연·변기 하부 절연시공법 채택 수",
+                  "type": "number",
+                  "unit": "개"
+                },
+                {
+                  "name": "low_noise_drain_pipe_noise_reduction_dBA",
+                  "label": "저소음형 배수관과 일반관의 소음도 차이",
+                  "type": "number",
+                  "unit": "dB(A)"
+                },
+                {
+                  "name": "same_floor_drainage_piping_used",
+                  "label": "오배수관 당해층 배관방식 채택 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "independent_exhaust_duct_installed",
+                  "label": "AD/air duct를 통한 상하층 간 소음전달 방지 독립 급배기구 설치 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "noise_blocking_exhaust_grille_installed",
+                  "label": "AD/air duct를 통한 상하층 간 소음전달 방지 소음 차단형 배기구 설치 여부",
+                  "type": "boolean"
+                }
+              ],
+              "point_items": [
+                {
+                  "name": "water_supply_pressure_score",
+                  "condition": "household_water_supply_pressure_MPa <= 0.245",
+                  "point": 2
+                },
+                {
+                  "name": "low_noise_toilet_score",
+                  "condition": "low_noise_toilet_used",
+                  "point": 2
+                },
+                {
+                  "name": "wall_hung_toilet_score",
+                  "condition": "wall_hung_toilet_used",
+                  "point": 3
+                },
+                {
+                  "name": "pipe_penetration_and_vibration_control_score",
+                  "condition": "1 <= pipe_penetration_and_vibration_control_item_count <= 2",
+                  "point": 1
+                },
+                {
+                  "name": "pipe_penetration_and_vibration_control_score",
+                  "condition": "pipe_penetration_and_vibration_control_item_count >= 3",
+                  "point": 2
+                },
+                {
+                  "name": "low_noise_drain_pipe_score",
+                  "condition": "5 <= low_noise_drain_pipe_noise_reduction_dBA < 10",
+                  "point": 1
+                },
+                {
+                  "name": "low_noise_drain_pipe_score",
+                  "condition": "10 <= low_noise_drain_pipe_noise_reduction_dBA < 15",
+                  "point": 2
+                },
+                {
+                  "name": "low_noise_drain_pipe_score",
+                  "condition": "15 <= low_noise_drain_pipe_noise_reduction_dBA < 20",
+                  "point": 3
+                },
+                {
+                  "name": "low_noise_drain_pipe_score",
+                  "condition": "low_noise_drain_pipe_noise_reduction_dBA >= 20",
+                  "point": 4
+                },
+                {
+                  "name": "same_floor_drainage_score",
+                  "condition": "same_floor_drainage_piping_used",
+                  "point": 5
+                },
+                {
+                  "name": "ad_air_duct_noise_prevention_score",
+                  "condition": "independent_exhaust_duct_installed",
+                  "point": 3
+                },
+                {
+                  "name": "ad_air_duct_noise_prevention_score",
+                  "condition": "noise_blocking_exhaust_grille_installed",
+                  "point": 2
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "toilet_plumbing_noise_reduction_score_total",
+                  "formula": "sum(applicable point_items with mutually exclusive alternatives resolved by maximum point)",
+                  "unit": "점"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "화장실 급배수 소음 저감방법 및 설비 채택 점수 합계 10점 이상",
+                  "condition": "toilet_plumbing_noise_reduction_score_total >= 10",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "합계 8점 이상 9점 이하",
+                  "condition": "8 <= toilet_plumbing_noise_reduction_score_total <= 9",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "합계 6점 이상 7점 이하",
+                  "condition": "6 <= toilet_plumbing_noise_reduction_score_total <= 7",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "합계 4점 이상 5점 이하",
+                  "condition": "4 <= toilet_plumbing_noise_reduction_score_total <= 5",
+                  "weight": 0.4
+                }
+              ],
+              "score_formula": "score = weight * 2"
+            }
+          },
+          "참고자료": [
+            "KS M 3404 (일반용 경질 폴리염화비닐관)"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "급․배수 소음 저감방법별 설계도면 및 시방서, 채용 공법별 관련 자료(시험성적서 등)",
+              "예비인증 시와 동일"
+            ],
+            "본인증": [
+              "설치 사진",
+              "급·배수 소음 저감공법을 확인할 수 있는 서류(감리 보고서 등)"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 7 실내환경\n인증항목 7.9 화장실 급배수 소음\n세부평가기준\n평가목적 화장실 급배수 소음, 배기 덕트(air duct)를 통한 상⋅하층간의 공기전달소음에 대해 관련 저감공법 채택을\n유도하여 실내공간의 정온성을 확보한다.\n평가방법 화장실 급배수 소음 저감공법 및 설비의 채택수로 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치) × (배점)\n구분 화장실 급배수 소음 저감공법 및 설비 채택 점수 합계 가중치\n1급 10점 이상 1.0\n2급 8점 이상 9점 이하 0.8\n3급 6점 이상 7점 이하 0.6\n4급 4점 이상 5점 이하 0.4\n화장실 급배수 소음 저감공법 및 설비 채택 점수\n세대별 급수압을 0.245MPa이하로 유지 2\n저소음형 변기주1) 채용 2\n벽체 고정형 변기주2) 채용 3\n벽체 및 바닥의 배관 관통부, 하부층 배수관 고정부, 욕조 하부 진동절연 시공, 변기 하부 절\n1\n연시공법 중 1~2개 채택\n벽체 및 바닥의 배관 관통부, 하부층 배수관 고정부, 욕조 하부 진동절연 시공, 변기 하부 절\n2\n연시공법 중 3개 이상 채택\n5dB(A) 이상 10dB(A) 미만 1\n저소음형 배수관(배수공법\n포함)주3)과 일반용 경질 10dB(A) 이상 15dB(A)미만 2\n폴리염화비닐관(KS M 3404의 15dB(A) 이상 20dB(A) 미만 3\nVG2)과의 소음레벨 차\n20dB(A) 이상 4\n오·배수관의 당해층 배관방식 채택 5\n배기용 AD(air duct)를 통한 상하층 독립 급배기관 설치 3\n간 소음전달 방지대책의 수립여부 소음 차단형 배기구주4) 설치 2\n주1) 저소음형 변기란 동일한 장소(공동주택 화장실이나 이와 동등하게 구축된 시험용 주택 화장실) 및 측\n정조건(배수관, 하부층의 천장마감 등이 동일)에서 사이폰(또는 사이폰제트)형 변기와 비교 측정한 배수\n시(급수음은 제외)의 최대 소음도(Lmax) 차가 3dB(A) 이상인 변기를 말하며, 소음도 측정은 변기가 설\n치된 층에서 실시함\n주2) 벽체 고정형 변기란 변기용 배수관이 벽을 통해 곧바로 배관 덕트(pipe duct)에 연결된 경우를 말함\n주3) 저소음형 배수관에는 배관 내에 소음저감을 목적으로 장치나 부품(재료 포함) 등을 설치하는 공법을 포\n함하며, 동일한 장소(공동주택 화장실이나 이와 동등하게 구축된 시험용 주택의 화장실) 및 측정조건\n(동일한 변기 타입, 세면대, 욕조 타입(욕실 모든 배수관), 동일한 배수량, 하부층의 천장마감이 없는\n상태 등)에서 실시한 일반용 경질 폴리염화비닐관(KS M 3404)과 측정대상 배수관(공법 포함)과의 최대\n소음도(Lmax) 차이로서 판단함\n주4) 소음차단형 배기구라 함은 동일한 측정조건에서 측정한 일반 배기구와의 소음차단성능 차가 5dB(A) 이\n상인 배기구를 말함\n참고자료 및 제출서류\n참고자료 - KS M 3404 (일반용 경질 폴리염화비닐관)\n제출서류\n예비\n- 급․배수 소음 저감방법별 설계도면 및 시방서, 채용 공법별 관련 자료(시험성적서 등)\n인증\n- 예비인증 시와 동일\n본인증 - 설치 사진\n- 급·배수 소음 저감공법을 확인할 수 있는 서류(감리 보고서 등)"
+        }
+      ]
+    }
+  ]
+}

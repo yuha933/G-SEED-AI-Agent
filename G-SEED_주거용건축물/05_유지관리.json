@@ -1,0 +1,556 @@
+{
+  "metadata": {
+    "인증기준명": "녹색건축 인증기준",
+    "버전": "G-SEED 2016-8",
+    "건축물유형": "신축 주거용 건축물",
+    "전문분야번호": "5",
+    "전문분야명": "유지관리",
+    "시작페이지": 39,
+    "종료페이지": 43,
+    "항목수": 3,
+    "원본PDF": "G-SEED 2016-8_개정전문.pdf",
+    "참조데이터": "G-SEED/01_신축_주거용_건축물.json",
+    "생성방식": "PDF 원문·평가기준·계산식 구조를 전문분야별로 분리"
+  },
+  "전문분야": [
+    {
+      "번호": "5",
+      "명칭": "유지관리",
+      "인증항목": [
+        {
+          "criterion_id": "R-5.1",
+          "출처": {
+            "페이지": 39,
+            "종료페이지": 39,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "5",
+            "명칭": "유지관리"
+          },
+          "인증항목": {
+            "번호": "5.1",
+            "명칭": "건설현장의 환경관리 계획",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "시공단계에서 체계적인 환경관리를 수행하도록 환경경영체계와 현장 환경관리 활동을 평가한다.",
+            "평가방법": "ISO 14001 보유 여부, 환경우선 운영지침, 현장 환경관리계획·조직·실행 여부를 단계적으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                39
+              ],
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "construction_company_iso_14001_certified",
+                  "label": "시공회사 ISO 14001 보유 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "construction_company_internal_environment_priority_guideline_exists",
+                  "label": "시공회사 자체 환경우선 운영지침 보유 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "site_environmental_management_plan_document_exists",
+                  "label": "공사현장 자체 환경관리계획서 보유 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "site_environmental_management_organization_exists",
+                  "label": "현장 환경관리 담당조직 구성 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "site_environmental_management_plan_established",
+                  "label": "현장 환경관리계획 수립 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "site_environmental_management_implemented",
+                  "label": "현장 환경관리 수행 여부",
+                  "type": "boolean"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "시공회사가 ISO 14001을 보유하고, 현장에도 ISO 14001에 근거한 환경관리조직이 있으며 환경관리계획을 수립·시행한 경우",
+                  "condition": "construction_company_iso_14001_certified and site_environmental_management_organization_exists and site_environmental_management_plan_established and site_environmental_management_implemented",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "시공회사가 자체 환경우선 운영지침을 보유하고, 현장 환경관리조직이 있으며 환경관리계획을 수립·시행한 경우",
+                  "condition": "construction_company_internal_environment_priority_guideline_exists and site_environmental_management_organization_exists and site_environmental_management_plan_established and site_environmental_management_implemented",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "공사현장 자체 환경관리계획서가 있고, 담당조직이 있으며 환경관리계획을 수립·시행한 경우",
+                  "condition": "site_environmental_management_plan_document_exists and site_environmental_management_organization_exists and site_environmental_management_plan_established and site_environmental_management_implemented",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "현장 환경관리 담당조직을 구성하고 환경관리를 수행한 경우",
+                  "condition": "site_environmental_management_organization_exists and site_environmental_management_implemented",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "건설기술진흥법, 국토교통부",
+            "건설환경관리 표준시방서, 국토교통부",
+            "지속가능경영아카데미 홈페이지 (http://www.ksasma.or.kr), 한국표준협회",
+            "ISO 14001 (환경경영시스템)"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "ISO 14001 인증서",
+              "예비 - 시공회사의 환경경영방침 관련 서류",
+              "인증 - 건설현장의 환경관리 계획서",
+              "※ 적용예정확인서로 갈음 가능",
+              "예비인증 시와 동일",
+              "건설현장의 환경관리보고서"
+            ],
+            "본인증": [
+              "제출서류를 확인할 수 있는 사진",
+              "건설현장의 환경관리계획 시행 확인서"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 5 유지관리\n인증항목 5.1 건설현장의 환경관리 계획\n세부평가기준\n평가목적 건설현장에 대하여 환경관리 계획의 타당성 및 시행 여부 등을 확인하여 친환경적으로 관리함으로써 시공과\n정에서 발생하는 환경부하를 최소화하고자 한다.\n평가방법 시공회사의 ISO 14001(환경경영시스템) 보유 여부, 시공회사의 환경경영방침 수립 여부, 건설현장의 환경관\n리 계획 수립 및 시행 여부에 따라 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치)×(배점)\n구분 현장의 환경관리 계획 가중치\n시공회사가 ISO 14001을 보유하고 있고, 현장에도 ISO 14001에 근거한 환경관리조\n1급 1.0\n직이 있으며, 환경관리계획을 수립하여 시행하고 있는 경우\n시공회사가 환경을 우선으로 하는 사내운영지침을 보유하고 있고, 현장에도 환경을\n2급 0.8\n담당하는 조직이 있으며, 환경관리계획을 수립하여 시행하고 있는 경우\n건설현장 자체적으로 환경관리계획서를 문서로 보유하고 있고, 이를 수행하기 위한\n3급 0.6\n담당조직이 있으며, 환경관리계획을 수립하여 시행하고 있는 경우\n건설현장 자체적으로 환경관리를 수행하기 위한 담당조직이 있으며, 환경관리를 시행\n4급 0.4\n하고 있는 경우\n- 환경관리 계획은 본사나 현장의 환경경영조직과는 별도로 수립해야 하는 것으로서 인증대상 건축물을 시\n공하는 데에 있어 필요한 환경관리조직 및 업무와 관련된 사항을 구체적으로 기술하고 있어야 함\n참고자료 및 제출서류\n참고자료 - 건설기술진흥법, 국토교통부\n- 건설환경관리 표준시방서, 국토교통부\n- 지속가능경영아카데미 홈페이지 (http://www.ksasma.or.kr), 한국표준협회\n- ISO 14001 (환경경영시스템)\n제출서류\n- ISO 14001 인증서\n예비 - 시공회사의 환경경영방침 관련 서류\n인증 - 건설현장의 환경관리 계획서\n※ 적용예정확인서로 갈음 가능\n- 예비인증 시와 동일\n- 건설현장의 환경관리보고서\n본인증\n- 제출서류를 확인할 수 있는 사진\n- 건설현장의 환경관리계획 시행 확인서"
+        },
+        {
+          "criterion_id": "R-5.2",
+          "출처": {
+            "페이지": 40,
+            "종료페이지": 41,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "5",
+            "명칭": "유지관리"
+          },
+          "인증항목": {
+            "번호": "5.2",
+            "명칭": "운영·유지관리 문서 및 매뉴얼 제공",
+            "구분": "필수항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "건축물 준공 후 운영·유지관리에 필요한 필수 도서와 매뉴얼 제공 수준을 평가한다.",
+            "평가방법": "필수 도서 3종 제공 여부와 운영·유지관리 매뉴얼 11종 중 제공 개수를 산정하여 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                40,
+                41
+              ],
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "as_built_drawings_provided",
+                  "label": "준공도서 제공 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "completion_documents_provided",
+                  "label": "준공 관련 서류 제공 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "periodic_inspection_document_or_manual_provided",
+                  "label": "정기점검 관련 문서 또는 매뉴얼 제공 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_roof_waterproofing",
+                  "label": "옥상 방수 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_structure_and_nonbearing_wall",
+                  "label": "구조체 및 비내력벽 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_hvac_heat_source_and_hot_water",
+                  "label": "냉난방 열원 및 급탕설비 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_elevator_exterior_lighting_cctv_parking_control",
+                  "label": "승강기·외부조명·CCTV·주차관제 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_lighting_equipment",
+                  "label": "조명설비 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_landscape",
+                  "label": "조경 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_water_supply_drainage_rainwater_reuse",
+                  "label": "급수·배수·우수·중수 설비 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_underground_parking_and_common_condensation",
+                  "label": "지하주차장 및 공용부 결로 관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_renewable_energy_equipment",
+                  "label": "신재생에너지 설비 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_community_and_welfare_facilities",
+                  "label": "커뮤니티 및 부대복리시설 유지관리 매뉴얼",
+                  "type": "boolean"
+                },
+                {
+                  "name": "om_manual_fire_and_extinguishing_equipment",
+                  "label": "소방 및 소화설비 유지관리 매뉴얼",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "required_document_count",
+                  "label": "제공된 필수 도서 수",
+                  "formula": "sum(as_built_drawings_provided, completion_documents_provided, periodic_inspection_document_or_manual_provided)",
+                  "unit": "개"
+                },
+                {
+                  "name": "operation_maintenance_manual_item_count",
+                  "label": "제공된 운영·유지관리 매뉴얼 항목 수",
+                  "formula": "sum(11 operation_maintenance_manual boolean variables)",
+                  "unit": "개"
+                },
+                {
+                  "name": "all_required_documents_provided",
+                  "label": "필수 도서 3종 모두 제공 여부",
+                  "formula": "required_document_count == 3"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "필수 도서 3종을 모두 제공하고 운영·유지관리 매뉴얼 8개 이상을 제공한 경우",
+                  "condition": "all_required_documents_provided and operation_maintenance_manual_item_count >= 8",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "필수 도서 3종을 모두 제공하고 운영·유지관리 매뉴얼 7개를 제공한 경우",
+                  "condition": "all_required_documents_provided and operation_maintenance_manual_item_count == 7",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "필수 도서 3종을 모두 제공하고 운영·유지관리 매뉴얼 6개를 제공한 경우",
+                  "condition": "all_required_documents_provided and operation_maintenance_manual_item_count == 6",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "필수 도서 3종을 모두 제공하고 운영·유지관리 매뉴얼 1개 이상 5개 이하를 제공한 경우",
+                  "condition": "all_required_documents_provided and 1 <= operation_maintenance_manual_item_count <= 5",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "건축물의 설계도서 작성기준, 국토교통부",
+            "건축물 유지관리 점검 매뉴얼, 국토교통부",
+            "안전점검 및 정밀안전진단 세부지침, 한국시설안전공단"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "운영·유지관리 필수 문서",
+              "운영·유지관리 매뉴얼",
+              "※ 적용예정확인서로 갈음 가능",
+              "운영·유지관리 필수 문서 및 매뉴얼 제공 확인서"
+            ],
+            "본인증": [
+              "운영·유지관리 매뉴얼",
+              "제출서류를 확인할 수 있는 사진"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 5 유지관리\n인증항목 5.2 운영·유지관리 문서 및 매뉴얼 제공\n세부평가기준\n평가목적 건축물 제반시설 및 설비의 운영방법에 대한 정보를 사전에 마련함으로써 당초 의도했던 계획에 따라, 건축\n물이 최대의 효율을 발휘함과 동시에 지속적인 유지관리가 이루어지도록 한다.\n평가방법 관리자를 위한 제반시설 및 설비의 운영·유지관리 문서와 매뉴얼의 제공 여부에 따라 평가\n배 점 2점(필수항목)\n산출기준 • 평점 = (가중치) × (배점)\n구분 운영·관리 도서 및 매뉴얼 제공 가중치\n1급 필수도서 + 운영·유지관리 매뉴얼 중 8개 항목을 제공한 경우 1.0\n2급 필수도서 + 운영·유지관리 매뉴얼 중 7개 항목을 제공한 경우 0.8\n3급 필수도서 + 운영·유지관리 매뉴얼 중 6개 항목을 제공한 경우 0.6\n4급 필수도서 + 운영·유지관리 매뉴얼 중 1~5개 항목을 제공한 경우 0.4\n필수도서\n(1) 준공도면(건축, 구조, 기계, 전기, 소방설비, 조경, 토목 등)\n(2) 준공서류(지질조사보고서, 구조계산서, 시방서 등)\n(3) 정기점검 목록에 의거한 정기점검 문서(안전점검 및 정밀안전진단 세부지침에 근거한 정기점검 매뉴얼)\n운영·유지관리 매뉴얼\n(1) 옥상방수의 유지관리 매뉴얼\n(2) 건축물의 구조체·비내력벽체의 유지관리 매뉴얼\n(3) 냉난방열원 및 급탕설비의 운영 및 유지관리 매뉴얼\n(4) 승강기, 외부조명기기, CCTV, 주차관제시설의 운영 및 유지관리 매뉴얼\n(5) 조명설비 및 조명기기에 관한 유지관리 매뉴얼\n(6) 조경관련 유지관리 매뉴얼\n(7) 급수 및 배수시설(우수, 중수 포함)의 유지관리 매뉴얼\n(8) 지하주차장 및 공용부분에 대한 결로 유지관리 매뉴얼\n(9) 신재생에너지 설비의 유지관리 매뉴얼\n(10) 주민공동시설 등 부대시설 유지관리 매뉴얼\n(11) 소방 및 소화설비 유지관리 매뉴얼\n- 건축물 운영·유지관리 매뉴얼에는 아래와 같은 사항을 포함하여야 함\n· 현황\n· 점검방법\n· 상시 유지관리 점검사항\n· 해당 업체(공사참여자, 설비 설치업체 등), 유지관리 담당자의 연락처\n참고자료 및 제출서류\n참고자료 - 건축물의 설계도서 작성기준, 국토교통부\n- 건축물 유지관리 점검 매뉴얼, 국토교통부\n- 안전점검 및 정밀안전진단 세부지침, 한국시설안전공단\n제출서류\n- 운영·유지관리 필수 문서\n예비\n- 운영·유지관리 매뉴얼\n인증\n※ 적용예정확인서로 갈음 가능\n- 운영·유지관리 필수 문서 및 매뉴얼 제공 확인서\n본인증 - 운영·유지관리 매뉴얼\n- 제출서류를 확인할 수 있는 사진"
+        },
+        {
+          "criterion_id": "R-5.3",
+          "출처": {
+            "페이지": 42,
+            "종료페이지": 42,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "5",
+            "명칭": "유지관리"
+          },
+          "인증항목": {
+            "번호": "5.3",
+            "명칭": "사용자 매뉴얼 제공",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "입주자와 사용자가 건축물을 친환경적으로 사용할 수 있도록 사용자 매뉴얼 제공 수준을 평가한다.",
+            "평가방법": "사용자 매뉴얼 7개 항목 각각의 제공 여부를 변수로 두고 제공 개수를 합산하여 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                42
+              ],
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "user_manual_green_building_certification_summary",
+                  "label": "녹색건축 인증 관련 주요 성능 및 사용 안내",
+                  "type": "boolean"
+                },
+                {
+                  "name": "user_manual_energy_saving_operation",
+                  "label": "에너지 절약 운전 및 사용 안내",
+                  "type": "boolean"
+                },
+                {
+                  "name": "user_manual_water_saving_operation",
+                  "label": "물 절약 설비 사용 안내",
+                  "type": "boolean"
+                },
+                {
+                  "name": "user_manual_ventilation_and_indoor_air_quality",
+                  "label": "환기 및 실내공기질 관리 안내",
+                  "type": "boolean"
+                },
+                {
+                  "name": "user_manual_waste_separation_and_recycling",
+                  "label": "폐기물 분리배출 및 재활용 안내",
+                  "type": "boolean"
+                },
+                {
+                  "name": "user_manual_noise_and_living_environment",
+                  "label": "소음 및 생활환경 관리 안내",
+                  "type": "boolean"
+                },
+                {
+                  "name": "user_manual_facility_maintenance_contact_and_schedule",
+                  "label": "주요 설비 유지관리 연락처 및 점검주기 안내",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "user_manual_item_count",
+                  "label": "제공된 사용자 매뉴얼 항목 수",
+                  "formula": "sum(7 user_manual boolean variables)",
+                  "unit": "개"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "사용자 매뉴얼 7개 항목을 제공한 경우",
+                  "condition": "user_manual_item_count >= 7",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "사용자 매뉴얼 6개 항목을 제공한 경우",
+                  "condition": "user_manual_item_count == 6",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "사용자 매뉴얼 5개 항목을 제공한 경우",
+                  "condition": "user_manual_item_count == 5",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "사용자 매뉴얼 1개 이상 4개 이하 항목을 제공한 경우",
+                  "condition": "1 <= user_manual_item_count <= 4",
+                  "weight": 0.4
+                }
+              ]
+            }
+          },
+          "참고자료": [
+            "건축물 유지관리 점검 매뉴얼, 국토교통부"
+          ],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 사용자 매뉴얼(문서 또는 전자문서)",
+              "인증 ※ 적용예정확인서로 갈음 가능",
+              "예비인증 시와 동일",
+              "녹색건축물 인증 정보제공 적용예정확인서"
+            ],
+            "본인증": [
+              "제출서류를 확인할 수 있는 사진",
+              "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물",
+              "전문분야 5 유지관리",
+              "인증항목 5.4 녹색건축인증 관련 정보제공",
+              "인증심사 세부기준",
+              "평가목적 건축물의 녹색건축인증에 대한 정보를 소유주체(입주자 대표회 등)에게 제공함으로써 건축물이 효율적이고",
+              "지속적인 유지관리가 가능하도록 한다.",
+              "평가방법 소유주체에게 녹색건축인증 관련 정보의 제공 여부를 평가",
+              "배 점 3점(평가항목)",
+              "산출기준 • 평점 = (가중치) × (배점)",
+              "구분 녹색건축인증 관련 정보 가중치",
+              "1급 2급 + 녹색건축인증 제출서류(인증서 포함)를 소유주체에게 제공한 경우 1.0",
+              "2급 3급 + 녹색건축 인증서 및 항목별 배점표를 게시한 경우 0.8",
+              "3급 4급 + 녹색건축 인증서 및 항목별 배점표를 소유주체에게 제공한 경우 0.6",
+              "4급 녹색건축 인증명판을 부착한 경우 0.4",
+              "녹색건축 인증명판은 거주자들의 눈에 잘 띄는 장소에 부착하여야 함",
+              "녹색건축 인증서 및 항목별 배점표를 게시할 경우에는 거주자들의 눈에 잘 띄는 출입구에 3개월 이상 유",
+              "지하여야 함",
+              "참고자료 및 제출서류",
+              "참고자료",
+              "녹색건축물 인증 정보 제공 서약서"
+            ]
+          },
+          "원문": "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 5 유지관리\n인증항목 5.3 사용자 매뉴얼 제공\n세부평가기준\n평가목적 건축물 및 세대 내의 제반시설 및 설비에 대한 정보를 사용자들에게 제공함으로써 건축물의 관리 및 운영\n이 효율적으로 유지되도록 한다.\n평가방법 사용자들에게 매뉴얼(문서 또는 전자문서)의 제공 여부에 따라 평가\n배 점 2점(평가항목)\n산출기준 • 평점 = (가중치) × (배점)\n구분 사용자 매뉴얼 제공 가중치\n1급 사용자 매뉴얼 중 7개 항목을 제공한 경우 1.0\n2급 사용자 매뉴얼 중 6개 항목을 제공한 경우 0.8\n3급 사용자 매뉴얼 중 5개 항목을 제공한 경우 0.6\n4급 사용자 매뉴얼 중 1~4개 항목을 제공한 경우 0.4\n사용자 매뉴얼\n(1) 건축물 구조체(내력벽/비내력벽), 기둥의 위치, 치수 등이 포함된 단위세대 설계도\n(2) 난방(냉방)･급탕･가스설비 등 사용자 매뉴얼\n(3) 급수, 배수, 위생 등 사용자 매뉴얼\n(4) 조명 및 전기설비 등 사용자 매뉴얼\n(5) 정보통신설비 등 사용자 매뉴얼\n(6) 공동주택에서의 안전 및 생활에티켓 관련지침(소화시설사용법, 피난방법, 쓰레기 처리방법 등)\n(7) 층간소음 대처 관련지침\n- 사용자 매뉴얼은 아래와 같은 사항을 포함하여야 함\n· 점검, 고장감지 및 교체방법, 효율적인 운전방법 등\n· 유지관리, 보수 점검 주기에 기초한 정기적인 예방보전방법\n- 사용자 매뉴얼은 이용하기 편리하도록 합본형태로 제공하여야 함\n참고자료 및 제출서류\n참고자료 - 건축물 유지관리 점검 매뉴얼, 국토교통부\n제출서류 예비 - 사용자 매뉴얼(문서 또는 전자문서)\n인증 ※ 적용예정확인서로 갈음 가능\n- 예비인증 시와 동일\n본인증\n- 제출서류를 확인할 수 있는 사진\n녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물\n전문분야 5 유지관리\n인증항목 5.4 녹색건축인증 관련 정보제공\n인증심사 세부기준\n평가목적 건축물의 녹색건축인증에 대한 정보를 소유주체(입주자 대표회 등)에게 제공함으로써 건축물이 효율적이고\n지속적인 유지관리가 가능하도록 한다.\n평가방법 소유주체에게 녹색건축인증 관련 정보의 제공 여부를 평가\n배 점 3점(평가항목)\n산출기준 • 평점 = (가중치) × (배점)\n구분 녹색건축인증 관련 정보 가중치\n1급 2급 + 녹색건축인증 제출서류(인증서 포함)를 소유주체에게 제공한 경우 1.0\n2급 3급 + 녹색건축 인증서 및 항목별 배점표를 게시한 경우 0.8\n3급 4급 + 녹색건축 인증서 및 항목별 배점표를 소유주체에게 제공한 경우 0.6\n4급 녹색건축 인증명판을 부착한 경우 0.4\n- 녹색건축 인증명판은 거주자들의 눈에 잘 띄는 장소에 부착하여야 함\n- 녹색건축 인증서 및 항목별 배점표를 게시할 경우에는 거주자들의 눈에 잘 띄는 출입구에 3개월 이상 유\n지하여야 함\n참고자료 및 제출서류\n참고자료\n제출서류\n예비\n- 녹색건축물 인증 정보제공 적용예정확인서\n인증\n본인증 - 녹색건축물 인증 정보 제공 서약서"
+        },
+        {
+          "criterion_id": "R-5.4",
+          "출처": {
+            "페이지": 43,
+            "종료페이지": 43,
+            "버전": "G-SEED 2016-8"
+          },
+          "전문분야": {
+            "번호": "5",
+            "명칭": "유지관리"
+          },
+          "인증항목": {
+            "번호": "5.4",
+            "명칭": "녹색건축 인증 관련 정보 제공",
+            "구분": "평가항목",
+            "배점": 2
+          },
+          "평가": {
+            "평가목적": "녹색건축 인증 결과와 관련 정보를 건축물 소유·운영 주체 및 이용자에게 제공하도록 유도한다.",
+            "평가방법": "인증명판 부착을 기본조건으로 하고, 인증서·항목별 점수표 제공 및 게시, 인증 제출도서 제공 여부를 단계적으로 평가한다.",
+            "calculation_model": {
+              "model_version": "gseed_2016_8_residential_v2",
+              "source_pages": [
+                43
+              ],
+              "score_formula": "score = weight * 2",
+              "input_variables": [
+                {
+                  "name": "green_building_certification_nameplate_attached",
+                  "label": "녹색건축 인증 명판 부착 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "certificate_and_score_table_provided_to_owner",
+                  "label": "인증서 및 항목별 점수표를 소유 또는 운영 주체에게 제공 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "certificate_and_score_table_posted",
+                  "label": "인증서 및 항목별 점수표 게시 여부",
+                  "type": "boolean"
+                },
+                {
+                  "name": "green_certification_submission_documents_provided_to_owner",
+                  "label": "녹색건축 인증 제출도서 일체를 소유 또는 운영 주체에게 제공 여부",
+                  "type": "boolean"
+                }
+              ],
+              "derived_variables": [
+                {
+                  "name": "grade_4_certification_information_condition",
+                  "formula": "green_building_certification_nameplate_attached"
+                },
+                {
+                  "name": "grade_3_certification_information_condition",
+                  "formula": "grade_4_certification_information_condition and certificate_and_score_table_provided_to_owner"
+                },
+                {
+                  "name": "grade_2_certification_information_condition",
+                  "formula": "grade_3_certification_information_condition and certificate_and_score_table_posted"
+                }
+              ],
+              "grade_rules": [
+                {
+                  "grade": "1급",
+                  "original_text": "2급 기준을 만족하고, 인증서를 포함한 녹색건축 인증 제출도서 일체를 소유 또는 운영 주체에게 제공한 경우",
+                  "condition": "grade_2_certification_information_condition and green_certification_submission_documents_provided_to_owner",
+                  "weight": 1.0
+                },
+                {
+                  "grade": "2급",
+                  "original_text": "3급 기준을 만족하고, 인증서 및 항목별 점수표를 게시한 경우",
+                  "condition": "grade_2_certification_information_condition",
+                  "weight": 0.8
+                },
+                {
+                  "grade": "3급",
+                  "original_text": "4급 기준을 만족하고, 인증서 및 항목별 점수표를 소유 또는 운영 주체에게 제공한 경우",
+                  "condition": "grade_3_certification_information_condition",
+                  "weight": 0.6
+                },
+                {
+                  "grade": "4급",
+                  "original_text": "녹색건축 인증 명판을 부착한 경우",
+                  "condition": "grade_4_certification_information_condition",
+                  "weight": 0.4
+                }
+              ],
+              "posting_requirement": "인증서 및 항목별 점수표는 사용자가 보기 쉬운 주출입구 등에 3개월 이상 게시한다."
+            }
+          },
+          "참고자료": [],
+          "제출서류": {
+            "예비인증": [
+              "예비 - 사용자 매뉴얼(문서 또는 전자문서)",
+              "인증 ※ 적용예정확인서로 갈음 가능",
+              "예비인증 시와 동일",
+              "녹색건축물 인증 정보제공 적용예정확인서"
+            ],
+            "본인증": [
+              "제출서류를 확인할 수 있는 사진",
+              "녹색건축 인증기준 2016-8 <신축건축물> 주거용 건축물",
+              "전문분야 5 유지관리",
+              "인증항목 5.4 녹색건축인증 관련 정보제공",
+              "인증심사 세부기준",
+              "평가목적 건축물의 녹색건축인증에 대한 정보를 소유주체(입주자 대표회 등)에게 제공함으로써 건축물이 효율적이고",
+              "지속적인 유지관리가 가능하도록 한다.",
+              "평가방법 소유주체에게 녹색건축인증 관련 정보의 제공 여부를 평가",
+              "배 점 3점(평가항목)",
+              "산출기준 • 평점 = (가중치) × (배점)",
+              "구분 녹색건축인증 관련 정보 가중치",
+              "1급 2급 + 녹색건축인증 제출서류(인증서 포함)를 소유주체에게 제공한 경우 1.0",
+              "2급 3급 + 녹색건축 인증서 및 항목별 배점표를 게시한 경우 0.8",
+              "3급 4급 + 녹색건축 인증서 및 항목별 배점표를 소유주체에게 제공한 경우 0.6",
+              "4급 녹색건축 인증명판을 부착한 경우 0.4",
+              "녹색건축 인증명판은 거주자들의 눈에 잘 띄는 장소에 부착하여야 함",
+              "녹색건축 인증서 및 항목별 배점표를 게시할 경우에는 거주자들의 눈에 잘 띄는 출입구에 3개월 이상 유",
+              "지하여야 함",
+              "참고자료 및 제출서류",
+              "참고자료",
+              "녹색건축물 인증 정보 제공 서약서"
+            ]
+          },
+          "원문": "녹색건축 인증 관련 정보 제공: 인증 명판 부착, 인증서 및 항목별 점수표 제공·게시, 제출도서 제공 여부를 평가한다."
+        }
+      ]
+    }
+  ]
+}
